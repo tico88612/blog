@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://blog.yangjerry.tw/"/>
+  <link href="http://tico88612.github.io/blog/"/>
   <updated>2018-08-26T06:30:49.123Z</updated>
-  <id>http://blog.yangjerry.tw/</id>
+  <id>http://tico88612.github.io/blog/</id>
   
   <author>
     <name>Jerry Yang</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://blog.yangjerry.tw/2018/08/26/hello-world/"/>
-    <id>http://blog.yangjerry.tw/2018/08/26/hello-world/</id>
+    <link href="http://tico88612.github.io/blog/2018/08/26/hello-world/"/>
+    <id>http://tico88612.github.io/blog/2018/08/26/hello-world/</id>
     <published>2018-08-26T06:30:49.123Z</published>
     <updated>2018-08-26T06:30:49.123Z</updated>
     
