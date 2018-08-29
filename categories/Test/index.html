@@ -165,9 +165,11 @@
     </section>
 
     <section class="article typo">
-        <p>先恭喜亞運台灣 🇹🇼 奪得金牌<br><a href="https://www.net-chinese.com.tw/nc/" target="_blank" rel="noopener">網路中文</a> 也很大方的免費讓人註冊.tw<br>於是，這個 <a href="https://blog.yangjerry.tw">Blog</a> 就誕生了<br>第一次用 <a href="https://hexo.io/zh-tw/" target="_blank" rel="noopener">Hexo</a> 架設<br>用 Markdown 來寫寫看瑣碎事</p>
-<p>首頁嘛……晚點再把坑補上<br>寫到這裡就這樣吧！之後再補</p>
-
+        <p>先恭喜亞運台灣 🇹🇼 奪得金牌<br><a href="https://www.net-chinese.com.tw/nc/" target="_blank" rel="noopener">網路中文</a> 也很大方的免費讓人註冊.tw<br>
+        
+            <div class="readmore">
+                <a href="/2018/08/26/hello-world/" class="flat-box">READ MORE</a>
+            </div>
         
 
         
@@ -198,6 +200,10 @@
     
         <li><a class="flat-box" href="/categories/Test/"><div class='name'>Test</div><div class='badge'>1</div></a></li>
     
+        <li><a class="flat-box" href="/categories/解題區/"><div class='name'>解題區</div><div class='badge'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/解題區/解題報告書-ZeroJudge/"><div class='name'>解題報告書 - ZeroJudge</div><div class='badge'>1</div></a></li>
+    
     </ul>
     
 </div>
@@ -205,6 +211,13 @@
 
 
   
+<section class="m_widget tagcloud">
+    <div class="header"><i class="fa fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;標籤</div>
+    <div class='content'>
+        <a href="/tags/Queue/" style="font-size: 14px; color: #999">Queue</a> <a href="/tags/Special-Judge/" style="font-size: 14px; color: #999">Special Judge</a> <a href="/tags/Stack/" style="font-size: 14px; color: #999">Stack</a>
+    </div>
+</section>
+
 
 
   <section class='m_widget contacts'>
@@ -226,6 +239,27 @@
     <div class='header'><i class="fa fa-link" aria-hidden="true"></i>&nbsp;&nbsp;友情連結</div>
     <div class='content'>
         <ul class="entry" id="links">
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://tcshoj.tw">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        &nbsp;&nbsp;TCSH Online Judge
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://zerojudge.tw">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        &nbsp;&nbsp;ZeroJudge
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://uva.onlinejudge.org">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        &nbsp;&nbsp;UVa Online Judge
+                    </div>
+                </a></li>
             
                 <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://sunmoon-template.blogspot.com">
                     <div class='name'>
@@ -258,6 +292,13 @@
         
       
         
+            <a href="https://www.facebook.com/tico88612" class="social facebook"
+                target="_blank" rel="external">
+            <i class="fa fa-facebook"></i>
+            </a>
+        
+      
+        
             <a href="https://github.com/tico88612" class="social github"
                 target="_blank" rel="external">
             <i class="fa fa-github"></i>
@@ -275,8 +316,6 @@
       
         
       
-        
-      
     </div>
     <br>
     <div>Blog 内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" class="licenses">姓名標示-非商業性-相同方式分享 4.0 國際 (CC BY-NC-SA 4.0)</a></div>
@@ -285,6 +324,44 @@
 
 </footer>
 <!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+    <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            preferredFont: "TeX",
+            availableFonts: ["STIX","TeX"],
+            linebreaks: { automatic:true },
+            EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+        },
+        tex2jax: {
+            inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+            processEscapes: true,
+            ignoreClass: "tex2jax_ignore|dno",
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        },
+        TeX: {
+            equationNumbers: { autoNumber: "AMS" },
+            noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+            Macros: { href: "{}" }
+        },
+        messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116676990-3"></script>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>c700. 壞掉的隊列(queue) | Jerry Yang&#39;s Blog</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/">
+  <link rel="alternate" href="/atom.xml" title="Jerry Yang's Blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="題目 Problem題目連結：https://www.zerojudge.tw/ShowProblem?problemid=c700">
+<meta name="keywords" content="Stack,Queue,Special Judge">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c700. 壞掉的隊列(queue)">
+<meta property="og:url" content="http://blog.yangjerry.tw/2018/08/29/zj-c700/index.html">
+<meta property="og:site_name" content="Jerry Yang&#39;s Blog">
+<meta property="og:description" content="題目 Problem題目連結：https://www.zerojudge.tw/ShowProblem?problemid=c700">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2018-08-29T16:29:27.752Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="c700. 壞掉的隊列(queue)">
+<meta name="twitter:description" content="題目 Problem題目連結：https://www.zerojudge.tw/ShowProblem?problemid=c700">
+
+  <link rel="shortcut icon" href="" />
+  <link rel="icon" href="" />
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+</head>
+
+<body>
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+  <script>setLoadingBarProgress(20)</script>
+  <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				<!-- <i class="fa fa-home"></i> -->
+				Jerry Yang's Blog
+			</a>
+
+				<div class='menu'>
+					<ul class='h-list'>
+						
+							<li>
+								<a class='flat-box nav-about' href='https://yangjerry.tw'>
+									<i class="fa fa-home"></i>
+									首頁
+								</a>
+							</li>
+						
+							<li>
+								<a class='flat-box nav-home' href='/'>
+									<i class="fa fa-rss"></i>
+									Blog
+								</a>
+							</li>
+						
+							<li>
+								<a class='flat-box nav-archives' href='/archives'>
+									<i class="fa fa-archive"></i>
+									紀錄
+								</a>
+							</li>
+						
+					</ul>
+					<div class='underline'></div>
+				</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon"><i class="fa fa-search"></i></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a href='javascript:void(0)'><i class="fa fa-search flat-box"></i></span></a></li>
+				
+				<li class='s-menu'><a href='javascript:void(0)'><i class="fa fa-navicon flat-box"></i></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				xaoxuu
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a href='javascript:void(0)'><i class="fa fa-comments flat-box"></i></a></li>
+				<li class='s-top'><a href='javascript:void(0)'><i class="fa fa-arrow-up flat-box"></i></a></li>
+				<li class='s-toc'><a href='javascript:void(0)'><i class="fa fa-list-ul flat-box"></i></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+        <div class="header">Jerry Yang&#39;s Blog</div>
+		<nav>
+			
+				<a href="https://yangjerry.tw" class="nav-about nav">
+					<i class="fa fa-home"></i>
+					首頁
+				</a>
+			
+				<a href="/" class="nav-home nav">
+					<i class="fa fa-rss"></i>
+					Blog
+				</a>
+			
+				<a href="/archives" class="nav-archives nav">
+					<i class="fa fa-archive"></i>
+					紀錄
+				</a>
+			
+		</nav>
+	</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body">
+    <div class='container clearfix'>
+      <div class='l_main'>
+        <article id="post-zj-c700" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    <section class='meta'>
+        <h1 class="title">
+            
+                c700. 壞掉的隊列(queue)
+            
+        </h1>
+        <time>
+            2018-08-29 Wednesday&nbsp;&nbsp;
+            <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/解題區/">解題區</a>, <a href="/categories/解題區/解題報告書-ZeroJudge/">解題報告書 - ZeroJudge</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="題目-Problem"><a href="#題目-Problem" class="headerlink" title="題目 Problem"></a>題目 Problem</h2><p><a href="https://www.zerojudge.tw/ShowProblem?problemid=c700" target="_blank" rel="noopener">題目連結：https://www.zerojudge.tw/ShowProblem?problemid=c700</a><br><a id="more"></a></p>
+<h3 id="敘述-Description"><a href="#敘述-Description" class="headerlink" title="敘述 Description"></a>敘述 Description</h3><p>「測資中有若干行輸入，請你實作 queue 的幾種操作：</p>
+<p>push $X(0≤X&lt;2^{32})$: 將 $X$ 加入隊列</p>
+<p>pop: 輸出隊列最前方的數字並刪除，你可以假設此時隊列不是空的」 </p>
+<p>小W本來想隨便寫寫交差了事，卻發現 STL 的 queue 壞了！</p>
+<p>再看看題目，原來底下附註一行小字：請用兩個 stack 完成這題。</p>
+<p>於是小W希望你能用以下代號寫一張紙條告訴他該怎麼做。</p>
+<p>1: 讀入 push X 並將 X 放到堆疊一</p>
+<p>2: 讀入 push X 並將 X 放到堆疊二</p>
+<p>3: 讀入 pop ，將堆疊一頂端的元素輸出並刪除</p>
+<p>4: 讀入 pop ，將堆疊二頂端的元素輸出並刪除</p>
+<p>5: 將堆疊一頂端的元素取出並放至堆疊二</p>
+<p>6: 將堆疊二頂端的元素取出並放至堆疊一</p>
+<p>如果取出元素時堆疊為空或者讀入 push/pop 的順序與輸入測資不符，你會害小W拿到一個WA。</p>
+<h3 id="輸入-Input"><a href="#輸入-Input" class="headerlink" title="輸入 Input"></a>輸入 Input</h3><p>見題目和範例。</p>
+<h3 id="輸出-Output"><a href="#輸出-Output" class="headerlink" title="輸出 Output"></a>輸出 Output</h3><p>輸出一行你要傳給小W的內容。</p>
+<h3 id="範例輸入-Sample-Input"><a href="#範例輸入-Sample-Input" class="headerlink" title="範例輸入 Sample Input"></a>範例輸入 Sample Input</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">push 111</span><br><span class="line">push 222</span><br><span class="line">pop</span><br><span class="line">pop</span><br></pre></td></tr></table></figure>
+<h3 id="範例輸出-Sample-Output"><a href="#範例輸出-Sample-Output" class="headerlink" title="範例輸出 Sample Output"></a>範例輸出 Sample Output</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">範例輸出一:</span><br><span class="line">1234</span><br><span class="line"></span><br><span class="line">範例輸出二:</span><br><span class="line">12544</span><br><span class="line"></span><br><span class="line">範例輸出三:</span><br><span class="line">1143</span><br><span class="line"></span><br><span class="line">範例輸出四:</span><br><span class="line">1313</span><br><span class="line"></span><br><span class="line">範例輸出五:</span><br><span class="line">1133</span><br></pre></td></tr></table></figure>
+<h3 id="提示-Hint"><a href="#提示-Hint" class="headerlink" title="提示 Hint"></a>提示 Hint</h3><p>輸入至多 100000 行。</p>
+<p>以範例輸入而言，範例輸出一、二會拿到AC。</p>
+<p>範例輸出三會拿到WA，因為操作4時堆疊二是空的。</p>
+<p>範例輸出四也會拿到WA，因為輸入順序是push-&gt;push-&gt;pop-&gt;pop，但是1313的操作分別為push-&gt;pop-&gt;push-&gt;pop。</p>
+<p>範例輸出五的操作過程完全合法，但依據先進先出的原則，111應該比222早離開queue，若以1133的方式操作，222將比111早輸出，所以會拿到WA。</p>
+<h2 id="題解-Solution"><a href="#題解-Solution" class="headerlink" title="題解 Solution"></a>題解 Solution</h2><p>第一篇解題報告書就給這題啦！</p>
+<p><a href="https://www.hackerrank.com/challenges/queue-using-two-stacks/problem" target="_blank" rel="noopener">Hackerrank</a> 可以找到這個問題（這題就是要強制你使用 Stack）<br>實作 Queue 需要用到兩個 Stack<br>分別命名為$S1$跟$S2$</p>
+<p>$S1$用來記錄輸入的東西<br>$S2$就是把$S1$的內容顛倒過來</p>
+<p>$push$的時候先放入$S1$裡面<br>$pop$的時候先檢查$S2$有沒有東西</p>
+<p>如果有，$S2$的頂端$pop$掉<br>如果沒有，先$S1$<strong>所有內容</strong>$pop$到$S2$，再讓$S2$的頂端$pop$掉</p>
+<p>了解怎麼用 Stack 實作 Queue 就可以回到這題</p>
+<hr>
+<p>依照上面的做法，可以使用代號$1,4,5$的組合或$2,3,6$的組合來完成這題<br>並且用$2$個整數紀錄$2$個 Stack 的內容數量<br>分別命名為$x_1$跟$x_2$</p>
+<p>如果要$push$，就輸出$1$，把$x_1+1$<br>如果要$pop$，就先檢查$x_2$是否大於$0$</p>
+<p>如果有，就輸出$4$，把$x_2-1$<br>如果沒有，先輸出$x_1$個$5$，讓$x_2$加上$x_1$，並且把$x_1$歸零，再輸出$4$，把$x_2-1$</p>
+<p>這樣就可以來寫 Code 啦！</p>
+<h3 id="程式碼-Accepted-Code"><a href="#程式碼-Accepted-Code" class="headerlink" title="程式碼 Accepted Code"></a>程式碼 Accepted Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _ ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	_</span><br><span class="line">	<span class="built_in">string</span> enter;</span><br><span class="line">	<span class="keyword">int</span> total1=<span class="number">0</span>,total2=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;enter)&#123;</span><br><span class="line">		<span class="keyword">if</span>(enter==<span class="string">"push"</span>)&#123;</span><br><span class="line">			<span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> a;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;a;</span><br><span class="line">			total1++;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(total2)&#123;</span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;<span class="number">4</span>;</span><br><span class="line">				total2--;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;total1;i++)&#123;</span><br><span class="line">					<span class="built_in">cout</span>&lt;&lt;<span class="number">5</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				total2+=total1;</span><br><span class="line">				<span class="keyword">if</span>(total2)&#123;</span><br><span class="line">					<span class="built_in">cout</span>&lt;&lt;<span class="number">4</span>;</span><br><span class="line">					total2--;</span><br><span class="line">				&#125;</span><br><span class="line">				total1=<span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="後記-Afterword"><a href="#後記-Afterword" class="headerlink" title="後記 Afterword"></a>後記 Afterword</h2><p>這題有沒有其他解法？<br>這題是 Special Judge，應該是有吧，但……我沒有想到<br>上面這個解法是算簡單啦<br>如果有更好的解法，我還會再寫上去啦！</p>
+
+        </div>
+
+        
+            <div class="article-tags tags">
+                
+                    <a href="/tags/Stack/"><i class="fa fa-tag"></i>&nbsp;&nbsp;Stack</a>
+                
+                    <a href="/tags/Queue/"><i class="fa fa-tag"></i>&nbsp;&nbsp;Queue</a>
+                
+                    <a href="/tags/Special-Judge/"><i class="fa fa-tag"></i>&nbsp;&nbsp;Special Judge</a>
+                
+            </div>
+        
+
+        
+            <div class="art-item-footer">
+                
+                
+                    <span class="art-item-right">
+                        <a href="/2018/08/26/hello-world/" rel="next" title="Hello Hexo! Test By Jerry Yang">
+                            Hello Hexo! Test By Jerry Yang
+                        </a>&nbsp;
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </span>
+                
+            </div>
+        
+
+    </section>
+
+</article>
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box article-type-post>">
+        <section class="article typo">
+
+            
+
+            
+
+                
+                    <h4><i class="fa fa-comments" aria-hidden="true"></i>&nbsp;&nbsp;Disqus留言</h4>
+                    <section id="comments">
+                        <div id="disqus_thread">
+                            ⚠️  無法載入留言系統，請先確定你的網路連線 <a href="https://disqus.com">Disqus</a> 。
+                        </div>
+                    </section>
+                
+
+                
+
+                
+            
+
+        </section>
+    </article>
+
+
+<script>
+    window.subData = {
+        title: 'c700. 壞掉的隊列(queue)',
+        tools: true
+    }
+</script>
+
+
+      </div>
+      <aside class='l_side'>
+        
+  <section class='m_widget about'>
+    
+        <img class='avatar waves-image' src='/avatar.jpg' />
+    
+</section>
+
+
+  <section class='m_widget categories'>
+<div class='header'><i class="fa fa-sitemap" aria-hidden="true"></i>&nbsp;&nbsp;分類</div>
+<div class='content'>
+    
+    <ul class="entry">
+    
+        <li><a class="flat-box" href="/categories/Test/"><div class='name'>Test</div><div class='badge'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/解題區/"><div class='name'>解題區</div><div class='badge'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/解題區/解題報告書-ZeroJudge/"><div class='name'>解題報告書 - ZeroJudge</div><div class='badge'>1</div></a></li>
+    
+    </ul>
+    
+</div>
+</section>
+
+
+  
+<section class="m_widget tagcloud">
+    <div class="header"><i class="fa fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;標籤</div>
+    <div class='content'>
+        <a href="/tags/Queue/" style="font-size: 14px; color: #999">Queue</a> <a href="/tags/Special-Judge/" style="font-size: 14px; color: #999">Special Judge</a> <a href="/tags/Stack/" style="font-size: 14px; color: #999">Stack</a>
+    </div>
+</section>
+
+
+
+  <section class='m_widget contacts'>
+    <div class='header'><i class="fa fa-id-card" aria-hidden="true"></i>&nbsp;&nbsp;聯絡</div>
+    <div class='content'>
+        <ul class="entry">
+          
+            <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/tico88612">
+              <div class='name'>GitHub</div>
+              <div class='badge'>tico88612</div>
+            </a></li>
+          
+        </ul>
+    </div>
+</section>
+
+
+  <section class='m_widget links'>
+    <div class='header'><i class="fa fa-link" aria-hidden="true"></i>&nbsp;&nbsp;友情連結</div>
+    <div class='content'>
+        <ul class="entry" id="links">
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://tcshoj.tw">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        &nbsp;&nbsp;TCSH Online Judge
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://zerojudge.tw">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        &nbsp;&nbsp;ZeroJudge
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://uva.onlinejudge.org">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        &nbsp;&nbsp;UVa Online Judge
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://sunmoon-template.blogspot.com">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        &nbsp;&nbsp;日月卦長的模板庫
+                    </div>
+                </a></li>
+            
+        </ul>
+    </div>
+</section>
+
+
+  
+    <section class="m_widget toc-wrapper">
+        <div class="header"><i class="fa fa-list" aria-hidden="true"></i>&nbsp;&nbsp;目錄</div>
+        <div class='content'>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#題目-Problem"><span class="toc-text">題目 Problem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#敘述-Description"><span class="toc-text">敘述 Description</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#輸入-Input"><span class="toc-text">輸入 Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#輸出-Output"><span class="toc-text">輸出 Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#範例輸入-Sample-Input"><span class="toc-text">範例輸入 Sample Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#範例輸出-Sample-Output"><span class="toc-text">範例輸出 Sample Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提示-Hint"><span class="toc-text">提示 Hint</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#題解-Solution"><span class="toc-text">題解 Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#程式碼-Accepted-Code"><span class="toc-text">程式碼 Accepted Code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#後記-Afterword"><span class="toc-text">後記 Afterword</span></a></li></ol>
+        </div>
+    </section>
+
+
+
+
+      </aside>
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+  </div>
+  <footer id="footer" class="clearfix">
+    <div class="social-wrapper">
+      
+        
+            <a href="mailto:tico88612@gmail.com" class="social envelope"
+                target="_blank" rel="external">
+            <i class="fa fa-envelope"></i>
+            </a>
+        
+      
+        
+            <a href="https://www.facebook.com/tico88612" class="social facebook"
+                target="_blank" rel="external">
+            <i class="fa fa-facebook"></i>
+            </a>
+        
+      
+        
+            <a href="https://github.com/tico88612" class="social github"
+                target="_blank" rel="external">
+            <i class="fa fa-github"></i>
+            </a>
+        
+      
+        
+            <a href="https://www.instagram.com/jerry_love_linda/" class="social instagram"
+                target="_blank" rel="external">
+            <i class="fa fa-instagram"></i>
+            </a>
+        
+      
+        
+      
+        
+      
+    </div>
+    <br>
+    <div>Blog 内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" class="licenses">姓名標示-非商業性-相同方式分享 4.0 國際 (CC BY-NC-SA 4.0)</a></div>
+    <div>本站使用 <a href="https://github.com/xaoxuu/hexo-theme-material-x" target="_blank" class="codename">Material-X</a> 作為主題
+    </div>
+
+</footer>
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+    <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            preferredFont: "TeX",
+            availableFonts: ["STIX","TeX"],
+            linebreaks: { automatic:true },
+            EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+        },
+        tex2jax: {
+            inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+            processEscapes: true,
+            ignoreClass: "tex2jax_ignore|dno",
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        },
+        TeX: {
+            equationNumbers: { autoNumber: "AMS" },
+            noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+            Macros: { href: "{}" }
+        },
+        messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116676990-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-116676990-3');
+</script>
+
+
+  <script>setLoadingBarProgress(80);</script>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<!-- 访问统计 -->
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/jquery.fitvids.js"></script>
+<script>
+var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+var ALGOLIA_API_KEY = "";
+var ALGOLIA_APP_ID = "";
+var ALGOLIA_INDEX_NAME = "";
+var AZURE_SERVICE_NAME = "";
+var AZURE_INDEX_NAME = "";
+var AZURE_QUERY_KEY = "";
+var BAIDU_API_ID = "";
+var SEARCH_SERVICE = "hexo";
+var ROOT = "/"||"/";
+if(!ROOT.endsWith('/'))ROOT += '/';
+</script>
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+    
+        <script>
+            var disqus_shortname = 'yangjerry-blog';
+            
+                var disqus_url = 'http://blog.yangjerry.tw/2018/08/29/zj-c700/';
+            
+            (function(){
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+    
+    
+    
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
