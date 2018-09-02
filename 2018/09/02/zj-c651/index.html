@@ -21,7 +21,7 @@
 <meta property="og:description" content="題目 Problem題目連結：https://zerojudge.tw/ShowProblem?problemid=c651">
 <meta property="og:locale" content="zh">
 <meta property="og:image" content="http://blog.yangjerry.tw/2018/09/02/zj-c651/image.png">
-<meta property="og:updated_time" content="2018-09-02T04:32:30.469Z">
+<meta property="og:updated_time" content="2018-09-02T04:36:50.683Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="c651. 三、區間xor(RXQ)">
 <meta name="twitter:description" content="題目 Problem題目連結：https://zerojudge.tw/ShowProblem?problemid=c651">
@@ -188,7 +188,7 @@
 <h2 id="題解-Solution"><a href="#題解-Solution" class="headerlink" title="題解 Solution"></a>題解 Solution</h2><p>遇到一般的RMQ+單點修改問題，通常有幾種解題方式</p>
 <ol>
 <li>線段樹 Segment Tree</li>
-<li>二元索引樹（樹狀樹组） Binary Index Tree (Fenwick tree)<br>不過這題時限只有$0.5$秒<br>如果用前綴 $XOR$ 單點修改變成$O(N)$<br>如果用線段樹遞迴查詢可能會有點慢</li>
+<li>二元索引樹（樹狀樹组） Binary Index Tree (Fenwick tree)<br>不過這題時限只有$0.5$秒<br>如果用前綴 $XOR$ 單點修改變成$O(N)$<br>如果用線段樹遞迴查詢可能會有點慢（有實做過，只有$72\%$，其他的被TLE）</li>
 </ol>
 <p>這題可以使用BIT，也就是二元索引樹，但要如何使用呢？<br>（以下把二元索引樹 簡稱 BIT）</p>
 <p>XOR 真值表＆性質</p>
