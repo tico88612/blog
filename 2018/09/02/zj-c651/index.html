@@ -13,7 +13,7 @@
   <link rel="alternate" href="/atom.xml" title="Jerry Yang's Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="題目 Problem題目連結：https://zerojudge.tw/ShowProblem?problemid=c651">
-<meta name="keywords" content="Fenwick Tree,Binary Index Tree,XOR">
+<meta name="keywords" content="XOR,Fenwick Tree,Binary Index Tree">
 <meta property="og:type" content="article">
 <meta property="og:title" content="c651. 三、區間xor(RXQ)">
 <meta property="og:url" content="http://blog.yangjerry.tw/2018/09/02/zj-c651/index.html">
@@ -21,7 +21,7 @@
 <meta property="og:description" content="題目 Problem題目連結：https://zerojudge.tw/ShowProblem?problemid=c651">
 <meta property="og:locale" content="zh">
 <meta property="og:image" content="http://blog.yangjerry.tw/2018/09/02/zj-c651/image.png">
-<meta property="og:updated_time" content="2018-09-02T07:32:49.079Z">
+<meta property="og:updated_time" content="2018-09-02T09:39:57.626Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="c651. 三、區間xor(RXQ)">
 <meta name="twitter:description" content="題目 Problem題目連結：https://zerojudge.tw/ShowProblem?problemid=c651">
@@ -191,8 +191,7 @@
 <li>二元索引樹（樹狀樹组） Binary Index Tree (Fenwick tree)<br>不過這題時限只有$0.5$秒<br>如果用前綴 $XOR$ 單點修改變成$O(N)$<br>如果用線段樹遞迴查詢可能會有點慢（有實做過，只有$72\%$，其他的被TLE）</li>
 </ol>
 <p>這題可以使用BIT，也就是二元索引樹，但要如何使用呢？<br>（以下把二元索引樹 簡稱 BIT）</p>
-<p>XOR 真值表＆性質</p>
-<table>
+<h3 id="XOR-真值表＆性質"><a href="#XOR-真值表＆性質" class="headerlink" title="XOR 真值表＆性質"></a>XOR 真值表＆性質</h3><table>
 <thead>
 <tr>
 <th style="text-align:center">$A$</th>
@@ -238,17 +237,24 @@
         
             <div class="article-tags tags">
                 
+                    <a href="/tags/XOR/"><i class="fa fa-tag"></i>&nbsp;&nbsp;XOR</a>
+                
                     <a href="/tags/Fenwick-Tree/"><i class="fa fa-tag"></i>&nbsp;&nbsp;Fenwick Tree</a>
                 
                     <a href="/tags/Binary-Index-Tree/"><i class="fa fa-tag"></i>&nbsp;&nbsp;Binary Index Tree</a>
-                
-                    <a href="/tags/XOR/"><i class="fa fa-tag"></i>&nbsp;&nbsp;XOR</a>
                 
             </div>
         
 
         
             <div class="art-item-footer">
+                
+                    <span class="art-item-left">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;
+                        <a href="/2018/09/02/zj-d708/" rel="prev" title="d708. 小王的积木">
+                            d708. 小王的积木
+                        </a>
+                    </span>
                 
                 
                     <span class="art-item-right">
@@ -320,9 +326,11 @@
     
         <li><a class="flat-box" href="/categories/Hello-World/"><div class='name'>Hello World</div><div class='badge'>1</div></a></li>
     
-        <li><a class="flat-box" href="/categories/解題區/"><div class='name'>解題區</div><div class='badge'>4</div></a></li>
+        <li><a class="flat-box" href="/categories/解題區/"><div class='name'>解題區</div><div class='badge'>5</div></a></li>
     
         <li><a class="flat-box" href="/categories/解題區/解題報告書-ZeroJudge/"><div class='name'>解題報告書 - ZeroJudge</div><div class='badge'>4</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/解題區/解題報告書-ZeroJugde/"><div class='name'>解題報告書 - ZeroJugde</div><div class='badge'>1</div></a></li>
     
     </ul>
     
@@ -334,7 +342,7 @@
 <section class="m_widget tagcloud">
     <div class="header"><i class="fa fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;標籤</div>
     <div class='content'>
-        <a href="/tags/Binary-Index-Tree/" style="font-size: 14px; color: #999">Binary Index Tree</a> <a href="/tags/Fenwick-Tree/" style="font-size: 14px; color: #999">Fenwick Tree</a> <a href="/tags/Queue/" style="font-size: 14px; color: #999">Queue</a> <a href="/tags/Special-Judge/" style="font-size: 14px; color: #999">Special Judge</a> <a href="/tags/Stack/" style="font-size: 14px; color: #999">Stack</a> <a href="/tags/XOR/" style="font-size: 14px; color: #999">XOR</a> <a href="/tags/二分搜/" style="font-size: 14px; color: #999">二分搜</a> <a href="/tags/卡特蘭數/" style="font-size: 14px; color: #999">卡特蘭數</a> <a href="/tags/建表/" style="font-size: 24px; color: #555">建表</a>
+        <a href="/tags/Binary-Index-Tree/" style="font-size: 14px; color: #999">Binary Index Tree</a> <a href="/tags/Fenwick-Tree/" style="font-size: 14px; color: #999">Fenwick Tree</a> <a href="/tags/Queue/" style="font-size: 14px; color: #999">Queue</a> <a href="/tags/Special-Judge/" style="font-size: 14px; color: #999">Special Judge</a> <a href="/tags/Stack/" style="font-size: 14px; color: #999">Stack</a> <a href="/tags/XOR/" style="font-size: 24px; color: #555">XOR</a> <a href="/tags/二分搜/" style="font-size: 14px; color: #999">二分搜</a> <a href="/tags/卡特蘭數/" style="font-size: 14px; color: #999">卡特蘭數</a> <a href="/tags/建表/" style="font-size: 24px; color: #555">建表</a>
     </div>
 </section>
 
@@ -404,7 +412,7 @@
     <section class="m_widget toc-wrapper">
         <div class="header"><i class="fa fa-list" aria-hidden="true"></i>&nbsp;&nbsp;目錄</div>
         <div class='content'>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#題目-Problem"><span class="toc-text">題目 Problem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#敘述-Description"><span class="toc-text">敘述 Description</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#輸入-Input"><span class="toc-text">輸入 Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#輸出-Output"><span class="toc-text">輸出 Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#範例輸入-Sample-Input"><span class="toc-text">範例輸入 Sample Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#範例輸出-Sample-Output"><span class="toc-text">範例輸出 Sample Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提示-Hint"><span class="toc-text">提示 Hint</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#題解-Solution"><span class="toc-text">題解 Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#程式碼-Accepted-Code"><span class="toc-text">程式碼 Accepted Code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#後記-Afterword"><span class="toc-text">後記 Afterword</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#題目-Problem"><span class="toc-text">題目 Problem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#敘述-Description"><span class="toc-text">敘述 Description</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#輸入-Input"><span class="toc-text">輸入 Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#輸出-Output"><span class="toc-text">輸出 Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#範例輸入-Sample-Input"><span class="toc-text">範例輸入 Sample Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#範例輸出-Sample-Output"><span class="toc-text">範例輸出 Sample Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提示-Hint"><span class="toc-text">提示 Hint</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#題解-Solution"><span class="toc-text">題解 Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#XOR-真值表＆性質"><span class="toc-text">XOR 真值表＆性質</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#程式碼-Accepted-Code"><span class="toc-text">程式碼 Accepted Code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#後記-Afterword"><span class="toc-text">後記 Afterword</span></a></li></ol>
         </div>
     </section>
 
