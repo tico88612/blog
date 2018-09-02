@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>c311. PC:分組之塔</title>
+      <link href="/2018/09/02/zj-c311/"/>
+      <url>/2018/09/02/zj-c311/</url>
+      <content type="html"><![CDATA[<h2 id="題目-Problem"><a href="#題目-Problem" class="headerlink" title="題目 Problem"></a>題目 Problem</h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=c311" target="_blank" rel="noopener">題目連結：https://zerojudge.tw/ShowProblem?problemid=c311</a><br><a id="more"></a></p><h3 id="敘述-Description"><a href="#敘述-Description" class="headerlink" title="敘述 Description"></a>敘述 Description</h3><p>進到了這個房間，小風終於遇到第一個塔主，這個塔主精神有點疾病，他有超級多的部下，而他想要將這些人以91個人為單位分為一組，而多出來的人就要把他殺掉。<br>然而他實在是太懶惰了，不想要自己算要殺掉多少人，於是他命令小風幫他算出人數，否則第一個先死的就是小風了。<br>無奈小風的除法沒有學好，所以他算不出來。於是小風再次需要各位的幫忙，請算出塔主需要殺掉的人數。</p><h3 id="輸入-Input"><a href="#輸入-Input" class="headerlink" title="輸入 Input"></a>輸入 Input</h3><p>輸入有多筆測資，並以EOF作為結尾。<br>每一筆測資包含一個正整數n，代表塔主的部下人數。</p><p>10%的測資滿足n&lt;=10^9<br>40%的測資滿足n&lt;=10^18<br>100%的測資滿足n&lt;=10^100000</p><h3 id="輸出-Output"><a href="#輸出-Output" class="headerlink" title="輸出 Output"></a>輸出 Output</h3><p>對於每一筆輸入 請輸出塔主需要殺掉的人數</p><h3 id="範例輸入-Sample-Input"><a href="#範例輸入-Sample-Input" class="headerlink" title="範例輸入 Sample Input"></a>範例輸入 Sample Input</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">92</span><br><span class="line">93</span><br><span class="line">91</span><br></pre></td></tr></table></figure><h3 id="範例輸出-Sample-Output"><a href="#範例輸出-Sample-Output" class="headerlink" title="範例輸出 Sample Output"></a>範例輸出 Sample Output</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">0</span><br></pre></td></tr></table></figure><h3 id="提示-Hint"><a href="#提示-Hint" class="headerlink" title="提示 Hint"></a>提示 Hint</h3><h2 id="題解-Solution"><a href="#題解-Solution" class="headerlink" title="題解 Solution"></a>題解 Solution</h2><p>如何判斷數字是不是$7$的倍數跟$13$的倍數<br>當然是打開 Google 查啊（Ｘ）</p><p>7的倍數：由個位數起每三位數字一節，各奇數節的和與偶數節的和相減，其差是7的倍數。<br>13的倍數：由個位數起每三位數字一節，各奇數節的和與偶數節的和相減，其差是13的倍數。<br>（<a href="https://leestar2018.blogspot.com/2016/09/113.html" target="_blank" rel="noopener">文字來源：https://leestar2018.blogspot.com/2016/09/113.html</a>）</p><p>把數字長度補到$3$的倍數就可以算了</p><p>反正數字都一樣，就直接 $mod\ 91$<br>（繳交後3秒，回傳結果：WA）<br><img src="wtf.png" alt="不好意思齁這三洨 —— 圖源：好色龍"><span class="image-caption">不好意思齁這三洨 —— 圖源：好色龍</span><br>後來想想，我忘了重要關鍵點，因為只是判斷7的倍數或13的倍數，可以不用管正負<br>但！如果是 $mod$ 就要區分正負關係了</p><p>正數正常 $mod\ 91$ 就好<br>負數要先 $mod\ 91$ 再加 $91$ 再 $mod\ 91$<br>不知道為什麼的人請去 Google 負數取模</p><h3 id="程式碼-Accepted-Code"><a href="#程式碼-Accepted-Code" class="headerlink" title="程式碼 Accepted Code"></a>程式碼 Accepted Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _ ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">_</span><br><span class="line"><span class="built_in">string</span> enter;<span class="comment">//192936162 55</span></span><br><span class="line"><span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;enter)&#123;</span><br><span class="line"><span class="keyword">int</span> total=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> s=enter.length()%<span class="number">3</span>;</span><br><span class="line"><span class="keyword">if</span>(s==<span class="number">1</span>)</span><br><span class="line">enter=<span class="string">"00"</span>+enter;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(s==<span class="number">2</span>)</span><br><span class="line">enter=<span class="string">"0"</span>+enter;</span><br><span class="line"><span class="keyword">int</span> p=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=enter.length()<span class="number">-3</span>;i&gt;=<span class="number">0</span>;i-=<span class="number">3</span>)&#123;</span><br><span class="line"><span class="keyword">if</span>(p%<span class="number">2</span>)&#123;</span><br><span class="line">total-=((enter[i]-<span class="string">'0'</span>)*<span class="number">100</span>+(enter[i+<span class="number">1</span>]-<span class="string">'0'</span>)*<span class="number">10</span>+(enter[i+<span class="number">2</span>]-<span class="string">'0'</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">total+=((enter[i]-<span class="string">'0'</span>)*<span class="number">100</span>+(enter[i+<span class="number">1</span>]-<span class="string">'0'</span>)*<span class="number">10</span>+(enter[i+<span class="number">2</span>]-<span class="string">'0'</span>));</span><br><span class="line">&#125;</span><br><span class="line">p++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> mo=total%<span class="number">91</span>;</span><br><span class="line"><span class="keyword">if</span>(total&lt;<span class="number">0</span>)</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d\n"</span>,(<span class="number">91</span>+mo)%<span class="number">91</span>);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d\n"</span>,mo);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="後記-Afterword"><a href="#後記-Afterword" class="headerlink" title="後記 Afterword"></a>後記 Afterword</h2><p>異想不到的事，這題我是第一個 $0ms$ 完成<br><img src="0ms.png" alt="2018/09/03 截圖紀念"><span class="image-caption">2018/09/03 截圖紀念</span><br>畢竟 ZeroJudge 有改版過<br>效能應該有提升<br>但，套用憲哥說的一句話<br><img src="who_cares.png" alt="Who Cares？ —— 影像版權：《綜藝大熱門》"><span class="image-caption">Who Cares？ —— 影像版權：《綜藝大熱門》</span></p><p>不過我倒是好奇，畢竟這題曾經是比賽題<br>如果是在比賽期間，你要怎麼讓這題拿到AC呢？</p>]]></content>
+      
+      <categories>
+          
+          <category> 解題區 </category>
+          
+          <category> 解題報告書 - ZeroJudge </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 負數取Mod </tag>
+            
+            <tag> 倍數判斷法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>d708. 小王的积木</title>
       <link href="/2018/09/02/zj-d708/"/>
       <url>/2018/09/02/zj-d708/</url>
@@ -42,11 +67,11 @@
       
         <tags>
             
-            <tag> XOR </tag>
-            
             <tag> Fenwick Tree </tag>
             
             <tag> Binary Index Tree </tag>
+            
+            <tag> XOR </tag>
             
         </tags>
       

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>c311. PC:分組之塔 | Jerry Yang&#39;s Blog</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/">
+  <link rel="alternate" href="/atom.xml" title="Jerry Yang's Blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="題目 Problem題目連結：https://zerojudge.tw/ShowProblem?problemid=c311">
+<meta name="keywords" content="負數取Mod,倍數判斷法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c311. PC:分組之塔">
+<meta property="og:url" content="http://blog.yangjerry.tw/2018/09/02/zj-c311/index.html">
+<meta property="og:site_name" content="Jerry Yang&#39;s Blog">
+<meta property="og:description" content="題目 Problem題目連結：https://zerojudge.tw/ShowProblem?problemid=c311">
+<meta property="og:locale" content="zh">
+<meta property="og:image" content="http://blog.yangjerry.tw/2018/09/02/zj-c311/wtf.png">
+<meta property="og:image" content="http://blog.yangjerry.tw/2018/09/02/zj-c311/0ms.png">
+<meta property="og:image" content="http://blog.yangjerry.tw/2018/09/02/zj-c311/who_cares.png">
+<meta property="og:updated_time" content="2018-09-02T16:41:16.660Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="c311. PC:分組之塔">
+<meta name="twitter:description" content="題目 Problem題目連結：https://zerojudge.tw/ShowProblem?problemid=c311">
+<meta name="twitter:image" content="http://blog.yangjerry.tw/2018/09/02/zj-c311/wtf.png">
+
+  <link rel="shortcut icon" href="" />
+  <link rel="icon" href="" />
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116676990-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-116676990-3');
+  </script>
+</head>
+
+<body>
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+  <script>setLoadingBarProgress(20)</script>
+  <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				<!-- <i class="fa fa-home"></i> -->
+				Jerry Yang's Blog
+			</a>
+
+				<div class='menu'>
+					<ul class='h-list'>
+						
+							<li>
+								<a class='flat-box nav-about' href='https://yangjerry.tw'>
+									<i class="fa fa-home"></i>
+									首頁
+								</a>
+							</li>
+						
+							<li>
+								<a class='flat-box nav-home' href='/'>
+									<i class="fa fa-rss"></i>
+									Blog
+								</a>
+							</li>
+						
+							<li>
+								<a class='flat-box nav-archives' href='/archives'>
+									<i class="fa fa-archive"></i>
+									紀錄
+								</a>
+							</li>
+						
+					</ul>
+					<div class='underline'></div>
+				</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon"><i class="fa fa-search"></i></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a href='javascript:void(0)'><i class="fa fa-search flat-box"></i></span></a></li>
+				
+				<li class='s-menu'><a href='javascript:void(0)'><i class="fa fa-navicon flat-box"></i></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				xaoxuu
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a href='javascript:void(0)'><i class="fa fa-comments flat-box"></i></a></li>
+				<li class='s-top'><a href='javascript:void(0)'><i class="fa fa-arrow-up flat-box"></i></a></li>
+				<li class='s-toc'><a href='javascript:void(0)'><i class="fa fa-list-ul flat-box"></i></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+        <div class="header">Jerry Yang&#39;s Blog</div>
+		<nav>
+			
+				<a href="https://yangjerry.tw" class="nav-about nav">
+					<i class="fa fa-home"></i>
+					首頁
+				</a>
+			
+				<a href="/" class="nav-home nav">
+					<i class="fa fa-rss"></i>
+					Blog
+				</a>
+			
+				<a href="/archives" class="nav-archives nav">
+					<i class="fa fa-archive"></i>
+					紀錄
+				</a>
+			
+		</nav>
+	</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body">
+    <div class='container clearfix'>
+      <div class='l_main'>
+        <article id="post-zj-c311" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    <section class='meta'>
+        <h1 class="title">
+            
+                c311. PC:分組之塔
+            
+        </h1>
+        <time>
+            2018-09-02 Sunday&nbsp;&nbsp;
+            <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/解題區/">解題區</a>, <a href="/categories/解題區/解題報告書-ZeroJudge/">解題報告書 - ZeroJudge</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="題目-Problem"><a href="#題目-Problem" class="headerlink" title="題目 Problem"></a>題目 Problem</h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=c311" target="_blank" rel="noopener">題目連結：https://zerojudge.tw/ShowProblem?problemid=c311</a><br><a id="more"></a></p>
+<h3 id="敘述-Description"><a href="#敘述-Description" class="headerlink" title="敘述 Description"></a>敘述 Description</h3><p>進到了這個房間，小風終於遇到第一個塔主，這個塔主精神有點疾病，他有超級多的部下，而他想要將這些人以91個人為單位分為一組，而多出來的人就要把他殺掉。<br>然而他實在是太懶惰了，不想要自己算要殺掉多少人，於是他命令小風幫他算出人數，否則第一個先死的就是小風了。<br>無奈小風的除法沒有學好，所以他算不出來。於是小風再次需要各位的幫忙，請算出塔主需要殺掉的人數。</p>
+<h3 id="輸入-Input"><a href="#輸入-Input" class="headerlink" title="輸入 Input"></a>輸入 Input</h3><p>輸入有多筆測資，並以EOF作為結尾。<br>每一筆測資包含一個正整數n，代表塔主的部下人數。</p>
+<p>10%的測資滿足n&lt;=10^9<br>40%的測資滿足n&lt;=10^18<br>100%的測資滿足n&lt;=10^100000</p>
+<h3 id="輸出-Output"><a href="#輸出-Output" class="headerlink" title="輸出 Output"></a>輸出 Output</h3><p>對於每一筆輸入 請輸出塔主需要殺掉的人數</p>
+<h3 id="範例輸入-Sample-Input"><a href="#範例輸入-Sample-Input" class="headerlink" title="範例輸入 Sample Input"></a>範例輸入 Sample Input</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">92</span><br><span class="line">93</span><br><span class="line">91</span><br></pre></td></tr></table></figure>
+<h3 id="範例輸出-Sample-Output"><a href="#範例輸出-Sample-Output" class="headerlink" title="範例輸出 Sample Output"></a>範例輸出 Sample Output</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
+<h3 id="提示-Hint"><a href="#提示-Hint" class="headerlink" title="提示 Hint"></a>提示 Hint</h3><h2 id="題解-Solution"><a href="#題解-Solution" class="headerlink" title="題解 Solution"></a>題解 Solution</h2><p>如何判斷數字是不是$7$的倍數跟$13$的倍數<br>當然是打開 Google 查啊（Ｘ）</p>
+<p>7的倍數：由個位數起每三位數字一節，各奇數節的和與偶數節的和相減，其差是7的倍數。<br>13的倍數：由個位數起每三位數字一節，各奇數節的和與偶數節的和相減，其差是13的倍數。<br>（<a href="https://leestar2018.blogspot.com/2016/09/113.html" target="_blank" rel="noopener">文字來源：https://leestar2018.blogspot.com/2016/09/113.html</a>）</p>
+<p>把數字長度補到$3$的倍數就可以算了</p>
+<p>反正數字都一樣，就直接 $mod\ 91$<br>（繳交後3秒，回傳結果：WA）<br><img src="wtf.png" alt="不好意思齁這三洨 —— 圖源：好色龍"><span class="image-caption">不好意思齁這三洨 —— 圖源：好色龍</span><br>後來想想，我忘了重要關鍵點，因為只是判斷7的倍數或13的倍數，可以不用管正負<br>但！如果是 $mod$ 就要區分正負關係了</p>
+<p>正數正常 $mod\ 91$ 就好<br>負數要先 $mod\ 91$ 再加 $91$ 再 $mod\ 91$<br>不知道為什麼的人請去 Google 負數取模</p>
+<h3 id="程式碼-Accepted-Code"><a href="#程式碼-Accepted-Code" class="headerlink" title="程式碼 Accepted Code"></a>程式碼 Accepted Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _ ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	_</span><br><span class="line">	<span class="built_in">string</span> enter;<span class="comment">//192936162 55</span></span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;enter)&#123;</span><br><span class="line">		<span class="keyword">int</span> total=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> s=enter.length()%<span class="number">3</span>;</span><br><span class="line">		<span class="keyword">if</span>(s==<span class="number">1</span>)</span><br><span class="line">			enter=<span class="string">"00"</span>+enter;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(s==<span class="number">2</span>)</span><br><span class="line">			enter=<span class="string">"0"</span>+enter;</span><br><span class="line">		<span class="keyword">int</span> p=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=enter.length()<span class="number">-3</span>;i&gt;=<span class="number">0</span>;i-=<span class="number">3</span>)&#123;</span><br><span class="line">			<span class="keyword">if</span>(p%<span class="number">2</span>)&#123;</span><br><span class="line">				total-=((enter[i]-<span class="string">'0'</span>)*<span class="number">100</span>+(enter[i+<span class="number">1</span>]-<span class="string">'0'</span>)*<span class="number">10</span>+(enter[i+<span class="number">2</span>]-<span class="string">'0'</span>));</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				total+=((enter[i]-<span class="string">'0'</span>)*<span class="number">100</span>+(enter[i+<span class="number">1</span>]-<span class="string">'0'</span>)*<span class="number">10</span>+(enter[i+<span class="number">2</span>]-<span class="string">'0'</span>));</span><br><span class="line">			&#125;</span><br><span class="line">			p++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> mo=total%<span class="number">91</span>;</span><br><span class="line">		<span class="keyword">if</span>(total&lt;<span class="number">0</span>)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,(<span class="number">91</span>+mo)%<span class="number">91</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,mo);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="後記-Afterword"><a href="#後記-Afterword" class="headerlink" title="後記 Afterword"></a>後記 Afterword</h2><p>異想不到的事，這題我是第一個 $0ms$ 完成<br><img src="0ms.png" alt="2018/09/03 截圖紀念"><span class="image-caption">2018/09/03 截圖紀念</span><br>畢竟 ZeroJudge 有改版過<br>效能應該有提升<br>但，套用憲哥說的一句話<br><img src="who_cares.png" alt="Who Cares？ —— 影像版權：《綜藝大熱門》"><span class="image-caption">Who Cares？ —— 影像版權：《綜藝大熱門》</span></p>
+<p>不過我倒是好奇，畢竟這題曾經是比賽題<br>如果是在比賽期間，你要怎麼讓這題拿到AC呢？</p>
+
+        </div>
+
+        
+            <div class="article-tags tags">
+                
+                    <a href="/tags/負數取Mod/"><i class="fa fa-tag"></i>&nbsp;&nbsp;負數取Mod</a>
+                
+                    <a href="/tags/倍數判斷法/"><i class="fa fa-tag"></i>&nbsp;&nbsp;倍數判斷法</a>
+                
+            </div>
+        
+
+        
+            <div class="art-item-footer">
+                
+                
+                    <span class="art-item-right">
+                        <a href="/2018/09/02/zj-d708/" rel="next" title="d708. 小王的积木">
+                            d708. 小王的积木
+                        </a>&nbsp;
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </span>
+                
+            </div>
+        
+
+    </section>
+
+</article>
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box article-type-post>">
+        <section class="article typo">
+
+            
+
+            
+
+                
+                    <h4><i class="fa fa-comments" aria-hidden="true"></i>&nbsp;&nbsp;Disqus留言</h4>
+                    <section id="comments">
+                        <div id="disqus_thread">
+                            ⚠️  無法載入留言系統，請先確定你的網路連線 <a href="https://disqus.com">Disqus</a> 。
+                        </div>
+                    </section>
+                
+
+                
+
+                
+            
+
+        </section>
+    </article>
+
+
+<script>
+    window.subData = {
+        title: 'c311. PC:分組之塔',
+        tools: true
+    }
+</script>
+
+
+      </div>
+      <aside class='l_side'>
+        
+  <section class='m_widget about'>
+    
+        <img class='avatar waves-image' src='/avatar.jpg' />
+    
+</section>
+
+
+  <section class='m_widget categories'>
+<div class='header'><i class="fa fa-sitemap" aria-hidden="true"></i>&nbsp;&nbsp;分類</div>
+<div class='content'>
+    
+    <ul class="entry">
+    
+        <li><a class="flat-box" href="/categories/Hello-World/"><div class='name'>Hello World</div><div class='badge'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/解題區/"><div class='name'>解題區</div><div class='badge'>6</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/解題區/解題報告書-ZeroJudge/"><div class='name'>解題報告書 - ZeroJudge</div><div class='badge'>5</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/解題區/解題報告書-ZeroJugde/"><div class='name'>解題報告書 - ZeroJugde</div><div class='badge'>1</div></a></li>
+    
+    </ul>
+    
+</div>
+</section>
+
+
+  
+<section class="m_widget tagcloud">
+    <div class="header"><i class="fa fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;標籤</div>
+    <div class='content'>
+        <a href="/tags/Binary-Index-Tree/" style="font-size: 14px; color: #999">Binary Index Tree</a> <a href="/tags/Fenwick-Tree/" style="font-size: 14px; color: #999">Fenwick Tree</a> <a href="/tags/Queue/" style="font-size: 14px; color: #999">Queue</a> <a href="/tags/Special-Judge/" style="font-size: 14px; color: #999">Special Judge</a> <a href="/tags/Stack/" style="font-size: 14px; color: #999">Stack</a> <a href="/tags/XOR/" style="font-size: 24px; color: #555">XOR</a> <a href="/tags/二分搜/" style="font-size: 14px; color: #999">二分搜</a> <a href="/tags/倍數判斷法/" style="font-size: 14px; color: #999">倍數判斷法</a> <a href="/tags/卡特蘭數/" style="font-size: 14px; color: #999">卡特蘭數</a> <a href="/tags/建表/" style="font-size: 24px; color: #555">建表</a> <a href="/tags/負數取Mod/" style="font-size: 14px; color: #999">負數取Mod</a>
+    </div>
+</section>
+
+
+
+  <section class='m_widget contacts'>
+    <div class='header'><i class="fa fa-id-card" aria-hidden="true"></i>&nbsp;&nbsp;聯絡</div>
+    <div class='content'>
+        <ul class="entry">
+          
+            <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/tico88612">
+              <div class='name'>GitHub</div>
+              <div class='badge'>tico88612</div>
+            </a></li>
+          
+        </ul>
+    </div>
+</section>
+
+
+  <section class='m_widget links'>
+    <div class='header'><i class="fa fa-link" aria-hidden="true"></i>&nbsp;&nbsp;友情連結</div>
+    <div class='content'>
+        <ul class="entry" id="links">
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://tcshoj.tw">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        &nbsp;&nbsp;TCSH Online Judge
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://zerojudge.tw">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        &nbsp;&nbsp;ZeroJudge
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://uva.onlinejudge.org">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        &nbsp;&nbsp;UVa Online Judge
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://lfswang.github.io">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        &nbsp;&nbsp;LFsWang&#39;s World
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://sunmoon-template.blogspot.com">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        &nbsp;&nbsp;日月卦長的模板庫
+                    </div>
+                </a></li>
+            
+        </ul>
+    </div>
+</section>
+
+
+  
+    <section class="m_widget toc-wrapper">
+        <div class="header"><i class="fa fa-list" aria-hidden="true"></i>&nbsp;&nbsp;目錄</div>
+        <div class='content'>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#題目-Problem"><span class="toc-text">題目 Problem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#敘述-Description"><span class="toc-text">敘述 Description</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#輸入-Input"><span class="toc-text">輸入 Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#輸出-Output"><span class="toc-text">輸出 Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#範例輸入-Sample-Input"><span class="toc-text">範例輸入 Sample Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#範例輸出-Sample-Output"><span class="toc-text">範例輸出 Sample Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提示-Hint"><span class="toc-text">提示 Hint</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#題解-Solution"><span class="toc-text">題解 Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#程式碼-Accepted-Code"><span class="toc-text">程式碼 Accepted Code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#後記-Afterword"><span class="toc-text">後記 Afterword</span></a></li></ol>
+        </div>
+    </section>
+
+
+
+
+      </aside>
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+  </div>
+  <footer id="footer" class="clearfix">
+    <div class="social-wrapper">
+      
+        
+            <a href="mailto:tico88612@gmail.com" class="social envelope"
+                target="_blank" rel="external">
+            <i class="fa fa-envelope"></i>
+            </a>
+        
+      
+        
+            <a href="https://www.facebook.com/tico88612" class="social facebook"
+                target="_blank" rel="external">
+            <i class="fa fa-facebook"></i>
+            </a>
+        
+      
+        
+            <a href="https://github.com/tico88612" class="social github"
+                target="_blank" rel="external">
+            <i class="fa fa-github"></i>
+            </a>
+        
+      
+        
+            <a href="https://www.instagram.com/jerry_love_linda/" class="social instagram"
+                target="_blank" rel="external">
+            <i class="fa fa-instagram"></i>
+            </a>
+        
+      
+        
+      
+        
+      
+    </div>
+    <br>
+    <div>Blog 内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" class="licenses">姓名標示-非商業性-相同方式分享 4.0 國際 (CC BY-NC-SA 4.0)</a></div>
+    <div>本站使用 <a href="https://github.com/xaoxuu/hexo-theme-material-x" target="_blank" class="codename">Material-X</a> 作為主題
+    </div>
+
+</footer>
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+    <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            preferredFont: "TeX",
+            availableFonts: ["STIX","TeX"],
+            linebreaks: { automatic:true },
+            EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+        },
+        tex2jax: {
+            inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+            processEscapes: true,
+            ignoreClass: "tex2jax_ignore|dno",
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        },
+        TeX: {
+            equationNumbers: { autoNumber: "AMS" },
+            noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+            Macros: { href: "{}" }
+        },
+        messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+
+  <script>setLoadingBarProgress(80);</script>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<!-- 访问统计 -->
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/jquery.fitvids.js"></script>
+<script>
+var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+var ALGOLIA_API_KEY = "";
+var ALGOLIA_APP_ID = "";
+var ALGOLIA_INDEX_NAME = "";
+var AZURE_SERVICE_NAME = "";
+var AZURE_INDEX_NAME = "";
+var AZURE_QUERY_KEY = "";
+var BAIDU_API_ID = "";
+var SEARCH_SERVICE = "hexo";
+var ROOT = "/"||"/";
+if(!ROOT.endsWith('/'))ROOT += '/';
+</script>
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+    
+        <script>
+            var disqus_shortname = 'yangjerry-blog';
+            
+                var disqus_url = 'http://blog.yangjerry.tw/2018/09/02/zj-c311/';
+            
+            (function(){
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+    
+    
+    
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
