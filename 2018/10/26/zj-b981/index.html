@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>c453. TOI2003 第二題：疊羅漢 | Jerry Yang&#39;s Blog</title>
+  <title>b981. YoJudge 預練(時間之章) | Jerry Yang&#39;s Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -12,22 +12,18 @@
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="Jerry Yang's Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="題目 Problem題目連結：https://zerojudge.tw/ShowProblem?problemid=c453">
-<meta name="keywords" content="建表,卡特蘭數">
+  <meta name="description" content="題目 Problem題目連結：https://zerojudge.tw/ShowProblem?problemid=b981">
+<meta name="keywords" content="字串處理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c453. TOI2003 第二題：疊羅漢">
-<meta property="og:url" content="http://blog.yangjerry.tw/2018/08/31/zj-c453/index.html">
+<meta property="og:title" content="b981. YoJudge 預練(時間之章)">
+<meta property="og:url" content="http://blog.yangjerry.tw/2018/10/26/zj-b981/index.html">
 <meta property="og:site_name" content="Jerry Yang&#39;s Blog">
-<meta property="og:description" content="題目 Problem題目連結：https://zerojudge.tw/ShowProblem?problemid=c453">
+<meta property="og:description" content="題目 Problem題目連結：https://zerojudge.tw/ShowProblem?problemid=b981">
 <meta property="og:locale" content="zh">
-<meta property="og:image" content="http://blog.yangjerry.tw/2018/08/31/zj-c453/image.png">
-<meta property="og:image" content="http://blog.yangjerry.tw/2018/08/31/zj-c453/sol_1.jpg">
-<meta property="og:image" content="http://blog.yangjerry.tw/2018/08/31/zj-c453/sol_2.jpg">
-<meta property="og:updated_time" content="2018-09-02T04:42:34.820Z">
+<meta property="og:updated_time" content="2018-10-26T03:44:50.027Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c453. TOI2003 第二題：疊羅漢">
-<meta name="twitter:description" content="題目 Problem題目連結：https://zerojudge.tw/ShowProblem?problemid=c453">
-<meta name="twitter:image" content="http://blog.yangjerry.tw/2018/08/31/zj-c453/image.png">
+<meta name="twitter:title" content="b981. YoJudge 預練(時間之章)">
+<meta name="twitter:description" content="題目 Problem題目連結：https://zerojudge.tw/ShowProblem?problemid=b981">
 
   <link rel="shortcut icon" href="" />
   <link rel="icon" href="" />
@@ -151,15 +147,15 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        <article id="post-zj-c453" class="post white-box article-type-post" itemscope itemprop="blogPost">
+        <article id="post-zj-b981" class="post white-box article-type-post" itemscope itemprop="blogPost">
     <section class='meta'>
         <h1 class="title">
             
-                c453. TOI2003 第二題：疊羅漢
+                b981. YoJudge 預練(時間之章)
             
         </h1>
         <time>
-            2018-08-31 Friday&nbsp;&nbsp;
+            2018-10-26 Friday&nbsp;&nbsp;
             <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
         </time>
         
@@ -174,33 +170,22 @@
     <section class="article typo">
 
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="題目-Problem"><a href="#題目-Problem" class="headerlink" title="題目 Problem"></a>題目 Problem</h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=c453" target="_blank" rel="noopener">題目連結：https://zerojudge.tw/ShowProblem?problemid=c453</a><br><a id="more"></a></p>
-<h3 id="敘述-Description"><a href="#敘述-Description" class="headerlink" title="敘述 Description"></a>敘述 Description</h3><p>　　某特技團經常表演疊羅漢的節目。表演時通常在最底層會先站好一排連續的 n 個人，然後在任意連續兩人的肩膀上面便可支撐另一個人站在這兩個人的上一層。在第二層如果有連續兩人的話，當然可繼續往第三層疊上一個人，以此類推。為了增加趣味性，有時會組合出不同的型態展現在觀眾的眼前。舉例來說，如果 n=3，也就是說底層共有 3 個人，那麼就有下列 5 種不同的組合。<br><img src="image.png" alt=""><br>　　如果 n=4，也就是說底層共有 4 個人，那麼你也可以列舉一下，便可知道共有下列 14 種不同的組合。現在針對不同的 n 值，請你撰寫一個程式來計算共有幾種不同的組合？</p>
-<h3 id="輸入-Input"><a href="#輸入-Input" class="headerlink" title="輸入 Input"></a>輸入 Input</h3><p>第一行有一個正整數 n，1 ≤ n ≤ 20。</p>
-<h3 id="輸出-Output"><a href="#輸出-Output" class="headerlink" title="輸出 Output"></a>輸出 Output</h3><p>請輸出共有幾種不同的組合。</p>
-<h3 id="範例輸入-Sample-Input"><a href="#範例輸入-Sample-Input" class="headerlink" title="範例輸入 Sample Input"></a>範例輸入 Sample Input</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//範例輸入一</span><br><span class="line">3</span><br><span class="line"></span><br><span class="line">//範例輸入二</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
-<h3 id="範例輸出-Sample-Output"><a href="#範例輸出-Sample-Output" class="headerlink" title="範例輸出 Sample Output"></a>範例輸出 Sample Output</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//範例輸出一</span><br><span class="line">5</span><br><span class="line"></span><br><span class="line">//範例輸出二</span><br><span class="line">14</span><br></pre></td></tr></table></figure>
-<h3 id="提示-Hint"><a href="#提示-Hint" class="headerlink" title="提示 Hint"></a>提示 Hint</h3><h2 id="題解-Solution"><a href="#題解-Solution" class="headerlink" title="題解 Solution"></a>題解 Solution</h2><h3 id="動態規劃-Dynamic-Programming"><a href="#動態規劃-Dynamic-Programming" class="headerlink" title="動態規劃 Dynamic Programming"></a>動態規劃 Dynamic Programming</h3><p>感覺這題很DP，不過 oToToT 大大真的寫出了 DP 算式：</p>
-<p>令$dp[i][j]$代表第$i$斜排他的長度要是$j$時的方法數<br>$dp[i][j]=\sum_{k=j-1}^{i-1}dp[i-1][k]$<br>因為會發現若是這裡要擺長度為$j$那前面最少要擺長度$j-1$，所以可以枚舉前一斜條擺放的數量來計算這個狀態的方法數。<br>而對於n個斜條的總方法數，只要再枚舉最後一斜條有幾個人就好了。</p>
-<p>我果然很低端，回我的當下我真的看不懂QQ</p>
-<h3 id="卡特蘭數-Catalan-Number"><a href="#卡特蘭數-Catalan-Number" class="headerlink" title="卡特蘭數 Catalan Number"></a>卡特蘭數 Catalan Number</h3><p>（至於為何會想到卡特蘭數，請滑到後記）<br>這是我理解的版本，<a href="https://johnmayhk.wordpress.com/2014/02/03/cn/" target="_blank" rel="noopener">連結</a></p>
-<p>$C(0,0)=1$<br>$C(1,1)=C(0,0)$<br>$C(2,2)=C(1,0)+C(1,1)$<br>$C(3,3)=C(2,0)+C(2,1)+C(2,2)$<br>$C(4,4)=C(3,0)+C(3,1)+C(3,2)+C(3,3)$<br>…<br>$C(N,N)=C(N-1,0)+C(N-1,1)+…+C(N-1,N-1)$</p>
-<p>可以把這些想像成</p>
-<p>$N$層上面$N-1-0$層有幾種組合<br>$N$層上面$N-1-1$層有幾種組合<br>…<br>$N$層上面$N-1-i$層有幾種組合<br>…<br>$N$層上面$1$層有幾種組合<br>$N$層上面$0$層有幾種組合<br>再加上 涂家銘 大大提供給我參考的圖：<br><img src="sol_1.jpg" alt=""><br><img src="sol_2.jpg" alt=""><br>稍微轉一轉是不是就變成高中熟悉的最短路徑組合呢？</p>
-<h3 id="程式碼-Accepted-Code"><a href="#程式碼-Accepted-Code" class="headerlink" title="程式碼 Accepted Code"></a>程式碼 Accepted Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _ ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> <span class="title">catalan</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> N)</span></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> n2=<span class="number">2</span>*N;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> ans=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> i=N+<span class="number">1</span>;i&lt;=n2;i++)&#123;</span><br><span class="line">		ans*=i;</span><br><span class="line">		ans/=(i-N);</span><br><span class="line">	&#125;</span><br><span class="line">	ans/=(N+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	_</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> query[<span class="number">21</span>]=&#123;<span class="number">0</span>,<span class="number">1</span>&#125;;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;<span class="number">21</span>;i++)&#123;</span><br><span class="line">		query[i]=catalan(i);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> N;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;N;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;query[N]&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="後記-Afterword"><a href="#後記-Afterword" class="headerlink" title="後記 Afterword"></a>後記 Afterword</h2><p>這題我一開始打開 Google 搜尋「0 1 2 5 14 OEIS」（我認為0位是0種，所以一開始打0）作弊開好開滿<br>但沒想到一打開就是傳說中的<a href="https://oeis.org/A000108" target="_blank" rel="noopener">卡特蘭數列</a><br>只有聽到「清大程式解題營」的 <a href="https://lfswang.github.io/" target="_blank" rel="noopener">旺陽學長</a> 提到過<br>但沒有寫過這種題目</p>
-<p>不過 涂家銘 大大表示：</p>
-<p>幫社團出練習賽題目其中一題用 DP 做會 TLE<br>（練習賽也太狠了吧QQ）</p>
-<p>的確，畢竟這題的最大值$N=20$，如果$N$更大，有機會爆 TLE 了</p>
+            <h2 id="題目-Problem"><a href="#題目-Problem" class="headerlink" title="題目 Problem"></a>題目 Problem</h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=b981" target="_blank" rel="noopener">題目連結：https://zerojudge.tw/ShowProblem?problemid=b981</a><br><a id="more"></a></p>
+<h3 id="敘述-Description"><a href="#敘述-Description" class="headerlink" title="敘述 Description"></a>敘述 Description</h3><p>　前幾天看到一隻 b961 YoJudge怪獸，感覺太強大了，所以先打Lo練功，期盼來日再戰YoJudge怪獸。<br>　這次任務較簡單，將以下各種格式的時間單位統一轉換為毫秒。 以下 x,y,z,a,b皆為非負整數<br>可能出現的時間單位格式如下：<br>xhour :代表 x 小時, 0&lt;=x&lt;24<br>xhym :代表 x 小時又 y 分鐘, 0&lt;=x&lt;24, 0&lt;=y&lt;60<br>xhymzs :代表 x 小時又 y 分鐘又 z 秒, 0&lt;=x&lt;24, 0&lt;=y&lt;60, 0&lt;=z&lt;60<br>ymin :代表 y 分鐘, 0&lt;=y&lt;60<br>ymzs :代表 y 分鐘又 z 秒, 0&lt;=y&lt;60, 0&lt;=z&lt;60<br>zs :代表 z 秒, 0&lt;=y&lt;60, 0&lt;=z&lt;60<br>z.as :代表 z 秒又 a*100毫秒, 0&lt;=z&lt;60, 0&lt;=a&lt;10<br>bms :代表 b 毫秒, 0&lt;=b&lt;1000</p>
+<h3 id="輸入-Input"><a href="#輸入-Input" class="headerlink" title="輸入 Input"></a>輸入 Input</h3><p>多行直到 EOF，每行只有如上題目所說的時間格式，沒有空格</p>
+<h3 id="輸出-Output"><a href="#輸出-Output" class="headerlink" title="輸出 Output"></a>輸出 Output</h3><p>將輸入的每一行換算為毫秒，輸出一行整數</p>
+<h3 id="範例輸入-Sample-Input"><a href="#範例輸入-Sample-Input" class="headerlink" title="範例輸入 Sample Input"></a>範例輸入 Sample Input</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">13hour</span><br><span class="line">9h20m</span><br><span class="line">23h17m57s</span><br><span class="line">6min</span><br><span class="line">34m50s</span><br><span class="line">8s</span><br><span class="line">19.7s</span><br><span class="line">567ms</span><br></pre></td></tr></table></figure>
+<h3 id="範例輸出-Sample-Output"><a href="#範例輸出-Sample-Output" class="headerlink" title="範例輸出 Sample Output"></a>範例輸出 Sample Output</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">46800000</span><br><span class="line">33600000</span><br><span class="line">83877000</span><br><span class="line">360000</span><br><span class="line">2090000</span><br><span class="line">8000</span><br><span class="line">19700</span><br><span class="line">567</span><br></pre></td></tr></table></figure>
+<h3 id="提示-Hint"><a href="#提示-Hint" class="headerlink" title="提示 Hint"></a>提示 Hint</h3><h2 id="題解-Solution"><a href="#題解-Solution" class="headerlink" title="題解 Solution"></a>題解 Solution</h2><p>數字會先讀取，所以先存數字到 $tmp$ 裡面<br>讀到 $h$ 可能是 $h$ 或 $hour$，要自己判斷<br>讀到 $m$ 可能是 $m$ 或 $min$ 或 $ms$，$ms$ 是毫秒，要另外區隔<br>要注意小數點，反正小數點也只會在 $s$ 出現<br>出現小數點，就直接把數字放在 $s$ 就好<br>小數點後的數字另外判斷</p>
+<h3 id="程式碼-Accepted-Code"><a href="#程式碼-Accepted-Code" class="headerlink" title="程式碼 Accepted Code"></a>程式碼 Accepted Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _ ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	_</span><br><span class="line">	<span class="built_in">string</span> enter;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;enter)&#123;</span><br><span class="line">		<span class="keyword">int</span> h=<span class="number">0</span>,m=<span class="number">0</span>,s=<span class="number">0</span>,dot=<span class="number">0</span>,ms=<span class="number">0</span>,tmp=<span class="number">0</span>,dotyes=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">unsigned</span> <span class="keyword">int</span> i=<span class="number">0</span>;i&lt;enter.length();i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(enter[i]==<span class="string">'.'</span>)&#123;</span><br><span class="line">				s=tmp;</span><br><span class="line">				dotyes=<span class="number">1</span>;</span><br><span class="line">				tmp=<span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(<span class="string">'0'</span>&lt;=enter[i]&amp;&amp;enter[i]&lt;=<span class="string">'9'</span>)&#123;</span><br><span class="line">				tmp*=<span class="number">10</span>;</span><br><span class="line">				tmp+=enter[i]-<span class="string">'0'</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(enter[i]==<span class="string">'h'</span>)&#123;</span><br><span class="line">				<span class="keyword">if</span>(i+<span class="number">1</span>&lt;enter.length())&#123;</span><br><span class="line">					<span class="keyword">if</span>(enter[i+<span class="number">1</span>]==<span class="string">'o'</span>)&#123;</span><br><span class="line">						h=tmp;</span><br><span class="line">						i+=<span class="number">3</span>;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">else</span>&#123;</span><br><span class="line">						h=tmp;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span>&#123;</span><br><span class="line">					h=tmp;</span><br><span class="line">				&#125;</span><br><span class="line">				tmp=<span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(enter[i]==<span class="string">'m'</span>)&#123;</span><br><span class="line">				<span class="keyword">if</span>(i+<span class="number">1</span>&lt;enter.length())&#123;</span><br><span class="line">					<span class="keyword">if</span>(enter[i+<span class="number">1</span>]==<span class="string">'s'</span>)&#123;</span><br><span class="line">						ms=tmp;</span><br><span class="line">						i+=<span class="number">1</span>;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">else</span> <span class="keyword">if</span>(enter[i+<span class="number">1</span>]==<span class="string">'i'</span>)&#123;</span><br><span class="line">						m=tmp;</span><br><span class="line">						i+=<span class="number">2</span>;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">else</span>&#123;</span><br><span class="line">						m=tmp;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span>&#123;</span><br><span class="line">						m=tmp;</span><br><span class="line">					&#125;</span><br><span class="line">				tmp=<span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(enter[i]==<span class="string">'s'</span>)&#123;</span><br><span class="line">				<span class="keyword">if</span>(dotyes)&#123;</span><br><span class="line">					dot=tmp;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span>&#123;</span><br><span class="line">					s=tmp;</span><br><span class="line">				&#125;</span><br><span class="line">				tmp=<span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		m+=h*<span class="number">60</span>;</span><br><span class="line">		s+=m*<span class="number">60</span>;</span><br><span class="line">		dot+=s*<span class="number">10</span>;</span><br><span class="line">		ms+=dot*<span class="number">100</span>;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;ms&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="後記-Afterword"><a href="#後記-Afterword" class="headerlink" title="後記 Afterword"></a>後記 Afterword</h2><p>很久沒出解題報告書了<br>還有另一個 YoJudge 預練(空間之章)<br>晚點再寫吧！寫完「空間之章」，就可以來寫真正的「YouJudge」(X)了</p>
 
         </div>
 
         
             <div class="article-tags tags">
                 
-                    <a href="/tags/建表/"><i class="fa fa-tag"></i>&nbsp;&nbsp;建表</a>
-                
-                    <a href="/tags/卡特蘭數/"><i class="fa fa-tag"></i>&nbsp;&nbsp;卡特蘭數</a>
+                    <a href="/tags/字串處理/"><i class="fa fa-tag"></i>&nbsp;&nbsp;字串處理</a>
                 
             </div>
         
@@ -208,17 +193,10 @@
         
             <div class="art-item-footer">
                 
-                    <span class="art-item-left">
-                        <i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;
-                        <a href="/2018/09/02/zj-c651/" rel="prev" title="c651. 三、區間xor(RXQ)">
-                            c651. 三、區間xor(RXQ)
-                        </a>
-                    </span>
-                
                 
                     <span class="art-item-right">
-                        <a href="/2018/08/30/zj-a625/" rel="next" title="a625. 5. Overhanging Cards">
-                            a625. 5. Overhanging Cards
+                        <a href="/2018/10/24/theory-of-forms/" rel="next" title="理型論？為何凡是不能只看表面？">
+                            理型論？為何凡是不能只看表面？
                         </a>&nbsp;
                         <i class="fa fa-chevron-right" aria-hidden="true"></i>
                     </span>
@@ -261,7 +239,7 @@
 
 <script>
     window.subData = {
-        title: 'c453. TOI2003 第二題：疊羅漢',
+        title: 'b981. YoJudge 預練(時間之章)',
         tools: true
     }
 </script>
@@ -377,7 +355,7 @@
     <section class="m_widget toc-wrapper">
         <div class="header"><i class="fa fa-list" aria-hidden="true"></i>&nbsp;&nbsp;目錄</div>
         <div class='content'>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#題目-Problem"><span class="toc-text">題目 Problem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#敘述-Description"><span class="toc-text">敘述 Description</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#輸入-Input"><span class="toc-text">輸入 Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#輸出-Output"><span class="toc-text">輸出 Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#範例輸入-Sample-Input"><span class="toc-text">範例輸入 Sample Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#範例輸出-Sample-Output"><span class="toc-text">範例輸出 Sample Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提示-Hint"><span class="toc-text">提示 Hint</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#題解-Solution"><span class="toc-text">題解 Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#動態規劃-Dynamic-Programming"><span class="toc-text">動態規劃 Dynamic Programming</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#卡特蘭數-Catalan-Number"><span class="toc-text">卡特蘭數 Catalan Number</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#程式碼-Accepted-Code"><span class="toc-text">程式碼 Accepted Code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#後記-Afterword"><span class="toc-text">後記 Afterword</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#題目-Problem"><span class="toc-text">題目 Problem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#敘述-Description"><span class="toc-text">敘述 Description</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#輸入-Input"><span class="toc-text">輸入 Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#輸出-Output"><span class="toc-text">輸出 Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#範例輸入-Sample-Input"><span class="toc-text">範例輸入 Sample Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#範例輸出-Sample-Output"><span class="toc-text">範例輸出 Sample Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提示-Hint"><span class="toc-text">提示 Hint</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#題解-Solution"><span class="toc-text">題解 Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#程式碼-Accepted-Code"><span class="toc-text">程式碼 Accepted Code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#後記-Afterword"><span class="toc-text">後記 Afterword</span></a></li></ol>
         </div>
     </section>
 
@@ -503,7 +481,7 @@ if(!ROOT.endsWith('/'))ROOT += '/';
         <script>
             var disqus_shortname = 'yangjerry-blog';
             
-                var disqus_url = 'http://blog.yangjerry.tw/2018/08/31/zj-c453/';
+                var disqus_url = 'http://blog.yangjerry.tw/2018/10/26/zj-b981/';
             
             (function(){
                 var dsq = document.createElement('script');
