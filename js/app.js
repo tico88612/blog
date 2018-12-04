@@ -9,6 +9,11 @@ var customSearch;
 		const $elem = elem.href ? $(elem.getAttribute('href')) : $(elem);
 		$('html, body').animate({ 'scrollTop': $elem.offset().top - correction }, 400);
 	};
+  document.onkeydown = function() {
+    if (event.keyCode == 9) {
+      return false;
+    }
+  }
 
 	function setHeader() {
 		if (!window.subData) return;
@@ -22,10 +27,10 @@ var customSearch;
 		$(document, window).scroll(() => {
 			const scrollTop = $(window).scrollTop();
 			const del = scrollTop - pos;
-			if (del >= 20) {
+			if (del >= 50 && scrollTop > 100) {
 				pos = scrollTop;
 				$wrapper.addClass('sub');
-			} else if (del <= -20) {
+			} else if (del <= -50) {
 				pos = scrollTop;
 				$wrapper.removeClass('sub');
 			}
@@ -44,47 +49,47 @@ var customSearch;
 		$top.click(()=>scrolltoElement(document.body));
 
 	}
-	function setHeaderMenu() {
-		var $headerMenu = $('header .menu');
-		var $underline = $headerMenu.find('.underline');
-		function setUnderline($item, transition) {
-			$item = $item || $headerMenu.find('li a.active');//get instant
-			transition = transition === undefined ? true : !!transition;
-			if (!transition) $underline.addClass('disable-trans');
-			if ($item && $item.length) {
-				$item.addClass('active').siblings().removeClass('active');
-				$underline.css({
-					left: $item.position().left,
-					width: $item.innerWidth()
-				});
-			} else {
-				$underline.css({
-					left: 0,
-					width: 0
-				});
-			}
-			if (!transition) {
-				setTimeout(function () { $underline.removeClass('disable-trans') }, 0);//get into the queue.
-			}
-		}
-		$headerMenu.on('mouseenter', 'li', function (e) {
-			setUnderline($(e.currentTarget));
-		});
-		$headerMenu.on('mouseout', function () {
-			setUnderline();
-		});
-		//set current active nav
-		var $active_link = null;
-		if (location.pathname === '/' || location.pathname.startsWith('/page/')) {
-			$active_link = $('.nav-home', $headerMenu);
-		} else {
-			var name = location.pathname.match(/\/(.*?)\//);
-			if (name.length > 1) {
-				$active_link = $('.nav-' + name[1], $headerMenu);
-			}
-		}
-		setUnderline($active_link, false);
-	}
+	// function setHeaderMenu() {
+	// 	var $headerMenu = $('header .menu');
+	// 	var $underline = $headerMenu.find('.underline');
+	// 	function setUnderline($item, transition) {
+	// 		$item = $item || $headerMenu.find('li a.active');//get instant
+	// 		transition = transition === undefined ? true : !!transition;
+	// 		if (!transition) $underline.addClass('disable-trans');
+	// 		if ($item && $item.length) {
+	// 			$item.addClass('active').siblings().removeClass('active');
+	// 			$underline.css({
+	// 				left: $item.position().left,
+	// 				width: $item.innerWidth()
+	// 			});
+	// 		} else {
+	// 			$underline.css({
+	// 				left: 0,
+	// 				width: 0
+	// 			});
+	// 		}
+	// 		if (!transition) {
+	// 			setTimeout(function () { $underline.removeClass('disable-trans') }, 0);//get into the queue.
+	// 		}
+	// 	}
+	// 	// $headerMenu.on('mouseenter', 'li', function (e) {
+	// 	// 	setUnderline($(e.currentTarget));
+	// 	// });
+	// 	// $headerMenu.on('mouseout', function () {
+	// 	// 	setUnderline();
+	// 	// });
+	// 	//set current active nav
+	// 	var $active_link = null;
+	// 	if (location.pathname === '/' || location.pathname.startsWith('/page/')) {
+	// 		$active_link = $('.nav-home', $headerMenu);
+	// 	} else {
+	// 		var name = location.pathname.match(/\/(.*?)\//);
+	// 		if (name.length > 1) {
+	// 			$active_link = $('.nav-' + name[1], $headerMenu);
+	// 		}
+	// 	}
+	// 	setUnderline($active_link, false);
+	// }
 	function setHeaderMenuPhone() {
 		var $switcher = $('.l_header .switcher .s-menu');
 		$switcher.click(function (e) {
@@ -132,13 +137,21 @@ var customSearch;
 	function setTocToggle() {
 		const $toc = $('.toc-wrapper');
 		if ($toc.length === 0) return;
-		$toc.click((e) => { e.stopPropagation(); $toc.addClass('active'); });
+		// $toc.click((e) => {
+        //     e.stopPropagation();
+        //     $toc.addClass('active');
+        // });
 		$(document).click(() => $toc.removeClass('active'));
 
 		$toc.on('click', 'a', (e) => {
 			e.preventDefault();
 			e.stopPropagation();
-			scrolltoElement(e.target.tagName.toLowerCase === 'a' ? e.target : e.target.parentElement);
+			if (e.target.tagName === 'A') {
+                scrolltoElement(e.target);
+            } else if (e.target.tagName === 'SPAN') {
+                scrolltoElement(e.target.parentElement);
+            }
+            $toc.removeClass('active');
 		});
 
 		const liElements = Array.from($toc.find('li a'));
@@ -201,7 +214,7 @@ var customSearch;
 	$(function () {
 		//set header
 		setHeader();
-		setHeaderMenu();
+		// setHeaderMenu();
 		setHeaderMenuPhone();
 		setHeaderSearch();
 		setWaves();
