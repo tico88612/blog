@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Category: 師培筆記 - 教育哲學 | Jerry Yang&#39;s Blog</title>
+  <title>洛谷OJ P1031 均分纸牌 | Jerry Yang&#39;s Blog</title>
   
   <meta name="HandheldFriendly" content="True" />
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -137,68 +137,152 @@
                 <div class="l_body">
                     <div class='container clearfix'>
                         <div class='l_main'>
-                            
-    <script>
-        window.subData= { title:'分類 : 師培筆記 - 教育哲學'}
-    </script>
-
-
-<section class="post-list">
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/10/24/theory-of-forms/">
-                
-                    理型論？為何凡是不能只看表面？
-                
-            </a>
-        </h2>
+                            <article id="post-lg-1031" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    <section class='meta'>
+        
+            <h1 class="title">洛谷OJ P1031 均分纸牌</h1>
+        
         <time class="time">
-            <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2018-10-24
+            <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+            2019-01-19
         </time>
+        
+          <div class="browse busuanzi"><i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+            <span id="busuanzi_value_page_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+          </div>
+        
+
         
     
     <div class='cats'>
         <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-        <a class="categories" href="/categories/師培筆記/">師培筆記</a> / <a class="categories" href="/categories/師培筆記/師培筆記-教育哲學/">師培筆記 - 教育哲學</a>
+        <a class="categories" href="/categories/解題區/">解題區</a> / <a class="categories" href="/categories/解題區/解題報告書-洛谷OJ/">解題報告書 - 洛谷OJ</a>
     </div>
 
 
     </section>
 
     <section class="article typo">
-        <p>Tag 是不是多了兩個感覺不相關的？((((；ﾟДﾟ)))))))<br>
-        
-            <div class="readmore">
-                <a href="/2018/10/24/theory-of-forms/" class="flat-box">
-                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-                    READ MORE
-                </a>
-            </div>
-        
 
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/理型論/"><i class="fas fa-tag fa-fw"></i>&nbsp;理型論</a>
-                
-                    <a href="/tags/洞穴寓言/"><i class="fas fa-tag fa-fw"></i>&nbsp;洞穴寓言</a>
-                
-                    <a href="/tags/慈濟/"><i class="fas fa-tag fa-fw"></i>&nbsp;慈濟</a>
-                
-                    <a href="/tags/普悠瑪出軌事件/"><i class="fas fa-tag fa-fw"></i>&nbsp;普悠瑪出軌事件</a>
-                
-            </div>
-        
-    </section>
-</article>
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="題目-Problem"><a href="#題目-Problem" class="headerlink" title="題目 Problem"></a>題目 Problem</h2><p><a href="https://www.luogu.org/problemnew/show/P1031" target="_blank" rel="noopener">題目連結：https://www.luogu.org/problemnew/show/P1031</a><br><a id="more"></a></p>
+<h3 id="敘述-Description"><a href="#敘述-Description" class="headerlink" title="敘述 Description"></a>敘述 Description</h3><p>有$N$堆纸牌，编号分别为 $1,2,…,N$。每堆上有若干张，但纸牌总数必为$N$的倍数。可以在任一堆上取若干张纸牌，然后移动。</p>
+<p>移牌规则为：在编号为$1$堆上取的纸牌，只能移到编号为$2$的堆上；在编号为$N$的堆上取的纸牌，只能移到编号为$N−1$的堆上；其他堆上取的纸牌，可以移到相邻左边或右边的堆上。</p>
+<p>现在要求找出一种移动方法，用最少的移动次数使每堆上纸牌数都一样多。</p>
+<p>例如$N=4$，$4$堆纸牌数分别为：</p>
+<p>①$9$②$8$③$17$④$6$</p>
+<p>移动$3$次可达到目的：</p>
+<p>从 ③ 取$4$张牌放到 ④ $（9,8,13,10）$-&gt; 从 ③ 取333张牌放到 ②$（9,11,10,10）$-&gt; 从 ② 取111张牌放到①$（10,10,10,10）$。</p>
+<h3 id="輸入-Input"><a href="#輸入-Input" class="headerlink" title="輸入 Input"></a>輸入 Input</h3><p>两行</p>
+<p>第一行为：$N$（$N$ 堆纸牌，$1 \leq N \leq 100$）</p>
+<p>第二行为：$A_1,A_2, … ,A_n$（$N$堆纸牌，每堆纸牌初始数，$1 \leq A_i \leq 10000$）</p>
+<h3 id="輸出-Output"><a href="#輸出-Output" class="headerlink" title="輸出 Output"></a>輸出 Output</h3><p>一行：即所有堆均达到相等时的最少移动次数。</p>
+<h3 id="範例輸入-Sample-Input"><a href="#範例輸入-Sample-Input" class="headerlink" title="範例輸入 Sample Input"></a>範例輸入 Sample Input</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">9 8 17 6</span><br></pre></td></tr></table></figure>
+<h3 id="範例輸出-Sample-Output"><a href="#範例輸出-Sample-Output" class="headerlink" title="範例輸出 Sample Output"></a>範例輸出 Sample Output</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
+<h2 id="題解-Solution"><a href="#題解-Solution" class="headerlink" title="題解 Solution"></a>題解 Solution</h2><p>Re:<a href="https://www.luogu.org/discuss/show/75812" target="_blank" rel="noopener">我没看懂我自己的想法，居然过了</a><br>因為沒有中國門號，無法在上面回，就留在這裡了</p>
+<p>作法就是把差距移到下一個位置<br>也就是說這堆的牌把下一堆的牌拿過來平衡<br>反正下一堆不平衡從下下一堆再拿牌也沒關係</p>
+<p>大概就是這樣</p>
+<h3 id="程式碼-Accepted-Code"><a href="#程式碼-Accepted-Code" class="headerlink" title="程式碼 Accepted Code"></a>程式碼 Accepted Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _ ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="comment">// 參考來源：https://www.luogu.org/discuss/show/75812</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> N,sum=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;N;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; enter(N);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;enter[i];</span><br><span class="line">        sum+=enter[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> avg=sum/N,timee=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N<span class="number">-1</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(enter[i]!=avg)&#123;</span><br><span class="line">            enter[i+<span class="number">1</span>]+=enter[i]-avg;</span><br><span class="line">            timee++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;timee&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="後記-Afterword"><a href="#後記-Afterword" class="headerlink" title="後記 Afterword"></a>後記 Afterword</h2><p>稍微看一下討論區，這題思路也蠻多的，可以好好嘗試其他的過程</p>
+<p>本人試寫<a href="https://www.luogu.org" target="_blank" rel="noopener">洛谷OJ</a>，把「新手村」都刷光光了<br>難度排序還不錯，認識一下 NOI 或 NOIP 的題目<br>之後也會開始寫<a href="https://www.luogu.org" target="_blank" rel="noopener">洛谷OJ</a>的相關題解</p>
+<p>（為何不用洛谷裡面的 Blog 呢？）</p>
+<p>因為我沒有中國門號 QAQ</p>
 
         </div>
-    
-</section>
 
+        <section class='meta'>
+            <time class="time" itemprop="dateUpdated" datetime="2019-01-19T14:36:08+08:00" content="2019-01-19">
+                <i class="fas fa-pen fa-fw" aria-hidden="true"></i>
+                本文最后更新于：2019-01-19
+            </time>
+            
+        </section>
+
+        
+            <div class="prev-next">
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2018/11/22/zj-c878/" rel="prev" title="c878. 107北二5.議會質詢紀錄">
+                                    
+                                        c878. 107北二5.議會質詢紀錄
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <i class="fas fa-tags fa-fw" aria-hidden="true"></i>
+                                    <a class="tag" href="/tags/DP/">DP</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+
+    </section>
+
+</article>
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box comments">
+        <section class="article typo">
+
+            
+                
+
+    <div class="recommended_posts">
+        <h4><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
+        <ul>
+            
+                <li><a href="http://blog.yangjerry.tw/2018/11/22/zj-c878/">c878. 107北二5.議會質詢紀錄</a></li>
+            
+                <li><a href="http://blog.yangjerry.tw/2018/10/26/zj-b981/">b981. YoJudge 預練(時間之章)</a></li>
+            
+                <li><a href="http://blog.yangjerry.tw/2018/10/24/theory-of-forms/">理型論？為何凡是不能只看表面？</a></li>
+            
+                <li><a href="http://blog.yangjerry.tw/2018/10/17/kp-tcu-note/">演講筆記：醫人文 —— 我的故事</a></li>
+            
+        </ul>
+    </div>
+
+
+            
+
+            
+
+                
+                    <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Disqus评论</h4>
+                    <section id="comments">
+                        <div id="disqus_thread">
+                            ⚠️  无法加载评论系统，请确保您的网络能够正常访问 <a href="https://disqus.com">Disqus</a> 。
+                        </div>
+                    </section>
+                
+
+                
+
+                
+            
+
+        </section>
+    </article>
+
+
+<script>
+    window.subData = {
+        title: '洛谷OJ P1031 均分纸牌',
+        tools: true
+    }
+</script>
 
 
                         </div>
@@ -383,6 +467,23 @@
     
     
         
+    <section class='m_widget toc-wrapper'>
+        <header class="header pure">
+            <div>
+                <i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;
+                目錄
+            </div>
+            <div class='wrapper'>
+                <a class="s-toc rightBtn" title="固定到顶部" target="_blank" rel="external nofollow noopener noreferrer" href="javascript:void(0)">
+                    <i class="fas fa-thumbtack fa-fw"></i>
+                </a>
+            </div>
+        </header>
+        <div class='content pure'>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#題目-Problem"><span class="toc-text">題目 Problem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#敘述-Description"><span class="toc-text">敘述 Description</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#輸入-Input"><span class="toc-text">輸入 Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#輸出-Output"><span class="toc-text">輸出 Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#範例輸入-Sample-Input"><span class="toc-text">範例輸入 Sample Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#範例輸出-Sample-Output"><span class="toc-text">範例輸出 Sample Output</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#題解-Solution"><span class="toc-text">題解 Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#程式碼-Accepted-Code"><span class="toc-text">程式碼 Accepted Code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#後記-Afterword"><span class="toc-text">後記 Afterword</span></a></li></ol>
+        </div>
+    </section>
+    
     
     
     
@@ -585,6 +686,24 @@
 <script src="/js/search.js"></script>
 <script src="/js/app.js"></script>
 
+
+    
+        <script>
+            var disqus_shortname = 'yangjerry-blog';
+            
+                var disqus_url = 'http://blog.yangjerry.tw/2019/01/19/lg-1031/';
+            
+            (function(){
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+    
+    
+    
 
 
 
