@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.yangjerry.tw/"/>
-  <updated>2019-01-19T06:36:08.937Z</updated>
+  <updated>2019-01-31T05:15:51.363Z</updated>
   <id>http://blog.yangjerry.tw/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>O(1)的費氏數列？公式解就一定是O(1)？</title>
+    <link href="http://blog.yangjerry.tw/2019/01/31/fibonacci-is-bigO1/"/>
+    <id>http://blog.yangjerry.tw/2019/01/31/fibonacci-is-bigO1/</id>
+    <published>2019-01-31T05:15:00.000Z</published>
+    <updated>2019-01-31T05:15:51.363Z</updated>
+    
+    <content type="html"><![CDATA[<p>我在撰寫此貼文時，原留言者已經刪留言了，反正就是說「費氏數列有公式解，複雜度就是$O(1)$」<br><a id="more"></a></p><p>於是一堆國手紛紛出籠，然後就……你看就知道了<br><a href="https://www.facebook.com/groups/pythontw/permalink/10158445814613438/" target="_blank" rel="noopener">原文連結：https://www.facebook.com/groups/pythontw/permalink/10158445814613438/</a></p><p>甚至出現 「$\pi$ 跟 $e$ 都存在月球上，這樣就存取最快了，$O(1)$！」</p><p><del>（果然用爛留言去釣高手是最快的辦法，$O(1)$！）</del></p><hr><h2 id="版上的大神在反串什麼？"><a href="#版上的大神在反串什麼？" class="headerlink" title="版上的大神在反串什麼？"></a>版上的大神在反串什麼？</h2><p>首先，先來簡單介紹時間複雜度（這只是大眾版的）<br>要計算最壞的時間複雜度我們會用 big-O</p><p>假設$n$是資料個數 或 計算大小<br>$O(1)$是常數複雜度<br>意思是說：計算量不會與 $n$ 的大小有任何關係，Ex.$1+2+…+N$的公式解</p><p>$O(\log{n})$是對數複雜度<br>意思是說：計算量會與 $n$ 的大小呈現對數關係，Ex.二分搜尋法</p><p>$O(n)$是線性複雜度<br>意思是說：計算量會與 $n$ 的大小呈現線性（直線）關係</p><h2 id="公式解就一定是O-1-？"><a href="#公式解就一定是O-1-？" class="headerlink" title="公式解就一定是O(1)？"></a>公式解就一定是O(1)？</h2><p>從1加到N的算式可以寫成這樣<br>$1+2+…+N=\dfrac{n(n+1)}{2}$</p><p>算式就要做一次乘法跟一次除法</p><p>不論$N$開多大，開到$10^{100}$，算式都只要做一次乘法跟一次除法就好</p><p><strong>可是費氏數列有公式解</strong></p><p>$Fibonacci(n)=\dfrac{\sqrt{5}}{5} \cdot \left[\left(\dfrac{1 + \sqrt{5}}{2}\right)^{n} - \left(\dfrac{1 - \sqrt{5}}{2}\right)^{n}\right]$</p><p>對，費氏數列有公式解，但是它不是$O(1)$</p><p>關鍵就是這個$\left(\dfrac{1 + \sqrt{5}}{2}\right)^{n}$ 跟 $\left(\dfrac{1 - \sqrt{5}}{2}\right)^{n}$</p><p>要算第$100$項，這東西就要乘$100$次<br>要算第$10000$項，這東西就要乘$10000$次<br>要算第$10^9$項，這東西就要乘$10^9$次</p><p>所以這是線性複雜度$O(n)$<br>（高手就知道這是$O(\log{n})$，這可以矩陣快速冪）</p><p><strong>$O(1)$的意義不是在快，而是資料量大小不論多少，他都是固定的計算次數。</strong></p><p>如果今天我設計了一個函數：<br>$n=1$，要計算次數是$10^8$，<br>$n=10^6$，要計算次數是$10^8$，<br>$n=10^{100}$，要計算次數是$10^8$，<br>不論$n$的大小，計算次數都是$10^8$。</p><p>時間複雜度：$O(1)$，因為計算次數跟$n$沒有任何關係</p><h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>要下什麼總結呢？我只知道原Po在原文被歪樓後就被邊緣了QQ</p><p>然後原留言者也刪留言、關臉書了。</p><p><strong>如果討論是一直在堅持自己的意見，那就不叫討論了</strong></p><p>結果變成競程選手們茶餘飯後的話題</p><p>整體過程大概就是這樣啦！如果有錯誤，歡迎在底下留言討論！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我在撰寫此貼文時，原留言者已經刪留言了，反正就是說「費氏數列有公式解，複雜度就是$O(1)$」&lt;br&gt;
+    
+    </summary>
+    
+      <category term="生活" scheme="http://blog.yangjerry.tw/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="程式日常" scheme="http://blog.yangjerry.tw/categories/%E7%94%9F%E6%B4%BB/%E7%A8%8B%E5%BC%8F%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="費氏數列" scheme="http://blog.yangjerry.tw/tags/%E8%B2%BB%E6%B0%8F%E6%95%B8%E5%88%97/"/>
+    
+      <category term="公式解" scheme="http://blog.yangjerry.tw/tags/%E5%85%AC%E5%BC%8F%E8%A7%A3/"/>
+    
+      <category term="時間複雜度" scheme="http://blog.yangjerry.tw/tags/%E6%99%82%E9%96%93%E8%A4%87%E9%9B%9C%E5%BA%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>洛谷OJ P1031 均分纸牌</title>

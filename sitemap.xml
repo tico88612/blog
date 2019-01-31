@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.yangjerry.tw/2019/01/31/fibonacci-is-bigO1/</loc>
+    
+    <lastmod>2019-01-31T05:15:51.363Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.yangjerry.tw/2019/01/19/lg-1031/</loc>
     
     <lastmod>2019-01-19T06:36:08.937Z</lastmod>
