@@ -1,171 +1,219 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
   <title>d635. 幸運777？luck | Jerry Yang&#39;s Blog</title>
   
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <link rel="shortcut icon" href="/">
-  <link rel="alternate" href="/atom.xml" title="Jerry Yang's Blog">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
 
-  <link rel="shortcut icon" href="" />
-  <link rel="icon" href="" />
   
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet">
+  <link rel="alternate" href="/atom.xml" title="Jerry Yang's Blog">
   
-  <!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+
+  
   <link rel="stylesheet" href="/style.css">
+  
+
   <script>
     function setLoadingBarProgress(num) {
       document.getElementById('loading-bar').style.width=num+"%";
     }
   </script>
+
+  
   
 </head>
 
-
-    <body>
-        <div id="loading-bar-wrapper">
-  <div id="loading-bar" class="pure"></div>
+<body>
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar" class="material"></div>
 </div>
 
-            <script>setLoadingBarProgress(20)</script>
-            <header class="l_header pure">
-	<div class='wrapper'>
+    <script>setLoadingBarProgress(20)</script>
+    <header class="l_header material">
+	<div class="wrapper">
 		<div class="nav-main container container--flex">
-			<a class="logo flat-box" href='/' >Jerry Yang's Blog</a>
-				<div class='menu'>
-					<ul class='h-list'>
-            
-    					
-    						<li>
-    							<a class="nav flat-box" href="https://yangjerry.tw">
-    								<i class='fas fa-home fa-fw'></i>&nbsp;首頁
-  								</a>
-  							</li>
-        			
-    						<li>
-    							<a class="nav flat-box" href="/">
-    								<i class='fas fa-rss fa-fw'></i>&nbsp;Blog
-  								</a>
-  							</li>
-        			
-    						<li>
-    							<a class="nav flat-box" href="/archives/">
-    								<i class='fas fa-archive fa-fw'></i>&nbsp;紀錄
-  								</a>
-  							</li>
-        			
-    						<li>
-    							<a class="nav flat-box" href="https://www.twitch.tv/tico88612">
-    								<i class='fab fa-twitch fa-fw'></i>&nbsp;解題直播
-  								</a>
-  							</li>
-        			
-        		
-					</ul>
-					<div class='underline'></div>
-				</div>
+      <a class="logo flat-box" href="/">
+        
+          Jerry Yang's Blog
+        
+      </a>
+			<div class="menu">
+				<ul class="h-list">
+          
+  					
+  						<li>
+								<a id="https:yangjerry.tw" class="nav flat-box" href="https://yangjerry.tw">
+									<i class="fas fa-home fa-fw"></i>&nbsp;首頁
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="home" class="nav flat-box" href="/">
+									<i class="fas fa-rss fa-fw"></i>&nbsp;Blog
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="archives" class="nav flat-box" href="/archives/">
+									<i class="fas fa-archive fa-fw"></i>&nbsp;紀錄
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="https:www.twitch.tvtico88612" class="nav flat-box" href="https://www.twitch.tv/tico88612">
+									<i class="fab fa-twitch fa-fw"></i>&nbsp;解題直播
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
 
 			
 				<div class="m_search">
 					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="Search" />
+						<input type="text" class="input u-search-input" placeholder="搜尋">
 						<span class="icon"><i class="fas fa-search fa-fw"></i></span>
 					</form>
 				</div>
 			
-			<ul class='switcher h-list'>
+			<ul class="switcher h-list">
 				
-					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></span></a></li>
+					<li class="s-search"><a class="fas fa-search fa-fw" href="javascript:void(0)"></a></li>
 				
-				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+				<li class="s-menu"><a class="fas fa-bars fa-fw" href="javascript:void(0)"></a></li>
 			</ul>
 		</div>
 
-		<div class='nav-sub container container--flex'>
+		<div class="nav-sub container container--flex">
 			<a class="logo flat-box"></a>
-			<ul class='switcher h-list'>
-				<li class='s-comment'><a class="fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
-				<li class='s-top'><a class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a></li>
-				<li class='s-toc'><a class="fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+			<ul class="switcher h-list">
+				<li class="s-comment"><a class="flat-btn fas fa-comments fa-fw" href="javascript:void(0)"></a></li>
+				<li class="s-toc"><a class="flat-btn fas fa-list fa-fw" href="javascript:void(0)"></a></li>
 			</ul>
 		</div>
 	</div>
 </header>
 	<aside class="menu-phone">
-		<nav>
+    <header>
+		<nav class="menu">
       <ul>
           
               
                   <li>
-										<a class="nav  flat-box" href="https://yangjerry.tw">
-											<i class='fas fa-home fa-fw'></i>&nbsp;首頁
+										<a id="https:yangjerry.tw" class="nav flat-box" href="https://yangjerry.tw">
+											<i class="fas fa-home fa-fw"></i>&nbsp;首頁
 										</a>
                   </li>
               
                   <li>
-										<a class="nav  flat-box" href="/">
-											<i class='fas fa-rss fa-fw'></i>&nbsp;Blog
+										<a id="home" class="nav flat-box" href="/">
+											<i class="fas fa-rss fa-fw"></i>&nbsp;Blog
 										</a>
                   </li>
               
                   <li>
-										<a class="nav  flat-box" href="/archives/">
-											<i class='fas fa-archive fa-fw'></i>&nbsp;紀錄
+										<a id="archives" class="nav flat-box" href="/archives/">
+											<i class="fas fa-archive fa-fw"></i>&nbsp;紀錄
 										</a>
                   </li>
               
                   <li>
-										<a class="nav  flat-box" href="https://www.twitch.tv/tico88612">
-											<i class='fab fa-twitch fa-fw'></i>&nbsp;解題直播
+										<a id="https:www.twitch.tvtico88612" class="nav flat-box" href="https://www.twitch.tv/tico88612">
+											<i class="fab fa-twitch fa-fw"></i>&nbsp;解題直播
 										</a>
                   </li>
               
        
       </ul>
 		</nav>
+    </header>
 	</aside>
 
-                <script>setLoadingBarProgress(40);</script>
-                <div class="l_body">
-                    <div class='container clearfix'>
-                        <div class='l_main'>
-                            <article id="post-zj-d635" class="post white-box article-type-post" itemscope itemprop="blogPost">
-    <section class='meta'>
-        
-            <h1 class="title">d635. 幸運777？luck</h1>
-        
-        <time class="time">
-            <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <script>setLoadingBarProgress(40);</script>
+    <div class="l_body">
+    <div class='container clearfix'>
+        <div class='l_main'>
+            <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+  
+<section class="meta">
+  
+  
+  <div class="meta" id="header-meta">
+    
+      
+          <h1 class="title">d635. 幸運777？luck</h1>
+      
+    
+
+    <div class="new-meta-box">
+      
+        <div class="new-meta-item author">
+          <a href="http://blog.yangjerry.tw">
+            <i class="fas fa-user" aria-hidden="true"></i>
+            Jerry Yang
+          </a>
+        </div>
+      
+      
+        <div class="new-meta-item date">
+          <a class="notlink">
+            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
             2018-09-14
-        </time>
+          </a>
+        </div>
+      
+      
         
-          <div class="browse busuanzi"><i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-            <span id="busuanzi_value_page_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+          
+          <div class="new-meta-item category">
+            <a href="/categories/解題區/解題報告書-ZeroJudge/">
+              <i class="fas fa-folder-open" aria-hidden="true"></i>
+              解題區&nbsp;/&nbsp;解題報告書 - ZeroJudge
+            </a>
           </div>
         
-
+      
+      
         
-    
-    <div class='cats'>
-        <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-        <a class="categories" href="/categories/解題區/">解題區</a> / <a class="categories" href="/categories/解題區/解題報告書-ZeroJudge/">解題報告書 - ZeroJudge</a>
+          <div class="new-meta-item browse busuanzi">
+            <a class="notlink">
+              <i class="fas fa-eye" aria-hidden="true"></i>
+              <span id="busuanzi_value_page_pv">
+                <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+              </span>
+            </a>
+          </div>
+        
+      
+      
     </div>
-
-
-    </section>
+    <hr>
+  </div>
+</section>
 
     <section class="article typo">
-
-        <div class="article-entry" itemprop="articleBody">
-            <h2 id="題目-Problem"><a href="#題目-Problem" class="headerlink" title="題目 Problem"></a>題目 Problem</h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=d635" target="_blank" rel="noopener">題目連結：https://zerojudge.tw/ShowProblem?problemid=d635</a><br><a id="more"></a></p>
+      <div class="article-entry" itemprop="articleBody">
+        <h2 id="題目-Problem"><a href="#題目-Problem" class="headerlink" title="題目 Problem"></a>題目 Problem</h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=d635" target="_blank" rel="noopener">題目連結：https://zerojudge.tw/ShowProblem?problemid=d635</a><br><a id="more"></a></p>
 <h3 id="敘述-Description"><a href="#敘述-Description" class="headerlink" title="敘述 Description"></a>敘述 Description</h3><p>你說什麼？777=511？怎麼可能…？</p>
 <p>因為這裡是八進位的777轉換成10進位的511了～(好爛ˇ)</p>
 <p>給你十進位的數字，請你把他們轉成八進位好嗎？</p>
@@ -188,28 +236,34 @@
 <h3 id="程式碼-Accepted-Code"><a href="#程式碼-Accepted-Code" class="headerlink" title="程式碼 Accepted Code"></a>程式碼 Accepted Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _ ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	_</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> enter;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;enter)&#123;</span><br><span class="line">		<span class="keyword">if</span>(enter&lt;<span class="number">0</span>)&#123;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"-1"</span>&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(enter==<span class="number">0</span>)&#123;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"0"</span>&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> ans[<span class="number">10</span>]=&#123;<span class="number">0</span>&#125;,len=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(enter)&#123;</span><br><span class="line">			ans[len++]+=enter%<span class="number">8</span>;</span><br><span class="line">			enter/=<span class="number">8</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=len<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;ans[i];</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="後記-Afterword"><a href="#後記-Afterword" class="headerlink" title="後記 Afterword"></a>後記 Afterword</h2><p>這題題目敘述真的是爛到吃了好幾個 WA<br>寫 UVa 題目也有碰過一次，題目沒有寫清楚<br>最後還是看了一下 AC Code 才知道在寫什麼</p>
 
-        </div>
-
-        <section class='meta'>
-            <time class="time" itemprop="dateUpdated" datetime="2018-09-14T13:04:31+08:00" content="2018-09-14">
-                <i class="fas fa-pen fa-fw" aria-hidden="true"></i>
-                本文最后更新于：2018-09-14
-            </time>
-            
-                
-                <div class="tags">
-                    <i class="fas fa-tags fa-fw" aria-hidden="true"></i>
-                    <a class="tag" href="/tags/進位制/">進位制</a>
+      </div>
+        
+          <section class="meta" id="footer-meta">
+            <hr>
+            <div class="new-meta-box">
+              
+                <div class="new-meta-item date" itemprop="dateUpdated" datetime="2018-09-14T13:04:31+08:00">
+                  <a class="notlink">
+                    <i class="fas fa-save" aria-hidden="true"></i>
+                    2018-09-14
+                  </a>
                 </div>
-            
-        </section>
+              
+              
+                
+                <div class="new-meta-item meta-tags"><a class="tag" href="/tags/進位制/"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;進位制</a></div>
+              
+              
+            </div>
+          </section>
+        
 
         
             <div class="prev-next">
                 
                     <section class="prev">
                         <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一頁</h6>
                             <h4>
                                 <a href="/2018/09/26/zj-c731/" rel="prev" title="c731. 走路時要算數學">
                                   
@@ -220,8 +274,7 @@
                             
                                 
                                 <h6 class="tags">
-                                    <i class="fas fa-tags fa-fw" aria-hidden="true"></i>
-                                    <a class="tag" href="/tags/DP/">DP</a>
+                                    <a class="tag" href="/tags/DP/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>DP</a>
                                 </h6>
                             
                         </span>
@@ -230,7 +283,7 @@
                 
                     <section class="next">
                         <span class="art-item-right" aria-hidden="true">
-                            <h6>下一篇&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h6>下一頁&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
                                 <a href="/2018/09/12/1071credit/" rel="prev" title="超修？扛下去？演算法直接跳上去？">
                                     
@@ -241,8 +294,7 @@
                             
                                 
                                 <h6 class="tags">
-                                    <i class="fas fa-tags fa-fw" aria-hidden="true"></i>
-                                    <a class="tag" href="/tags/生活/">生活</a>, <a class="tag" href="/tags/學分/">學分</a>, <a class="tag" href="/tags/超修/">超修</a>, <a class="tag" href="/tags/助教/">助教</a>
+                                    <a class="tag" href="/tags/生活/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>生活</a> <a class="tag" href="/tags/學分/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>學分</a> <a class="tag" href="/tags/超修/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>超修</a> <a class="tag" href="/tags/助教/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>助教</a>
                                 </h6>
                             
                         </span>
@@ -255,52 +307,70 @@
 
 </article>
 
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+    <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX","TeX"],
+      linebreaks: { automatic:true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+      Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+  });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
+    }
+    console.log("mathjax did loaded!");
+  });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
 <br>
 
 <!-- 显示推荐文章和评论 -->
 
-    <article class="post white-box comments">
-        <section class="article typo">
-
-            
-                
-
-    <div class="recommended_posts">
-        <h4><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
-        <ul>
-            
-                <li><a href="http://blog.yangjerry.tw/2018/10/17/kp-tcu-note/">演講筆記：醫人文 —— 我的故事</a></li>
-            
-                <li><a href="http://blog.yangjerry.tw/2018/09/26/zj-c731/">c731. 走路時要算數學</a></li>
-            
-                <li><a href="http://blog.yangjerry.tw/2018/09/12/1071credit/">超修？扛下去？演算法直接跳上去？</a></li>
-            
-                <li><a href="http://blog.yangjerry.tw/2018/09/02/zj-c311/">c311. PC:分組之塔</a></li>
-            
-        </ul>
-    </div>
 
 
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;評論</h4>
+      
+        <section id="comments">
+          <div id="disqus_thread">
+            <div><i class="fas fa-exclamation-triangle">&nbsp;無法加載Disqus評論系統，請確保您的網絡能夠正常訪問。</i></div>
             
-
             
-
-                
-                    <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Disqus评论</h4>
-                    <section id="comments">
-                        <div id="disqus_thread">
-                            ⚠️  无法加载评论系统，请确保您的网络能够正常访问 <a href="https://disqus.com">Disqus</a> 。
-                        </div>
-                    </section>
-                
-
-                
-
-                
-            
-
+          </div>
         </section>
-    </article>
+      
+      
+      
+    </section>
+  </article>
+
 
 
 <script>
@@ -311,440 +381,454 @@
 </script>
 
 
-                        </div>
-                        <aside class='l_side'>
-                            
+        </div>
+        <aside class='l_side'>
+            
+  
+  
     
-        
-  <section class='m_widget author'>
+      
+      
+        <section class="author">
+  <div class="content material">
     
-      <div class='header'>
-        <img class='avatar' src='/avatar.jpg'
-        />
+      <div class="avatar">
+        <img class="avatar" src="/avatar.jpg">
       </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="mailto:tico88612@gmail.com" class="social flat-btn" target="_blank" rel="external"><i class="social fas fa-envelope" aria-hidden="true"></i></a>
+          
+        
+          
+            <a href="https://www.facebook.com/tico88612" class="social flat-btn" target="_blank" rel="external"><i class="social fab fa-facebook" aria-hidden="true"></i></a>
+          
+        
+          
+            <a href="https://github.com/tico88612" class="social flat-btn" target="_blank" rel="external"><i class="social fab fa-github" aria-hidden="true"></i></a>
+          
+        
+          
+            <a href="https://www.instagram.com/jerry_love_linda/" class="social flat-btn" target="_blank" rel="external"><i class="social fab fa-instagram" aria-hidden="true"></i></a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+      
+    
+  
+    
+      
       
         
-            
-              <div class="social-wrapper">
-                
-                  
-                    <a href="mailto:tico88612@gmail.com" class="social flat-box" target="_blank" rel="external">
-                      <i class="social fas fa-envelope" aria-hidden="true"></i>
-                    </a>
-                    
-                      
-                  
-                    <a href="https://www.facebook.com/tico88612" class="social flat-box" target="_blank" rel="external">
-                      <i class="social fab fa-facebook" aria-hidden="true"></i>
-                    </a>
-                    
-                      
-                  
-                    <a href="https://github.com/tico88612" class="social flat-box" target="_blank" rel="external">
-                      <i class="social fab fa-github" aria-hidden="true"></i>
-                    </a>
-                    
-                      
-                  
-                    <a href="https://www.instagram.com/jerry_love_linda/" class="social flat-box" target="_blank" rel="external">
-                      <i class="social fab fa-instagram" aria-hidden="true"></i>
-                    </a>
-                    
-                      
-              </div>
-              
-  </section>
+  <section class="toc-wrapper">
+    
+<header class="material">
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章目錄</div>
   
-    
-    
-        
-  <section class='m_widget announcement'>
-    <header class='header pure'>
-      <div>
-        <i class="fas fa-bullhorn fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;
-        公告
-      </div>
-    </header>
-    <div class='content pure'>
-      主題佈景大更新，改 Code 真的一堆坑
-    </div>
-  </section>
+    <div class="wrapper"><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
   
-    
-    
-        <section class='m_widget categories'>
-    <header class='header pure'>
-        <div>
-            <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;
-            分類
-        </div>
-    </header>
-    <div class='content pure'>
-        
-            <ul class="entry">
-                
-                    <li>
-                        <a class="flat-box" href="/categories/Hello-World/">
-                            <div class='name'>
-                                Hello World
-                            </div>
-                            <div class='badge'>
-                                1
-                            </div>
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a class="flat-box" href="/categories/師培筆記/">
-                            <div class='name'>
-                                師培筆記
-                            </div>
-                            <div class='badge'>
-                                1
-                            </div>
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a class="flat-box" href="/categories/師培筆記/師培筆記-教育哲學/">
-                            <div class='name'>
-                                師培筆記 - 教育哲學
-                            </div>
-                            <div class='badge'>
-                                1
-                            </div>
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a class="flat-box" href="/categories/演講筆記/">
-                            <div class='name'>
-                                演講筆記
-                            </div>
-                            <div class='badge'>
-                                1
-                            </div>
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a class="flat-box" href="/categories/生活/">
-                            <div class='name'>
-                                生活
-                            </div>
-                            <div class='badge'>
-                                2
-                            </div>
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a class="flat-box" href="/categories/生活/程式日常/">
-                            <div class='name'>
-                                程式日常
-                            </div>
-                            <div class='badge'>
-                                1
-                            </div>
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a class="flat-box" href="/categories/解題區/">
-                            <div class='name'>
-                                解題區
-                            </div>
-                            <div class='badge'>
-                                11
-                            </div>
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a class="flat-box" href="/categories/解題區/解題報告書-ZeroJudge/">
-                            <div class='name'>
-                                解題報告書 - ZeroJudge
-                            </div>
-                            <div class='badge'>
-                                10
-                            </div>
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a class="flat-box" href="/categories/解題區/解題報告書-洛谷OJ/">
-                            <div class='name'>
-                                解題報告書 - 洛谷OJ
-                            </div>
-                            <div class='badge'>
-                                1
-                            </div>
-                        </a>
-                    </li>
-                    
-            </ul>
-            
-    </div>
-</section>
-    
-    
-        
-    <section class='m_widget tagcloud'>
-        <header class="header pure">
-            <div>
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;
-                標籤
-            </div>
-        </header>
-        <div class='content pure'>
-            <a href="/tags/Binary-Index-Tree/" style="font-size: 14px; color: #999">Binary Index Tree</a> <a href="/tags/DP/" style="font-size: 24px; color: #555">DP</a> <a href="/tags/Fenwick-Tree/" style="font-size: 14px; color: #999">Fenwick Tree</a> <a href="/tags/Queue/" style="font-size: 14px; color: #999">Queue</a> <a href="/tags/Special-Judge/" style="font-size: 14px; color: #999">Special Judge</a> <a href="/tags/Stack/" style="font-size: 14px; color: #999">Stack</a> <a href="/tags/XOR/" style="font-size: 24px; color: #555">XOR</a> <a href="/tags/二分搜/" style="font-size: 14px; color: #999">二分搜</a> <a href="/tags/倍數判斷法/" style="font-size: 14px; color: #999">倍數判斷法</a> <a href="/tags/公式解/" style="font-size: 14px; color: #999">公式解</a> <a href="/tags/助教/" style="font-size: 14px; color: #999">助教</a> <a href="/tags/卡特蘭數/" style="font-size: 14px; color: #999">卡特蘭數</a> <a href="/tags/字串處理/" style="font-size: 14px; color: #999">字串處理</a> <a href="/tags/學分/" style="font-size: 14px; color: #999">學分</a> <a href="/tags/建表/" style="font-size: 24px; color: #555">建表</a> <a href="/tags/慈濟/" style="font-size: 14px; color: #999">慈濟</a> <a href="/tags/時間複雜度/" style="font-size: 14px; color: #999">時間複雜度</a> <a href="/tags/普悠瑪出軌事件/" style="font-size: 14px; color: #999">普悠瑪出軌事件</a> <a href="/tags/柯P/" style="font-size: 14px; color: #999">柯P</a> <a href="/tags/洞穴寓言/" style="font-size: 14px; color: #999">洞穴寓言</a> <a href="/tags/演講筆記/" style="font-size: 14px; color: #999">演講筆記</a> <a href="/tags/理型論/" style="font-size: 14px; color: #999">理型論</a> <a href="/tags/生活/" style="font-size: 14px; color: #999">生活</a> <a href="/tags/負數取Mod/" style="font-size: 14px; color: #999">負數取Mod</a> <a href="/tags/費氏數列/" style="font-size: 14px; color: #999">費氏數列</a> <a href="/tags/超修/" style="font-size: 14px; color: #999">超修</a> <a href="/tags/進位制/" style="font-size: 14px; color: #999">進位制</a>
-        </div>
-    </section>
-    
-    
-    
-        
-    <section class='m_widget toc-wrapper'>
-        <header class="header pure">
-            <div>
-                <i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;
-                目錄
-            </div>
-            <div class='wrapper'>
-                <a class="s-toc rightBtn" title="固定到顶部" target="_blank" rel="external nofollow noopener noreferrer" href="javascript:void(0)">
-                    <i class="fas fa-thumbtack fa-fw"></i>
-                </a>
-            </div>
-        </header>
-        <div class='content pure'>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#題目-Problem"><span class="toc-text">題目 Problem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#敘述-Description"><span class="toc-text">敘述 Description</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#輸入-Input"><span class="toc-text">輸入 Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#輸出-Output"><span class="toc-text">輸出 Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#範例輸入-Sample-Input"><span class="toc-text">範例輸入 Sample Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#範例輸出-Sample-Output"><span class="toc-text">範例輸出 Sample Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提示-Hint"><span class="toc-text">提示 Hint</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#題解-Solution"><span class="toc-text">題解 Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#程式碼-Accepted-Code"><span class="toc-text">程式碼 Accepted Code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#後記-Afterword"><span class="toc-text">後記 Afterword</span></a></li></ol>
-        </div>
-    </section>
-    
-    
-    
-    
-        <section class='m_widget links'>
-    <header class='header pure'>
-        <div>
-            <i class="fas fa-handshake fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;
-            友情連結
-        </div>
-        
-            <a class="rightBtn" title="聯絡版主新增友情連結" target="_blank" rel="external nofollow noopener noreferrer" href="mailto:tico88612@gmail.com?subject=交換友情連結&body=你好，我想和你交換友情連結，我已經將【Jerry Yang&#39;s Blog】添加到我的博客的友情連結中。我的Blog連結是：">
-                <i class="fas fa-plus fa-fw"></i>
-            </a>
-            
-    </header>
-    <div class='content pure'>
-        <ul class="entry" id="links">
-            
-                <li>
-                    <a class="flat-box" title="https://www.tcumyinfo.tw/" target="_blank" rel="external nofollow noopener noreferrer"
-                        href="https://www.tcumyinfo.tw/">
-                        <div class='name'>
-                            
-                                <img src="https://www.tcumyinfo.tw/include/favicon/favicon.ico">
-                                
-                                        &nbsp;&nbsp;
-                                        慈大校務系統 手機版
-                        </div>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="flat-box" title="https://tcshoj.tw" target="_blank" rel="external nofollow noopener noreferrer"
-                        href="https://tcshoj.tw">
-                        <div class='name'>
-                            
-                                <img src="https://tcshoj.tw/public/website/favicon.ico">
-                                
-                                        &nbsp;&nbsp;
-                                        TCSH Online Judge
-                        </div>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="flat-box" title="https://zerojudge.tw" target="_blank" rel="external nofollow noopener noreferrer"
-                        href="https://zerojudge.tw">
-                        <div class='name'>
-                            
-                                    <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
-                                    
-                                        &nbsp;&nbsp;
-                                        ZeroJudge
-                        </div>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="flat-box" title="https://uva.onlinejudge.org" target="_blank" rel="external nofollow noopener noreferrer"
-                        href="https://uva.onlinejudge.org">
-                        <div class='name'>
-                            
-                                <img src="https://uva.onlinejudge.org/templates/hm_yaml_2_5/img/onlinejudgelogo2.png">
-                                
-                                        &nbsp;&nbsp;
-                                        UVa Online Judge
-                        </div>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="flat-box" title="https://lfswang.github.io" target="_blank" rel="external nofollow noopener noreferrer"
-                        href="https://lfswang.github.io">
-                        <div class='name'>
-                            
-                                <img src="https://lfswang.github.io/images/avatar.jpg">
-                                
-                                        &nbsp;&nbsp;
-                                        LFsWang&#39;s World
-                        </div>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="flat-box" title="https://sunmoon-template.blogspot.com" target="_blank" rel="external nofollow noopener noreferrer"
-                        href="https://sunmoon-template.blogspot.com">
-                        <div class='name'>
-                            
-                                <img src="https://lh5.googleusercontent.com/-7nkY-QRjkc0/AAAAAAAAAAI/AAAAAAAAAC4/nikfDCU1WFo/s80-c/photo.jpg">
-                                
-                                        &nbsp;&nbsp;
-                                        日月卦長的模板庫
-                        </div>
-                    </a>
-                </li>
-                
-        </ul>
-    </div>
-</section>
-    
+</header>
 
-                        </aside>
-                        <script>setLoadingBarProgress(60);</script>
-                    </div>
-                </div>
-                <footer id="footer" class="clearfix">
-    
-        <div class="social-wrapper">
-          
-              
-                  <a href="mailto:tico88612@gmail.com" class="social fas fa-envelope flat-box" target="_blank" rel="external"></a>
-              
-          
-              
-                  <a href="https://www.facebook.com/tico88612" class="social fab fa-facebook flat-box" target="_blank" rel="external"></a>
-              
-          
-              
-                  <a href="https://github.com/tico88612" class="social fab fa-github flat-box" target="_blank" rel="external"></a>
-              
-          
-              
-                  <a href="https://www.instagram.com/jerry_love_linda/" class="social fab fa-instagram flat-box" target="_blank" rel="external"></a>
-              
-          
-        </div>
-    
-    <br>
-    <div>Blog 内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" class="licenses">姓名標示-非商業性-相同方式分享 4.0 國際 (CC BY-NC-SA 4.0)</a></div>
-    <div>本站使用 <a href="https://github.com/xaoxuu/hexo-theme-material-x" target="_blank" class="codename">Material-X</a> 作為主題
+    <div class="content material">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#題目-Problem"><span class="toc-text">題目 Problem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#敘述-Description"><span class="toc-text">敘述 Description</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#輸入-Input"><span class="toc-text">輸入 Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#輸出-Output"><span class="toc-text">輸出 Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#範例輸入-Sample-Input"><span class="toc-text">範例輸入 Sample Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#範例輸出-Sample-Output"><span class="toc-text">範例輸出 Sample Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提示-Hint"><span class="toc-text">提示 Hint</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#題解-Solution"><span class="toc-text">題解 Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#程式碼-Accepted-Code"><span class="toc-text">程式碼 Accepted Code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#後記-Afterword"><span class="toc-text">後記 Afterword</span></a></li></ol>
     </div>
+  </section>
+
+
+      
+    
+  
+    
+      
+      
+        <section class="plain">
+  
+<header class="material">
+  <div><i class="fas fa-bullhorn fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;注意啦～</div>
+  
+</header>
+
+  <div class="content material">
+    <p>主題佈景大更新，改 Code 真的一堆坑</p>
+
+  </div>
+</section>
+
+      
+    
+  
+    
+      
+      
+        
+  <section class="category">
+    
+<header class="material">
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;所有分類</div>
+  
+</header>
+
+    <div class="content material">
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/Hello-World/" href="/categories/Hello-World/"><div class="name">Hello World</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/師培筆記/" href="/categories/師培筆記/"><div class="name">師培筆記</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/師培筆記/師培筆記-教育哲學/" href="/categories/師培筆記/師培筆記-教育哲學/"><div class="name">師培筆記 - 教育哲學</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/演講筆記/" href="/categories/演講筆記/"><div class="name">演講筆記</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/生活/" href="/categories/生活/"><div class="name">生活</div><div class="badge">(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/生活/程式日常/" href="/categories/生活/程式日常/"><div class="name">程式日常</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/解題區/" href="/categories/解題區/"><div class="name">解題區</div><div class="badge">(11)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/解題區/解題報告書-ZeroJudge/" href="/categories/解題區/解題報告書-ZeroJudge/"><div class="name">解題報告書 - ZeroJudge</div><div class="badge">(10)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/解題區/解題報告書-洛谷OJ/" href="/categories/解題區/解題報告書-洛谷OJ/"><div class="name">解題報告書 - 洛谷OJ</div><div class="badge">(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+      
+    
+  
+    
+      
+      
+        
+  <section class="tagcloud">
+    
+<header class="material">
+  <div><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;熱門標籤</div>
+  
+</header>
+
+    <div class="content material">
+      <a href="/tags/Binary-Index-Tree/" style="font-size: 14px; color: #999">Binary Index Tree</a> <a href="/tags/DP/" style="font-size: 24px; color: #555">DP</a> <a href="/tags/Fenwick-Tree/" style="font-size: 14px; color: #999">Fenwick Tree</a> <a href="/tags/Queue/" style="font-size: 14px; color: #999">Queue</a> <a href="/tags/Special-Judge/" style="font-size: 14px; color: #999">Special Judge</a> <a href="/tags/Stack/" style="font-size: 14px; color: #999">Stack</a> <a href="/tags/XOR/" style="font-size: 24px; color: #555">XOR</a> <a href="/tags/二分搜/" style="font-size: 14px; color: #999">二分搜</a> <a href="/tags/倍數判斷法/" style="font-size: 14px; color: #999">倍數判斷法</a> <a href="/tags/公式解/" style="font-size: 14px; color: #999">公式解</a> <a href="/tags/助教/" style="font-size: 14px; color: #999">助教</a> <a href="/tags/卡特蘭數/" style="font-size: 14px; color: #999">卡特蘭數</a> <a href="/tags/字串處理/" style="font-size: 14px; color: #999">字串處理</a> <a href="/tags/學分/" style="font-size: 14px; color: #999">學分</a> <a href="/tags/建表/" style="font-size: 24px; color: #555">建表</a> <a href="/tags/慈濟/" style="font-size: 14px; color: #999">慈濟</a> <a href="/tags/時間複雜度/" style="font-size: 14px; color: #999">時間複雜度</a> <a href="/tags/普悠瑪出軌事件/" style="font-size: 14px; color: #999">普悠瑪出軌事件</a> <a href="/tags/柯P/" style="font-size: 14px; color: #999">柯P</a> <a href="/tags/洞穴寓言/" style="font-size: 14px; color: #999">洞穴寓言</a> <a href="/tags/演講筆記/" style="font-size: 14px; color: #999">演講筆記</a> <a href="/tags/理型論/" style="font-size: 14px; color: #999">理型論</a> <a href="/tags/生活/" style="font-size: 14px; color: #999">生活</a> <a href="/tags/負數取Mod/" style="font-size: 14px; color: #999">負數取Mod</a> <a href="/tags/費氏數列/" style="font-size: 14px; color: #999">費氏數列</a> <a href="/tags/超修/" style="font-size: 14px; color: #999">超修</a> <a href="/tags/進位制/" style="font-size: 14px; color: #999">進位制</a>
+    </div>
+  </section>
+
+
+      
+    
+  
+    
+      
+      
+        <section class="list">
+  
+<header class="material">
+  <div><i class="fas fa-link fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;友情鏈結</div>
+  
+</header>
+
+  <div class="content material">
+    <ul class="entry">
+      
+        <li><a class="flat-box" title="https://www.tcumyinfo.tw/" href="https://www.tcumyinfo.tw/">
+          <div class="name">
+            
+              <img src="https://www.tcumyinfo.tw/include/favicon/favicon.ico" id="round">
+            
+            &nbsp;&nbsp;慈大校務系統 手機版
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://tcshoj.tw" href="https://tcshoj.tw">
+          <div class="name">
+            
+              <img src="https://tcshoj.tw/public/website/favicon.ico" id="round">
+            
+            &nbsp;&nbsp;TCSH Online Judge
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://zerojudge.tw" href="https://zerojudge.tw">
+          <div class="name">
+            
+              <img src="https://i.imgur.com/Zk6Xhfg.png" id="round">
+            
+            &nbsp;&nbsp;ZeroJudge
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://uva.onlinejudge.org" href="https://uva.onlinejudge.org">
+          <div class="name">
+            
+              <img src="https://uva.onlinejudge.org/templates/hm_yaml_2_5/img/onlinejudgelogo2.png" id="round">
+            
+            &nbsp;&nbsp;UVa Online Judge
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://lfswang.github.io" href="https://lfswang.github.io">
+          <div class="name">
+            
+              <img src="https://lfswang.github.io/images/avatar.jpg" id="round">
+            
+            &nbsp;&nbsp;LFsWang's World
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://sunmoon-template.blogspot.com" href="https://sunmoon-template.blogspot.com">
+          <div class="name">
+            
+              <img src="https://lh5.googleusercontent.com/-7nkY-QRjkc0/AAAAAAAAAAI/AAAAAAAAAC4/nikfDCU1WFo/s80-c/photo.jpg" id="round">
+            
+            &nbsp;&nbsp;日月卦長的模板庫
+          </div>
+          
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+      
+    
+  
+
+
+        </aside>
+        <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+    </div>
+    <footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="mailto:tico88612@gmail.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external"></a>
+        
+      
+        
+          <a href="https://www.facebook.com/tico88612" class="social fab fa-facebook flat-btn" target="_blank" rel="external"></a>
+        
+      
+        
+          <a href="https://github.com/tico88612" class="social fab fa-github flat-btn" target="_blank" rel="external"></a>
+        
+      
+        
+          <a href="https://www.instagram.com/jerry_love_linda/" class="social fab fa-instagram flat-btn" target="_blank" rel="external"></a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>博客內容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW">姓名標示-非商業性-相同方式分享 4.0 國際 (CC BY-NC-SA 4.0) 協議</a></p>
+</div>
+  <div>本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a> 作為主題，總訪問量為 <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
+  </div>
 </footer>
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
 
-    <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        "HTML-CSS": {
-            preferredFont: "TeX",
-            availableFonts: ["STIX","TeX"],
-            linebreaks: { automatic:true },
-            EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-        },
-        tex2jax: {
-            inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
-            processEscapes: true,
-            ignoreClass: "tex2jax_ignore|dno",
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        },
-        TeX: {
-            equationNumbers: { autoNumber: "AMS" },
-            noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
-            Macros: { href: "{}" }
-        },
-        messageStyle: "none"
+    <script>setLoadingBarProgress(80);</script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
     });
-</script>
-<!-- 给MathJax元素添加has-jax class -->
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
     });
-</script>
-<!-- 通过连接CDN加载MathJax的js代码 -->
-<script type="text/javascript" async
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
 
 
 
 
-                    <script>setLoadingBarProgress(80);</script>
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
-<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
-<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
-<!-- 访问统计 -->
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
-<script src="/js/jquery.fitvids.js"></script>
+  <script>
+    var disqus_shortname = 'yangjerry-blog';
+    
+      var disqus_url = 'http://blog.yangjerry.tw/2018/09/14/zj-d635/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
 
-    <script>
-        var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
-        var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
-        var ALGOLIA_API_KEY = "";
-        var ALGOLIA_APP_ID = "";
-        var ALGOLIA_INDEX_NAME = "";
-        var AZURE_SERVICE_NAME = "";
-        var AZURE_INDEX_NAME = "";
-        var AZURE_QUERY_KEY = "";
-        var BAIDU_API_ID = "";
-        var SEARCH_SERVICE = "hexo" || "hexo";
-        var ROOT = "/"||"/";
-        if(!ROOT.endsWith('/'))ROOT += '/';
-    </script>
 
+
+
+
+
+  <script src="/js/app.js"></script>
 <script src="/js/search.js"></script>
-<script src="/js/app.js"></script>
-
-
-    
-        <script>
-            var disqus_shortname = 'yangjerry-blog';
-            
-                var disqus_url = 'http://blog.yangjerry.tw/2018/09/14/zj-d635/';
-            
-            (function(){
-                var dsq = document.createElement('script');
-                dsq.type = 'text/javascript';
-                dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-    
-    
-    
 
 
 
 
 
-                        <script>setLoadingBarProgress(100);</script>
-    </body>
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "複製成功";
+  let COPY_FAILURE = "複製失敗";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+    <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
