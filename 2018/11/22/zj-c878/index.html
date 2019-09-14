@@ -23,13 +23,13 @@
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
   
 
   
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9.9/css/style.css">
   
 
   <script>
@@ -45,9 +45,9 @@
 <body>
   
   
-  <header class="l_header material">
+  <header class="l_header pure">
   <div id="loading-bar-wrapper">
-    <div id="loading-bar" class="material"></div>
+    <div id="loading-bar" class="pure"></div>
   </div>
 
 	<div class="wrapper">
@@ -160,9 +160,8 @@
       <div class="l_main">
   
 
-  
-    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
-      
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
 
 
   <section class="meta">
@@ -188,12 +187,14 @@
           
             
   <div class="new-meta-item author">
-    <a href="http://blog.yangjerry.tw" rel="nofollow">
-      
-        <img src="avatar.jpg">
-      
-      <p>Jerry Yang</p>
-    </a>
+    
+      <a href="http://blog.yangjerry.tw" rel="nofollow">
+        
+          <img src="avatar.jpg">
+        
+        <p>Jerry Yang</p>
+      </a>
+    
   </div>
 
 
@@ -253,9 +254,9 @@
   </section>
 
 
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          <h2 id="題目-Problem"><a href="#題目-Problem" class="headerlink" title="題目 Problem"></a>題目 Problem</h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=c878" target="_blank" rel="noopener">題目連結：https://zerojudge.tw/ShowProblem?problemid=c878</a><br><a id="more"></a></p>
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <h2 id="題目-Problem"><a href="#題目-Problem" class="headerlink" title="題目 Problem"></a>題目 Problem</h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=c878" target="_blank" rel="noopener">題目連結：https://zerojudge.tw/ShowProblem?problemid=c878</a><br><a id="more"></a></p>
 <h3 id="敘述-Description"><a href="#敘述-Description" class="headerlink" title="敘述 Description"></a>敘述 Description</h3><p>根據民主政治的精神，政府單位有責任到民意代表所組成的會議中接受質詢與監督。某議會的議長在會期開始前就和政府單位進行下面的溝通：「我們議會希望被質詢的官員每一次都要出席。如果有<strong>兩次以上的請假紀錄</strong>，或是<strong>連續三次以上請代理</strong>的同仁來接受質詢的話，恐怕會造成雙方溝通上的緊張。」<br>請你寫一隻程式來統計一下，當官員需要被質詢 N 次的情況下，有多少種官員出席紀錄可以保持府會的和諧關係。另外，由於答案可能會非常大，請回傳除以 100000007 之後的餘數。</p>
 <h3 id="輸入-Input"><a href="#輸入-Input" class="headerlink" title="輸入 Input"></a>輸入 Input</h3><p>測試資料只有一行，只有一個正整數 N，代表某一官員所要接受質詢的次數。N 的範圍從 2 到 120000。</p>
 <h3 id="輸出-Output"><a href="#輸出-Output" class="headerlink" title="輸出 Output"></a>輸出 Output</h3><p>輸出資料為一個數值，為能夠保持府會和諧的出席紀錄組合數量。</p>
@@ -276,20 +277,20 @@
 <script type="math/tex; mode=display">dp[i][1][2]=dp[i-1][1][1]</script><h3 id="程式碼-Accepted-Code"><a href="#程式碼-Accepted-Code" class="headerlink" title="程式碼 Accepted Code"></a>程式碼 Accepted Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _ ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> dp[<span class="number">120002</span>][<span class="number">2</span>][<span class="number">3</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">	dp[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">	dp[<span class="number">1</span>][<span class="number">0</span>][<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">	dp[<span class="number">1</span>][<span class="number">1</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; <span class="number">120002</span>; ++i)&#123;</span><br><span class="line">		dp[i][<span class="number">0</span>][<span class="number">0</span>]=(dp[i<span class="number">-1</span>][<span class="number">0</span>][<span class="number">0</span>]+dp[i<span class="number">-1</span>][<span class="number">0</span>][<span class="number">1</span>]+dp[i<span class="number">-1</span>][<span class="number">0</span>][<span class="number">2</span>])%<span class="number">100000007</span>;</span><br><span class="line">		dp[i][<span class="number">0</span>][<span class="number">1</span>]=dp[i<span class="number">-1</span>][<span class="number">0</span>][<span class="number">0</span>]%<span class="number">100000007</span>;</span><br><span class="line">		dp[i][<span class="number">0</span>][<span class="number">2</span>]=dp[i<span class="number">-1</span>][<span class="number">0</span>][<span class="number">1</span>]%<span class="number">100000007</span>;</span><br><span class="line">		dp[i][<span class="number">1</span>][<span class="number">0</span>]=(dp[i<span class="number">-1</span>][<span class="number">0</span>][<span class="number">0</span>]+dp[i<span class="number">-1</span>][<span class="number">0</span>][<span class="number">1</span>]+dp[i<span class="number">-1</span>][<span class="number">0</span>][<span class="number">2</span>]+dp[i<span class="number">-1</span>][<span class="number">1</span>][<span class="number">0</span>]+dp[i<span class="number">-1</span>][<span class="number">1</span>][<span class="number">1</span>]+dp[i<span class="number">-1</span>][<span class="number">1</span>][<span class="number">2</span>])%<span class="number">100000007</span>;</span><br><span class="line">		dp[i][<span class="number">1</span>][<span class="number">1</span>]=(dp[i<span class="number">-1</span>][<span class="number">1</span>][<span class="number">0</span>])%<span class="number">100000007</span>;</span><br><span class="line">		dp[i][<span class="number">1</span>][<span class="number">2</span>]=(dp[i<span class="number">-1</span>][<span class="number">1</span>][<span class="number">1</span>])%<span class="number">100000007</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> N;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;N;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;(dp[N][<span class="number">0</span>][<span class="number">0</span>]+dp[N][<span class="number">0</span>][<span class="number">1</span>]+dp[N][<span class="number">0</span>][<span class="number">2</span>]+dp[N][<span class="number">1</span>][<span class="number">0</span>]+dp[N][<span class="number">1</span>][<span class="number">1</span>]+dp[N][<span class="number">1</span>][<span class="number">2</span>])%<span class="number">100000007</span>&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="後記-Afterword"><a href="#後記-Afterword" class="headerlink" title="後記 Afterword"></a>後記 Afterword</h2><p>這題 Sine Wu 也分享了他的解法<br>之後來研究，研究完會貼出來分享<br>台南一中OJ有個類題 <a href="https://toj.tfcis.org/oj/pro/416/" target="_blank" rel="noopener">https://toj.tfcis.org/oj/pro/416/</a><br>測試資料高達 $N=10^9$<br>這種就只能寫矩陣快速冪<br>可以把$O(N)$變成$O(\log N)$</p>
 
-        </div>
+      </div>
+      
+        <br>
         
-          
 
 
   <section class="meta" id="footer-meta">
-    <hr>
     <div class="new-meta-box">
       
         
           <div class="new-meta-item date" itemprop="dateUpdated" datetime="2018-11-22T13:08:05+08:00">
   <a class="notlink">
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>最後更新於 2018年11月22日</p>
+    <p>更新於 2018年11月22日</p>
   </a>
 </div>
 
@@ -298,7 +299,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/DP/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>DP</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/DP/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>DP</p></a></div>
 
 
         
@@ -312,52 +313,52 @@
   </section>
 
 
-        
-        
-            <div class="prev-next">
-                
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一頁</h6>
-                            <h4>
-                                <a href="/2019/01/19/lg-1031/" rel="prev" title="洛谷OJ P1031 均分纸牌">
-                                  
-                                      洛谷OJ P1031 均分纸牌
-                                  
-                                </a>
-                            </h4>
-                            
-                        </span>
-                    </section>
-                
-                
-                    <section class="next">
-                        <span class="art-item-right" aria-hidden="true">
-                            <h6>下一頁&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                            <h4>
-                                <a href="/2018/10/26/zj-b981/" rel="prev" title="b981. YoJudge 預練(時間之章)">
-                                    
-                                        b981. YoJudge 預練(時間之章)
-                                    
-                                </a>
-                            </h4>
-                            
+      
+      
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一頁</h6>
+                          <h4>
+                              <a href="/2019/01/19/lg-1031/" rel="prev" title="洛谷OJ P1031 均分纸牌">
                                 
-                                <h6 class="tags">
-                                    <a class="tag" href="/tags/字串處理/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>字串處理</a>
-                                </h6>
-                            
-                        </span>
-                    </section>
-                
-            </div>
-        
-      </section>
-    </article>
-  
+                                    洛谷OJ P1031 均分纸牌
+                                
+                              </a>
+                          </h4>
+                          
+                      </span>
+                  </section>
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一頁&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/2018/10/26/zj-b981/" rel="prev" title="b981. YoJudge 預練(時間之章)">
+                                  
+                                      b981. YoJudge 預練(時間之章)
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/tags/字串處理/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 字串處理</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
 
-  
-    <!-- 显示推荐文章和评论 -->
+
+
+  <!-- 显示推荐文章和评论 -->
 
 
 
@@ -378,7 +379,6 @@
   </article>
 
 
-  
 
 
 
@@ -438,11 +438,13 @@
     
     
       
+      
         
           
           
-            <section class="widget author">
-  <div class="content material">
+            
+              <section class="widget author">
+  <div class="content pure">
     
       <div class="avatar">
         <img class="avatar" src="/avatar.jpg">
@@ -482,62 +484,106 @@
   </div>
 </section>
 
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
           
         
       
         
           
           
+        
+          
+          
             
+              
   <section class="widget toc-wrapper">
     
-<header class="material">
+<header class="pure">
   <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目錄</div>
   
-    <div class="wrapper"><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
   
 </header>
 
-    <div class="content material">
+    <div class="content pure">
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#題目-Problem"><span class="toc-text">題目 Problem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#敘述-Description"><span class="toc-text">敘述 Description</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#輸入-Input"><span class="toc-text">輸入 Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#輸出-Output"><span class="toc-text">輸出 Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#範例輸入-Sample-Input"><span class="toc-text">範例輸入 Sample Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#範例輸出-Sample-Output"><span class="toc-text">範例輸出 Sample Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提示-Hint"><span class="toc-text">提示 Hint</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#題解-Solution"><span class="toc-text">題解 Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#程式碼-Accepted-Code"><span class="toc-text">程式碼 Accepted Code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#後記-Afterword"><span class="toc-text">後記 Afterword</span></a></li></ol>
     </div>
   </section>
 
 
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
           
         
       
         
           
           
-            <section class="widget plain">
-  
-<header class="material">
-  <div><i class="fas fa-bullhorn fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;注意啦～</div>
-  
-</header>
-
-  <div class="content material">
-    <p>主題佈景大更新，改 Code 真的一堆坑</p>
-
-  </div>
-</section>
-
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
           
         
       
+        
+          
+          
+        
+          
+          
+        
+          
+          
         
           
           
             
+              
   <section class="widget category">
     
-<header class="material">
+<header class="pure">
   <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分類</div>
   
 </header>
 
-    <div class="content material">
+    <div class="content pure">
       <ul class="entry">
         
           <li><a class="flat-box" title="/categories/Hello-World/" href="/categories/Hello-World/"><div class="name">Hello World</div><div class="badge">(1)</div></a></li>
@@ -569,40 +615,80 @@
   </section>
 
 
+            
+          
+        
+          
+          
+        
+          
           
         
       
         
           
           
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
             
+              
   <section class="widget tagcloud">
     
-<header class="material">
+<header class="pure">
   <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;熱門標籤</div>
   
 </header>
 
-    <div class="content material">
+    <div class="content pure">
       <a href="/tags/2019/" style="font-size: 14px; color: #999">2019</a> <a href="/tags/Binary-Index-Tree/" style="font-size: 14px; color: #999">Binary Index Tree</a> <a href="/tags/Bit-運算/" style="font-size: 14px; color: #999">Bit 運算</a> <a href="/tags/DP/" style="font-size: 19px; color: #777">DP</a> <a href="/tags/Fenwick-Tree/" style="font-size: 14px; color: #999">Fenwick Tree</a> <a href="/tags/Google-Code-Jam/" style="font-size: 14px; color: #999">Google Code Jam</a> <a href="/tags/IO-優化/" style="font-size: 14px; color: #999">IO 優化</a> <a href="/tags/Queue/" style="font-size: 14px; color: #999">Queue</a> <a href="/tags/Special-Judge/" style="font-size: 14px; color: #999">Special Judge</a> <a href="/tags/Stack/" style="font-size: 14px; color: #999">Stack</a> <a href="/tags/XOR/" style="font-size: 19px; color: #777">XOR</a> <a href="/tags/二分搜/" style="font-size: 14px; color: #999">二分搜</a> <a href="/tags/倍數判斷法/" style="font-size: 14px; color: #999">倍數判斷法</a> <a href="/tags/公式解/" style="font-size: 14px; color: #999">公式解</a> <a href="/tags/助教/" style="font-size: 14px; color: #999">助教</a> <a href="/tags/卡特蘭數/" style="font-size: 14px; color: #999">卡特蘭數</a> <a href="/tags/字串處理/" style="font-size: 14px; color: #999">字串處理</a> <a href="/tags/學分/" style="font-size: 14px; color: #999">學分</a> <a href="/tags/建表/" style="font-size: 24px; color: #555">建表</a> <a href="/tags/慈濟/" style="font-size: 14px; color: #999">慈濟</a> <a href="/tags/時間複雜度/" style="font-size: 14px; color: #999">時間複雜度</a> <a href="/tags/普悠瑪出軌事件/" style="font-size: 14px; color: #999">普悠瑪出軌事件</a> <a href="/tags/柯P/" style="font-size: 14px; color: #999">柯P</a> <a href="/tags/洞穴寓言/" style="font-size: 14px; color: #999">洞穴寓言</a> <a href="/tags/演講筆記/" style="font-size: 14px; color: #999">演講筆記</a> <a href="/tags/理型論/" style="font-size: 14px; color: #999">理型論</a> <a href="/tags/生活/" style="font-size: 14px; color: #999">生活</a> <a href="/tags/負數取Mod/" style="font-size: 14px; color: #999">負數取Mod</a> <a href="/tags/費氏數列/" style="font-size: 14px; color: #999">費氏數列</a> <a href="/tags/超修/" style="font-size: 14px; color: #999">超修</a> <a href="/tags/進位制/" style="font-size: 14px; color: #999">進位制</a>
     </div>
   </section>
 
 
+            
+          
+        
+          
           
         
       
         
           
           
-            <section class="widget list">
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class="widget list">
   
-<header class="material">
+<header class="pure">
   <div><i class="fas fa-link fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;友情鏈結</div>
   
 </header>
 
-  <div class="content material">
+  <div class="content pure">
     <ul class="entry">
       
         <li><a class="flat-box" title="https://www.tcumyinfo.tw/" href="https://www.tcumyinfo.tw/">
@@ -669,6 +755,27 @@
   </div>
 </section>
 
+            
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
           
         
       
@@ -749,6 +856,7 @@
     if(!ROOT.endsWith('/'))ROOT += '/';
   </script>
 
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
 
 
   <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
@@ -781,6 +889,31 @@
 
 
 
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
 
 
 
@@ -805,10 +938,10 @@
 
 
 
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/app.js"></script>
 
 
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/search.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/search.js"></script>
 
 
 
