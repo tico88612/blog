@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>e378. 撞來撞去</title>
+      <link href="/2019/09/18/zj-e378/"/>
+      <url>/2019/09/18/zj-e378/</url>
+      
+        <content type="html"><![CDATA[<h2 id="題目-Problem"><a href="#題目-Problem" class="headerlink" title="題目 Problem"></a>題目 Problem</h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=e378" target="_blank" rel="noopener">題目連結：https://zerojudge.tw/ShowProblem?problemid=e378</a><br><a id="more"></a></p><h3 id="敘述-Description"><a href="#敘述-Description" class="headerlink" title="敘述 Description"></a>敘述 Description</h3><p>現在地板上有兩個立方體和一面垂直於地板的牆壁</p><p>離牆壁較遠的立方體以等速撞上另一個立方體,使其撞上牆壁並以原路徑反彈</p><p>假設沒有摩擦力且所有碰撞均為完美彈性碰撞(也就是沒有能量散失)</p><p>且離牆壁較遠的立方體的質量是離牆壁較近的立方體的10x倍</p><p>給你x,請求出總共會碰撞幾次</p><h3 id="輸入-Input"><a href="#輸入-Input" class="headerlink" title="輸入 Input"></a>輸入 Input</h3><p>每一行一個非負偶數x(x&lt;923)</p><h3 id="輸出-Output"><a href="#輸出-Output" class="headerlink" title="輸出 Output"></a>輸出 Output</h3><p>總共會碰撞幾次</p><h3 id="範例輸入-Sample-Input"><a href="#範例輸入-Sample-Input" class="headerlink" title="範例輸入 Sample Input"></a>範例輸入 Sample Input</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0</span><br></pre></td></tr></table></figure><h3 id="範例輸出-Sample-Output"><a href="#範例輸出-Sample-Output" class="headerlink" title="範例輸出 Sample Output"></a>範例輸出 Sample Output</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure><h3 id="提示-Hint"><a href="#提示-Hint" class="headerlink" title="提示 Hint"></a>提示 Hint</h3><p>輸出的數字可能很大,但是跟大數運算無關</p><p>還有,拜託知道的人不要破梗</p><h2 id="題解-Solution"><a href="#題解-Solution" class="headerlink" title="題解 Solution"></a>題解 Solution</h2><p>想必都點到這裡了，應該是解不出來的，對吧？<br>那就來破梗吧！答案就在作者身上</p><p>……<br>……<br>……</p><p>什麼？你還是不知道？<br>給你看這個影片吧！</p><div class="video-container"><iframe src="//www.youtube.com/embed/8z5yUP2C9g4" frameborder="0" allowfullscreen></iframe></div><p>至於為什麼，參考影片就放這裡，自己看吧！</p><p>3B1B —— 偏向數學解答（有中文 CC 字幕）</p><div class="video-container"><iframe src="//www.youtube.com/embed/jsYwFizhncE" frameborder="0" allowfullscreen></iframe></div><p>佑來了 —— 偏向物理解答</p><div class="video-container"><iframe src="//www.youtube.com/embed/bNBT5w6zRYc" frameborder="0" allowfullscreen></iframe></div><h3 id="程式碼-Accepted-Code"><a href="#程式碼-Accepted-Code" class="headerlink" title="程式碼 Accepted Code"></a>程式碼 Accepted Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    Author: Jerry Yang C.H. (tico88612)</span></span><br><span class="line"><span class="comment">    Date: 2019/9/18</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> pi = <span class="string">"314159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706798214808651328230664709384460955058223172535940812848111745028410270193852110555964462294895493038196442881097566593344612847564823378678316527120190914564856692346034861045432664821339360726024914127372458700660631558817488152092096282925409171536436789259036001133053054882046652138414695194151160943305727036575959195309218611738193261179310511854807446237996274956735188575272489122793818301194912983367336244065664308602139494639522473719070217986094370277053921717629317675238467481846766940513"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/********** Good Luck :) **********/</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios_base::sync_with_stdio(<span class="number">0</span>);<span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> N;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; N)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= N / <span class="number">2</span>; i++)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; pi[i];</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="後記-Afterword"><a href="#後記-Afterword" class="headerlink" title="後記 Afterword"></a>後記 Afterword</h2><p>看到這題目我還在想這到底是在<del>供三小</del><br>在看到兩個立方體、碰撞、$10^{x}$<br>才想起以前有看過類似的東西</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 解題區 </category>
+          
+          <category> 解題報告書 - ZeroJudge </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 建表 </tag>
+            
+            <tag> PI </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>e338. 放暑假了!!!!!...可惜要上暑輔...開學後還要模考...</title>
       <link href="/2019/08/24/zj-e338/"/>
       <url>/2019/08/24/zj-e338/</url>

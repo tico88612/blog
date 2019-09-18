@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>c731. 走路時要算數學 | Jerry Yang&#39;s Blog</title>
+  <title>Tag: PI | Jerry Yang&#39;s Blog</title>
   
   
 
@@ -157,11 +157,25 @@
 
   <div class="l_body nocover">
     <div class='body-wrapper'>
-      <div class="l_main">
+      
+<div class="l_main">
   
-
-  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
     
+      
+  <section class="post-list">
+    
+      
+        
+          
+        
+      
+    
+    
+      
+        
+          <div class="post-wrapper">
+            <article class="post reveal ">
+  
 
 
   <section class="meta">
@@ -170,13 +184,11 @@
     <div class="meta" id="header-meta">
       
         
-  
-    <h1 class="title">
-      <a href="/2018/09/26/zj-c731/">
-        c731. 走路時要算數學
-      </a>
-    </h1>
-  
+  <h2 class="title">
+    <a href="/2019/09/18/zj-e378/">
+      e378. 撞來撞去
+    </a>
+  </h2>
 
 
       
@@ -204,7 +216,7 @@
             <div class="new-meta-item date">
   <a class="notlink">
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2018-09-26</p>
+    <p>2019-09-18</p>
   </a>
 </div>
 
@@ -225,24 +237,6 @@
         
           
             
-  
-    <div class="new-meta-item browse busuanzi">
-      <a class="notlink">
-        <i class="fas fa-eye" aria-hidden="true"></i>
-        <p>
-          <span id="busuanzi_value_page_pv">
-            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
-          </span>
-        </p>
-      </a>
-    </div>
-  
-
-
-          
-        
-          
-            
 
           
         
@@ -254,138 +248,41 @@
   </section>
 
 
-    <section class="article typo">
-      <div class="article-entry" itemprop="articleBody">
-        <h2 id="題目-Problem"><a href="#題目-Problem" class="headerlink" title="題目 Problem"></a>題目 Problem</h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=c731" target="_blank" rel="noopener">題目連結：https://zerojudge.tw/ShowProblem?problemid=c731</a><br><a id="more"></a></p>
-<h3 id="敘述-Description"><a href="#敘述-Description" class="headerlink" title="敘述 Description"></a>敘述 Description</h3><p>在一個二維平面上，從原點出發，每一步等於一單位長，每一次只能向右走、向上走或向左走。請問恰好走 n 步且不經過已走的點共有多少種走法？</p>
-<h3 id="輸入-Input"><a href="#輸入-Input" class="headerlink" title="輸入 Input"></a>輸入 Input</h3><p>輸入僅一行，為正整數 n （ 0 &lt; n &lt;= 10000 ）。</p>
-<h3 id="輸出-Output"><a href="#輸出-Output" class="headerlink" title="輸出 Output"></a>輸出 Output</h3><p>一個整數, 表示方案數。由於答案可能很大，你只需要輸出這個答案 mod 12345的值 ( 換句話說，輸出這個答案除以12345的餘數 )。</p>
-<h3 id="範例輸入-Sample-Input"><a href="#範例輸入-Sample-Input" class="headerlink" title="範例輸入 Sample Input"></a>範例輸入 Sample Input</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">【範例輸入一】</span><br><span class="line">2</span><br><span class="line"></span><br><span class="line">【範例輸入二】</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
-<h3 id="範例輸出-Sample-Output"><a href="#範例輸出-Sample-Output" class="headerlink" title="範例輸出 Sample Output"></a>範例輸出 Sample Output</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">【範例輸出一】</span><br><span class="line">7</span><br><span class="line"></span><br><span class="line">【範例輸出二】</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
-<h3 id="提示-Hint"><a href="#提示-Hint" class="headerlink" title="提示 Hint"></a>提示 Hint</h3><p>【分數】</p>
-<p>20% n &lt;= 5   </p>
-<p>40% n &lt;= 10</p>
-<p>60% n &lt;= 100</p>
-<p>80% n &lt;= 1000</p>
-<p>100% n &lt;= 10000</p>
-<h2 id="題解-Solution"><a href="#題解-Solution" class="headerlink" title="題解 Solution"></a>題解 Solution</h2><p>經典DP問題，如果不要走到重複的點，就不要往回走<br>如果要往上走，不用考慮會不會重複的點，全部加起來就對了<br>如果要往左走，前一步就不能往右走。<br>如果要往右走，前一步就不能往左走。<br>然後記得每次算完 $Mod\ 12345$ 就好</p>
-<h3 id="程式碼-Accepted-Code"><a href="#程式碼-Accepted-Code" class="headerlink" title="程式碼 Accepted Code"></a>程式碼 Accepted Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _ ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> up[<span class="number">10001</span>]=&#123;<span class="number">1</span>&#125;,left[<span class="number">10001</span>]=&#123;<span class="number">1</span>&#125;,right[<span class="number">10001</span>]=&#123;<span class="number">1</span>&#125;;</span><br><span class="line">	<span class="keyword">int</span> N;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;N;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;N;i++)&#123;</span><br><span class="line">		up[i]=up[i<span class="number">-1</span>]+left[i<span class="number">-1</span>]+right[i<span class="number">-1</span>];</span><br><span class="line">		left[i]=up[i<span class="number">-1</span>]+left[i<span class="number">-1</span>];</span><br><span class="line">		right[i]=up[i<span class="number">-1</span>]+right[i<span class="number">-1</span>];</span><br><span class="line">		up[i]%=<span class="number">12345</span>;</span><br><span class="line">		left[i]%=<span class="number">12345</span>;</span><br><span class="line">		right[i]%=<span class="number">12345</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;(up[N<span class="number">-1</span>]+left[N<span class="number">-1</span>]+right[N<span class="number">-1</span>])%<span class="number">12345</span>&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="後記-Afterword"><a href="#後記-Afterword" class="headerlink" title="後記 Afterword"></a>後記 Afterword</h2><p>數字應該能再開大一點啊，還以為這題有什麼陷阱 = =<br>如果沒有意外，下一篇應該是寫演講筆記<br>以前演講聽一聽就算了，不過這次我想寫出來<br>講者是誰？敬請期待</p>
-
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h2 id="題目-Problem"><a href="#題目-Problem" class="headerlink" title="題目 Problem"></a>題目 Problem</h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=e378" target="_blank" rel="noopener">題目連結：https://zerojudge.tw/ShowProblem?problemid=e378</a><br>
+      
+        <div class="readmore">
+          <a href="/2019/09/18/zj-e378/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            閱讀全文
+          </a>
+        </div>
+      
+    </p></div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/建表/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 建表</a>
+        
+          <a href="/tags/PI/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> PI</a>
+        
       </div>
-      
-        <br>
-        
-
-
-  <section class="meta" id="footer-meta">
-    <div class="new-meta-box">
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-01-19T13:59:39+08:00">
-  <a class="notlink">
-    <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新於 2019年1月19日</p>
-  </a>
-</div>
-
-        
-      
-        
-          
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/DP/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>DP</p></a></div>
-
-
-        
-      
-        
-          
-
-        
-      
-    </div>
+    
   </section>
+</article>
 
-
-      
-      
-          <div class="prev-next">
-              
-                  <section class="prev">
-                      <span class="art-item-left">
-                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一頁</h6>
-                          <h4>
-                              <a href="/2018/10/17/kp-tcu-note/" rel="prev" title="演講筆記：醫人文 —— 我的故事">
-                                
-                                    演講筆記：醫人文 —— 我的故事
-                                
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/演講筆記/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 演講筆記</a> <a class="tag" href="/tags/柯P/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 柯P</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
-              
-                  <section class="next">
-                      <span class="art-item-right" aria-hidden="true">
-                          <h6>下一頁&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                          <h4>
-                              <a href="/2018/09/14/zj-d635/" rel="prev" title="d635. 幸運777？luck">
-                                  
-                                      d635. 幸運777？luck
-                                  
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/進位制/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 進位制</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
           </div>
+        
       
-    </section>
-  </article>
-
-
-
-  <!-- 显示推荐文章和评论 -->
-
-
-
-  <article class="post white-box comments">
-    <section class="article typo">
-      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;評論</h4>
-      
-        <section id="comments">
-          <div id="disqus_thread">
-            <div><i class="fas fa-exclamation-triangle">&nbsp;無法加載Disqus評論系統，請確保您的網絡能夠正常訪問。</i></div>
-          </div>
-        </section>
-      
-      
-      
-      
-    </section>
-  </article>
-
-
-
-
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-  <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+    
+  </section>
+  
+    
+    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+    
+    
+      <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     "HTML-CSS": {
@@ -421,17 +318,13 @@
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
+    
+
+  
 
 
-
-  <script>
-    window.subData = {
-      title: 'c731. 走路時要算數學',
-      tools: true
-    }
-  </script>
-
-
+    
+  
 </div>
 <aside class="l_side">
   
@@ -497,165 +390,6 @@
           
         
           
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-            
-              
-  <section class="widget toc-wrapper">
-    
-<header class="pure">
-  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目錄</div>
-  
-    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
-  
-</header>
-
-    <div class="content pure">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#題目-Problem"><span class="toc-text">題目 Problem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#敘述-Description"><span class="toc-text">敘述 Description</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#輸入-Input"><span class="toc-text">輸入 Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#輸出-Output"><span class="toc-text">輸出 Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#範例輸入-Sample-Input"><span class="toc-text">範例輸入 Sample Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#範例輸出-Sample-Output"><span class="toc-text">範例輸出 Sample Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提示-Hint"><span class="toc-text">提示 Hint</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#題解-Solution"><span class="toc-text">題解 Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#程式碼-Accepted-Code"><span class="toc-text">程式碼 Accepted Code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#後記-Afterword"><span class="toc-text">後記 Afterword</span></a></li></ol>
-    </div>
-  </section>
-
-
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              
-  <section class="widget category">
-    
-<header class="pure">
-  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分類</div>
-  
-</header>
-
-    <div class="content pure">
-      <ul class="entry">
-        
-          <li><a class="flat-box" title="/categories/Hello-World/" href="/categories/Hello-World/"><div class="name">Hello World</div><div class="badge">(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/師培筆記/" href="/categories/師培筆記/"><div class="name">師培筆記</div><div class="badge">(1)</div></a></li>
-        
-          <li><a class="flat-box child" title="/categories/師培筆記/師培筆記-教育哲學/" href="/categories/師培筆記/師培筆記-教育哲學/"><div class="name">師培筆記 - 教育哲學</div><div class="badge">(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/比賽心得區/" href="/categories/比賽心得區/"><div class="name">比賽心得區</div><div class="badge">(1)</div></a></li>
-        
-          <li><a class="flat-box child" title="/categories/比賽心得區/Google-Code-Jam/" href="/categories/比賽心得區/Google-Code-Jam/"><div class="name">Google Code Jam</div><div class="badge">(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/演講筆記/" href="/categories/演講筆記/"><div class="name">演講筆記</div><div class="badge">(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/生活/" href="/categories/生活/"><div class="name">生活</div><div class="badge">(2)</div></a></li>
-        
-          <li><a class="flat-box child" title="/categories/生活/程式/" href="/categories/生活/程式/"><div class="name">程式</div><div class="badge">(1)</div></a></li>
-        
-          <li><a class="flat-box child" title="/categories/生活/程式日常/" href="/categories/生活/程式日常/"><div class="name">程式日常</div><div class="badge">(0)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/解題區/" href="/categories/解題區/"><div class="name">解題區</div><div class="badge">(13)</div></a></li>
-        
-          <li><a class="flat-box child" title="/categories/解題區/解題報告書-ZeroJudge/" href="/categories/解題區/解題報告書-ZeroJudge/"><div class="name">解題報告書 - ZeroJudge</div><div class="badge">(12)</div></a></li>
-        
-          <li><a class="flat-box child" title="/categories/解題區/解題報告書-洛谷OJ/" href="/categories/解題區/解題報告書-洛谷OJ/"><div class="name">解題報告書 - 洛谷OJ</div><div class="badge">(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-            
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              
-  <section class="widget tagcloud">
-    
-<header class="pure">
-  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;熱門標籤</div>
-  
-</header>
-
-    <div class="content pure">
-      <a href="/tags/2019/" style="font-size: 14px; color: #999">2019</a> <a href="/tags/Binary-Index-Tree/" style="font-size: 14px; color: #999">Binary Index Tree</a> <a href="/tags/Bit-運算/" style="font-size: 14px; color: #999">Bit 運算</a> <a href="/tags/DP/" style="font-size: 19px; color: #777">DP</a> <a href="/tags/Fenwick-Tree/" style="font-size: 14px; color: #999">Fenwick Tree</a> <a href="/tags/Google-Code-Jam/" style="font-size: 14px; color: #999">Google Code Jam</a> <a href="/tags/IO-優化/" style="font-size: 14px; color: #999">IO 優化</a> <a href="/tags/PI/" style="font-size: 14px; color: #999">PI</a> <a href="/tags/Queue/" style="font-size: 14px; color: #999">Queue</a> <a href="/tags/Special-Judge/" style="font-size: 14px; color: #999">Special Judge</a> <a href="/tags/Stack/" style="font-size: 14px; color: #999">Stack</a> <a href="/tags/XOR/" style="font-size: 19px; color: #777">XOR</a> <a href="/tags/二分搜/" style="font-size: 14px; color: #999">二分搜</a> <a href="/tags/倍數判斷法/" style="font-size: 14px; color: #999">倍數判斷法</a> <a href="/tags/公式解/" style="font-size: 14px; color: #999">公式解</a> <a href="/tags/助教/" style="font-size: 14px; color: #999">助教</a> <a href="/tags/卡特蘭數/" style="font-size: 14px; color: #999">卡特蘭數</a> <a href="/tags/字串處理/" style="font-size: 14px; color: #999">字串處理</a> <a href="/tags/學分/" style="font-size: 14px; color: #999">學分</a> <a href="/tags/建表/" style="font-size: 24px; color: #555">建表</a> <a href="/tags/慈濟/" style="font-size: 14px; color: #999">慈濟</a> <a href="/tags/時間複雜度/" style="font-size: 14px; color: #999">時間複雜度</a> <a href="/tags/普悠瑪出軌事件/" style="font-size: 14px; color: #999">普悠瑪出軌事件</a> <a href="/tags/柯P/" style="font-size: 14px; color: #999">柯P</a> <a href="/tags/洞穴寓言/" style="font-size: 14px; color: #999">洞穴寓言</a> <a href="/tags/演講筆記/" style="font-size: 14px; color: #999">演講筆記</a> <a href="/tags/理型論/" style="font-size: 14px; color: #999">理型論</a> <a href="/tags/生活/" style="font-size: 14px; color: #999">生活</a> <a href="/tags/負數取Mod/" style="font-size: 14px; color: #999">負數取Mod</a> <a href="/tags/費氏數列/" style="font-size: 14px; color: #999">費氏數列</a> <a href="/tags/超修/" style="font-size: 14px; color: #999">超修</a> <a href="/tags/進位制/" style="font-size: 14px; color: #999">進位制</a>
-    </div>
-  </section>
-
-
-            
           
         
           
@@ -773,6 +507,106 @@
           
         
           
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class="widget category">
+    
+<header class="pure">
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分類</div>
+  
+</header>
+
+    <div class="content pure">
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/Hello-World/" href="/categories/Hello-World/"><div class="name">Hello World</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/師培筆記/" href="/categories/師培筆記/"><div class="name">師培筆記</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/師培筆記/師培筆記-教育哲學/" href="/categories/師培筆記/師培筆記-教育哲學/"><div class="name">師培筆記 - 教育哲學</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/比賽心得區/" href="/categories/比賽心得區/"><div class="name">比賽心得區</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/比賽心得區/Google-Code-Jam/" href="/categories/比賽心得區/Google-Code-Jam/"><div class="name">Google Code Jam</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/演講筆記/" href="/categories/演講筆記/"><div class="name">演講筆記</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/生活/" href="/categories/生活/"><div class="name">生活</div><div class="badge">(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/生活/程式/" href="/categories/生活/程式/"><div class="name">程式</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/生活/程式日常/" href="/categories/生活/程式日常/"><div class="name">程式日常</div><div class="badge">(0)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/解題區/" href="/categories/解題區/"><div class="name">解題區</div><div class="badge">(13)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/解題區/解題報告書-ZeroJudge/" href="/categories/解題區/解題報告書-ZeroJudge/"><div class="name">解題報告書 - ZeroJudge</div><div class="badge">(12)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/解題區/解題報告書-洛谷OJ/" href="/categories/解題區/解題報告書-洛谷OJ/"><div class="name">解題報告書 - 洛谷OJ</div><div class="badge">(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class="widget tagcloud">
+    
+<header class="pure">
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;熱門標籤</div>
+  
+</header>
+
+    <div class="content pure">
+      <a href="/tags/2019/" style="font-size: 14px; color: #999">2019</a> <a href="/tags/Binary-Index-Tree/" style="font-size: 14px; color: #999">Binary Index Tree</a> <a href="/tags/Bit-運算/" style="font-size: 14px; color: #999">Bit 運算</a> <a href="/tags/DP/" style="font-size: 19px; color: #777">DP</a> <a href="/tags/Fenwick-Tree/" style="font-size: 14px; color: #999">Fenwick Tree</a> <a href="/tags/Google-Code-Jam/" style="font-size: 14px; color: #999">Google Code Jam</a> <a href="/tags/IO-優化/" style="font-size: 14px; color: #999">IO 優化</a> <a href="/tags/PI/" style="font-size: 14px; color: #999">PI</a> <a href="/tags/Queue/" style="font-size: 14px; color: #999">Queue</a> <a href="/tags/Special-Judge/" style="font-size: 14px; color: #999">Special Judge</a> <a href="/tags/Stack/" style="font-size: 14px; color: #999">Stack</a> <a href="/tags/XOR/" style="font-size: 19px; color: #777">XOR</a> <a href="/tags/二分搜/" style="font-size: 14px; color: #999">二分搜</a> <a href="/tags/倍數判斷法/" style="font-size: 14px; color: #999">倍數判斷法</a> <a href="/tags/公式解/" style="font-size: 14px; color: #999">公式解</a> <a href="/tags/助教/" style="font-size: 14px; color: #999">助教</a> <a href="/tags/卡特蘭數/" style="font-size: 14px; color: #999">卡特蘭數</a> <a href="/tags/字串處理/" style="font-size: 14px; color: #999">字串處理</a> <a href="/tags/學分/" style="font-size: 14px; color: #999">學分</a> <a href="/tags/建表/" style="font-size: 24px; color: #555">建表</a> <a href="/tags/慈濟/" style="font-size: 14px; color: #999">慈濟</a> <a href="/tags/時間複雜度/" style="font-size: 14px; color: #999">時間複雜度</a> <a href="/tags/普悠瑪出軌事件/" style="font-size: 14px; color: #999">普悠瑪出軌事件</a> <a href="/tags/柯P/" style="font-size: 14px; color: #999">柯P</a> <a href="/tags/洞穴寓言/" style="font-size: 14px; color: #999">洞穴寓言</a> <a href="/tags/演講筆記/" style="font-size: 14px; color: #999">演講筆記</a> <a href="/tags/理型論/" style="font-size: 14px; color: #999">理型論</a> <a href="/tags/生活/" style="font-size: 14px; color: #999">生活</a> <a href="/tags/負數取Mod/" style="font-size: 14px; color: #999">負數取Mod</a> <a href="/tags/費氏數列/" style="font-size: 14px; color: #999">費氏數列</a> <a href="/tags/超修/" style="font-size: 14px; color: #999">超修</a> <a href="/tags/進位制/" style="font-size: 14px; color: #999">進位制</a>
+    </div>
+  </section>
+
+
+            
           
         
           
@@ -917,20 +751,6 @@
 
 
 
-
-  <script>
-    var disqus_shortname = 'yangjerry-blog';
-    
-      var disqus_url = 'http://blog.yangjerry.tw/2018/09/26/zj-c731/';
-    
-    (function(){
-      var dsq = document.createElement('script');
-      dsq.type = 'text/javascript';
-      dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  </script>
 
 
 
