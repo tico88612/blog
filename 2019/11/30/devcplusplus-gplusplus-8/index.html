@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Dev-C++ 手動更新編譯器至 G++ 8.2.0 | Jerry Yang&#39;s Blog</title>
+  
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  
+  <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          Jerry Yang's Blog
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="https://yangjerry.tw"
+                  
+                  
+                  id="https:yangjerry.tw">
+									<i class='fas fa-home fa-fw'></i>&nbsp;首頁
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-rss fa-fw'></i>&nbsp;Blog
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives/"
+                  
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;紀錄
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="https://www.twitch.tv/tico88612"
+                  
+                  
+                  id="https:www.twitch.tvtico88612">
+									<i class='fab fa-twitch fa-fw'></i>&nbsp;解題直播
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜尋" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="https://yangjerry.tw"
+                
+                
+                id="https:yangjerry.tw">
+								<i class='fas fa-home fa-fw'></i>&nbsp;首頁
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-rss fa-fw'></i>&nbsp;Blog
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives/"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;紀錄
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="https://www.twitch.tv/tico88612"
+                
+                
+                id="https:www.twitch.tvtico88612">
+								<i class='fab fa-twitch fa-fw'></i>&nbsp;解題直播
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2019/11/30/devcplusplus-gplusplus-8/">
+        Dev-C++ 手動更新編譯器至 G++ 8.2.0
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="http://blog.yangjerry.tw" rel="nofollow">
+        
+          <img src="avatar.jpg">
+        
+        <p>Jerry Yang</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-11-30</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/生活/程式/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>生活&nbsp;/&nbsp;程式</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>這個筆記做一下記錄，我在 Windows 10 上的更新</p>
+<a id="more"></a>
+
+<p>很多人都知道 Dev-C++ 已經算是不更新的 IDE 了<br>但我在 Windows 寫 C / C++ 還是用 Dev-C++<br>可是版本停留在 TDM-GCC 4.9.2（Windows 最新的版本為 G++ 8.2.0）<br>新版的標準想使用都不能用<br>我們直接來手動更新吧！</p>
+<h2 id="1-安裝-MinGW"><a href="#1-安裝-MinGW" class="headerlink" title="1. 安裝 MinGW"></a>1. 安裝 MinGW</h2><p>進到 <a href="http://www.mingw.org/" target="_blank" rel="noopener">MinGW 官網</a> 點入 Downloads</p>
+<p>進入後請你找到 <strong>mingw-get-setup.exe</strong> 並下載</p>
+<p><img src="mingw-download.png" alt></p>
+<p><a href="https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/" target="_blank" rel="noopener">下載連結參考</a></p>
+<p>就開始 Install</p>
+<p><img src="mingw-install.png" alt></p>
+<p>選擇路徑，需要記得位置！</p>
+<p><img src="mingw-location.png" alt></p>
+<p>點下去就會開始安裝，安裝完畢後就開啟 <strong>MinGW Installation Manager</strong></p>
+<p><img src="mingw-imlist.png" alt></p>
+<p>把 mingw32-base-bin 跟 mingw32-gcc-g++-bin 這兩個 <strong>Mark for Installation</strong></p>
+<p><img src="mingw-mark.png" alt></p>
+<p><img src="mingw-imresult.png" alt></p>
+<p>然後就 <strong>Apply Changes</strong> </p>
+<p><img src="mingw-apply.png" alt></p>
+<p>點下 <strong>Apply</strong></p>
+<p>安裝完畢後，進到你安裝的路徑</p>
+<p><img src="win-location.png" alt></p>
+<p>進入 bin 資料夾，複製路徑</p>
+<p><img src="win-bin.png" alt></p>
+<p>編輯環境變數 Path</p>
+<p><img src="win-path.png" alt></p>
+<p>加入到環境變數 Path</p>
+<p><img src="win-path-add.png" alt></p>
+<p>確定後，打開「命令提示字元」輸入 <code>g++ -v</code></p>
+<p><img src="g++-v.png" alt></p>
+<p>如果顯示這些文字，就是安裝成功</p>
+<h2 id="2-Dev-C-加入-MinGW-G-8-2-0"><a href="#2-Dev-C-加入-MinGW-G-8-2-0" class="headerlink" title="2. Dev-C++ 加入 MinGW G++ 8.2.0"></a>2. Dev-C++ 加入 MinGW G++ 8.2.0</h2><p>打開 Dev-C++ 工具 $\rightarrow$ 編譯器選項</p>
+<p><img src="dev-compile.png" alt></p>
+<p>按到第三個 $+$</p>
+<p><img src="dev-3plus.png" alt></p>
+<p>選擇你剛剛 MinGW 安裝的地方</p>
+<p><img src="dev-choose.png" alt></p>
+<p>成功的話，上方就會自己變更為 MinGW GCC 8.2.0</p>
+<p><img src="dev-gcc8.2.0.png" alt></p>
+<p>因為舊版 Dev-C++ 語言標準只有停留在 C++11，我們下方命令列手動加入 <code>-std=c++17</code></p>
+<p><img src="dev-c17.png" alt></p>
+<p>按下確定後，就可以來測試 Sample Code 了</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;tuple&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">std</span>::tuple&lt;<span class="keyword">char</span>, <span class="keyword">int</span>, <span class="keyword">bool</span>&gt; mytuple()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">char</span> a = <span class="string">'a'</span>;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">123</span>;</span><br><span class="line">    <span class="keyword">bool</span> b = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">std</span>::make_tuple(a, i, b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">auto</span> [a, i, b] = mytuple();</span><br><span class="line">	<span class="comment">// Structured Bindings in C++17 is available.</span></span><br><span class="line">	<span class="comment">// Using in C++14 will get warning.</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"Hello C++17 "</span> &lt;&lt; a &lt;&lt; <span class="string">" "</span> &lt;&lt; i &lt;&lt; <span class="string">" "</span> &lt;&lt; b &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="dev-testc17.png" alt></p>
+<h2 id="3-注意事項"><a href="#3-注意事項" class="headerlink" title="3. 注意事項"></a>3. 注意事項</h2><p>如果你是競賽選手，你應該知道 GNU 的編譯器有個 <strong>bits/stdc++.h</strong> 引入所有函式庫的黑魔法</p>
+<p>但是直接使用會 Compile Error</p>
+<p><img src="dev-c17-warning.png" alt></p>
+<p>個人爬了一下 Reddit 的 C++ 版</p>
+<p>得知 C++17 的 <code>filesystem</code> 跟 <code>charconv</code> 在 Windows 是無法得到原生支援的[1]</p>
+<p>只有 Unix 的相關成員才能做得到（E.g. Mac / Linux）</p>
+<p>所以前面 <strong>bits/stdc++.h</strong> include 進來以前先把 <code>filesystem</code> 跟 <code>charconv</code> Define 掉</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _GLIBCXX_FILESYSTEM 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _GLIBCXX_CHARCONV 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">std</span>::tuple&lt;<span class="keyword">char</span>, <span class="keyword">int</span>, <span class="keyword">bool</span>&gt; mytuple()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">char</span> a = <span class="string">'a'</span>;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">123</span>;</span><br><span class="line">    <span class="keyword">bool</span> b = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">std</span>::make_tuple(a, i, b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">auto</span> [a, i, b] = mytuple();</span><br><span class="line">	<span class="comment">// Structured Bindings in C++17 is available.</span></span><br><span class="line">	<span class="comment">// Using in C++14 will get warning.</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"Hello C++17 "</span> &lt;&lt; a &lt;&lt; <span class="string">" "</span> &lt;&lt; i &lt;&lt; <span class="string">" "</span> &lt;&lt; b &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="後記-Afterword"><a href="#後記-Afterword" class="headerlink" title="後記 Afterword"></a>後記 Afterword</h2><p>我後來發現 Code::Blocks 用 C++17 的 <strong>bits/stdc++.h</strong> 也有同個問題。</p>
+<p>果然真的沒有原生 Windows 支援（唯一希望應該是 MSVC++ 的編譯器）</p>
+<p>我想這就是 MinGW 一直沒有讓 G++ 上去 9.2.0 的關係吧！</p>
+
+      </div>
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-12-01T15:07:08+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>更新於 2019年12月1日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Dev-C/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Dev-C++</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/更新/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>更新</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/程式/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>程式</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/競賽/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>競賽</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一頁&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/2019/11/23/zj-c421/" rel="prev" title="c421. pA 雲端列印">
+                                  
+                                      c421. pA 雲端列印
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/tags/multiset/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> multiset</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX","TeX"],
+      linebreaks: { automatic:true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+      Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+  });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
+    }
+  });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+
+  <script>
+    window.subData = {
+      title: 'Dev-C++ 手動更新編譯器至 G++ 8.2.0',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/avatar.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="mailto:tico88612@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://www.facebook.com/tico88612"
+              class="social fab fa-facebook flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/tico88612"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://www.instagram.com/jerry_love_linda/"
+              class="social fab fa-instagram flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://www.linkedin.com/in/tico88612/"
+              class="social fab fa-linkedin-in flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目錄</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-安裝-MinGW"><span class="toc-text">1. 安裝 MinGW</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Dev-C-加入-MinGW-G-8-2-0"><span class="toc-text">2. Dev-C++ 加入 MinGW G++ 8.2.0</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-注意事項"><span class="toc-text">3. 注意事項</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#後記-Afterword"><span class="toc-text">後記 Afterword</span></a></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分類</div>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/Hello-World/" href="/categories/Hello-World/"><div class='name'>Hello World</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/師培筆記/" href="/categories/師培筆記/"><div class='name'>師培筆記</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/師培筆記/師培筆記-教育哲學/" href="/categories/師培筆記/師培筆記-教育哲學/"><div class='name'>師培筆記 - 教育哲學</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/比賽心得區/" href="/categories/比賽心得區/"><div class='name'>比賽心得區</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/比賽心得區/Google-Code-Jam/" href="/categories/比賽心得區/Google-Code-Jam/"><div class='name'>Google Code Jam</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/演講筆記/" href="/categories/演講筆記/"><div class='name'>演講筆記</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/生活/" href="/categories/生活/"><div class='name'>生活</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/生活/程式/" href="/categories/生活/程式/"><div class='name'>程式</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/生活/程式日常/" href="/categories/生活/程式日常/"><div class='name'>程式日常</div><div class='badge'>(0)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/解題區/" href="/categories/解題區/"><div class='name'>解題區</div><div class='badge'>(14)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/解題區/解題報告書-ZeroJudge/" href="/categories/解題區/解題報告書-ZeroJudge/"><div class='name'>解題報告書 - ZeroJudge</div><div class='badge'>(13)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/解題區/解題報告書-洛谷OJ/" href="/categories/解題區/解題報告書-洛谷OJ/"><div class='name'>解題報告書 - 洛谷OJ</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;熱門標籤</div>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/2019/" style="font-size: 14px; color: #999">2019</a> <a href="/tags/Binary-Index-Tree/" style="font-size: 14px; color: #999">Binary Index Tree</a> <a href="/tags/Bit-運算/" style="font-size: 14px; color: #999">Bit 運算</a> <a href="/tags/DP/" style="font-size: 19px; color: #777">DP</a> <a href="/tags/Dev-C/" style="font-size: 14px; color: #999">Dev-C++</a> <a href="/tags/Digi/" style="font-size: 14px; color: #999">Digi</a> <a href="/tags/Fenwick-Tree/" style="font-size: 14px; color: #999">Fenwick Tree</a> <a href="/tags/Google-Code-Jam/" style="font-size: 14px; color: #999">Google Code Jam</a> <a href="/tags/IO-優化/" style="font-size: 14px; color: #999">IO 優化</a> <a href="/tags/NCPU/" style="font-size: 14px; color: #999">NCPU</a> <a href="/tags/PI/" style="font-size: 14px; color: #999">PI</a> <a href="/tags/Queue/" style="font-size: 14px; color: #999">Queue</a> <a href="/tags/Special-Judge/" style="font-size: 14px; color: #999">Special Judge</a> <a href="/tags/Stack/" style="font-size: 14px; color: #999">Stack</a> <a href="/tags/XOR/" style="font-size: 19px; color: #777">XOR</a> <a href="/tags/multiset/" style="font-size: 14px; color: #999">multiset</a> <a href="/tags/二分搜/" style="font-size: 14px; color: #999">二分搜</a> <a href="/tags/倍數判斷法/" style="font-size: 14px; color: #999">倍數判斷法</a> <a href="/tags/公式解/" style="font-size: 14px; color: #999">公式解</a> <a href="/tags/助教/" style="font-size: 14px; color: #999">助教</a> <a href="/tags/卡特蘭數/" style="font-size: 14px; color: #999">卡特蘭數</a> <a href="/tags/問題/" style="font-size: 14px; color: #999">問題</a> <a href="/tags/字串處理/" style="font-size: 14px; color: #999">字串處理</a> <a href="/tags/學分/" style="font-size: 14px; color: #999">學分</a> <a href="/tags/工研院/" style="font-size: 14px; color: #999">工研院</a> <a href="/tags/建表/" style="font-size: 24px; color: #555">建表</a> <a href="/tags/慈濟/" style="font-size: 14px; color: #999">慈濟</a> <a href="/tags/新手/" style="font-size: 14px; color: #999">新手</a> <a href="/tags/時間複雜度/" style="font-size: 14px; color: #999">時間複雜度</a> <a href="/tags/普悠瑪出軌事件/" style="font-size: 14px; color: #999">普悠瑪出軌事件</a> <a href="/tags/暑假/" style="font-size: 14px; color: #999">暑假</a> <a href="/tags/更新/" style="font-size: 14px; color: #999">更新</a> <a href="/tags/柯P/" style="font-size: 14px; color: #999">柯P</a> <a href="/tags/洞穴寓言/" style="font-size: 14px; color: #999">洞穴寓言</a> <a href="/tags/清大暑期程式競賽集訓營/" style="font-size: 14px; color: #999">清大暑期程式競賽集訓營</a> <a href="/tags/演講筆記/" style="font-size: 14px; color: #999">演講筆記</a> <a href="/tags/理型論/" style="font-size: 14px; color: #999">理型論</a> <a href="/tags/生活/" style="font-size: 14px; color: #999">生活</a> <a href="/tags/程式/" style="font-size: 19px; color: #777">程式</a> <a href="/tags/競賽/" style="font-size: 14px; color: #999">競賽</a> <a href="/tags/負數取Mod/" style="font-size: 14px; color: #999">負數取Mod</a> <a href="/tags/費氏數列/" style="font-size: 14px; color: #999">費氏數列</a> <a href="/tags/超修/" style="font-size: 14px; color: #999">超修</a> <a href="/tags/進位制/" style="font-size: 14px; color: #999">進位制</a> <a href="/tags/鋼琴/" style="font-size: 14px; color: #999">鋼琴</a>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget list'>
+  
+<header class='pure'>
+  <div><i class="fas fa-link fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;友情鏈結</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="entry">
+      
+        <li><a class="flat-box" title="https://www.tcumyinfo.tw/" href="https://www.tcumyinfo.tw/"
+          
+          
+          >
+          <div class='name'>
+            
+              <img src="https://www.tcumyinfo.tw/include/favicon/favicon.ico" id="round">
+            
+            &nbsp;&nbsp;慈大校務系統 手機版
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://tcshoj.tw" href="https://tcshoj.tw"
+          
+          
+          >
+          <div class='name'>
+            
+              <img src="https://tcshoj.tw/public/website/favicon.ico" id="round">
+            
+            &nbsp;&nbsp;TCSH Online Judge
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://zerojudge.tw" href="https://zerojudge.tw"
+          
+          
+          >
+          <div class='name'>
+            
+              <img src="https://i.imgur.com/Zk6Xhfg.png" id="round">
+            
+            &nbsp;&nbsp;ZeroJudge
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://uva.onlinejudge.org" href="https://uva.onlinejudge.org"
+          
+          
+          >
+          <div class='name'>
+            
+              <img src="https://uva.onlinejudge.org/templates/hm_yaml_2_5/img/onlinejudgelogo2.png" id="round">
+            
+            &nbsp;&nbsp;UVa Online Judge
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://lfswang.github.io" href="https://lfswang.github.io"
+          
+          
+          >
+          <div class='name'>
+            
+              <img src="https://lfswang.github.io/images/avatar.jpg" id="round">
+            
+            &nbsp;&nbsp;LFsWang's World
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="https://sunmoon-template.blogspot.com" href="https://sunmoon-template.blogspot.com"
+          
+          
+          >
+          <div class='name'>
+            
+              <img src="https://lh5.googleusercontent.com/-7nkY-QRjkc0/AAAAAAAAAAI/AAAAAAAAAC4/nikfDCU1WFo/s80-c/photo.jpg" id="round">
+            
+            &nbsp;&nbsp;日月卦長的模板庫
+          </div>
+          
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="mailto:tico88612@gmail.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://www.facebook.com/tico88612"
+            class="social fab fa-facebook flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/tico88612"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://www.instagram.com/jerry_love_linda/"
+            class="social fab fa-instagram flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://www.linkedin.com/in/tico88612/"
+            class="social fab fa-linkedin-in flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>博客內容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW">姓名標示-非商業性-相同方式分享 4.0 國際 (CC BY-NC-SA 4.0) 協議</a></p>
+</div>
+  <div>
+    本站使用
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    作為主題
+    
+      ，
+      總訪問量為
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      次
+    
+    。
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "複製成功";
+  let COPY_FAILURE = "複製失敗";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>複製</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
