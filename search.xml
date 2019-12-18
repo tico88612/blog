@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Flutter 心得 和 URL 網址無法打開之踩雷</title>
+      <link href="/2019/12/18/flutter-url-encoder/"/>
+      <url>/2019/12/18/flutter-url-encoder/</url>
+      
+        <content type="html"><![CDATA[<p>又是一種踩雷日常，想看看開發自己的 App 是什麼感覺</p><a id="more"></a><p>可是我又不想兩個平台語言都學<br>Android 陣營就是 Kotlin、Java<br>iOS 陣營就是 Swift、Objective-C</p><p>於是就選了 Google 旗下最新的框架 —— Flutter</p><h2 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h2><p>整體架構有點自由，自由到我都不知道 model 要放哪 LUL<br>UI 也很好編排，除非你要改一些位置<br>相關的 Code 也可以去 Google 找找看<br>我原本只想寫 UI<br>結果不小心就把資料一起 Get 進來了</p><p>而且整體 Code 也沒有不多</p><h2 id="URL-網址無法打開之踩雷"><a href="#URL-網址無法打開之踩雷" class="headerlink" title="URL 網址無法打開之踩雷"></a>URL 網址無法打開之踩雷</h2><p>前陣子才到的雷就是網址問題<br>cURL 拿到的是網址含有中文字<br>但是呢！瀏覽器會很有“智慧”的幫你轉成 URL Encode<br>但在 Dart 裡面就沒有這種“智慧”東西了<br>前面要求我們要先 <code>canLaunch</code><br>才可以 <code>launch</code> 網址</p><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">_launchURL(<span class="built_in">String</span> url) <span class="keyword">async</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">await</span> canLaunch(url)) &#123;</span><br><span class="line">        <span class="keyword">await</span> launch(url);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="string">'Could not launch $url'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>可是寫完之後要呼叫網址檔案時，就會 throw exception<br>結果後來觀察到用 PHP cURL 拿到的網址，全數字沒問題，但出現中文就會 throw exception<br>我還在想是不是中文問題，還去 Google <code>url_launcher flutter chinese</code><br>但發現根本沒有相關結果<br>直到我看到有個結果是網址有空格，要轉成 URL Encode<br>我才想到，要先轉成 URL Encode 瀏覽器才知道<br>於是就改成這樣</p><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">_launchURL(<span class="built_in">String</span> url) <span class="keyword">async</span> &#123;</span><br><span class="line">    url = <span class="built_in">Uri</span>.encodeFull(url); <span class="comment">// url to url encode.</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">await</span> canLaunch(url)) &#123;</span><br><span class="line">        <span class="keyword">await</span> launch(url);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="string">'Could not launch $url'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>這個坑，害我想了一整晚，原來是 Encode 問題啊！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 程式 </category>
+          
+          <category> Flutter </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Flutter </tag>
+            
+            <tag> url_launcher </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Dev-C++ 手動更新編譯器至 G++ 8.2.0</title>
       <link href="/2019/11/30/devcplusplus-gplusplus-8/"/>
       <url>/2019/11/30/devcplusplus-gplusplus-8/</url>
