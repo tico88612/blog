@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>ITSA 基礎題庫 —— 題目17. 英文斷詞</title>
+      <link href="/2020/06/01/itsa-basic-17/"/>
+      <url>/2020/06/01/itsa-basic-17/</url>
+      
+        <content type="html"><![CDATA[<h2 id="題目-Problem"><a href="#題目-Problem" class="headerlink" title="題目 Problem"></a>題目 Problem</h2><p><a href="https://e-tutor.itsa.org.tw/e-Tutor/mod/programming/view.php?a=15924" target="_blank" rel="noopener">題目連結：https://e-tutor.itsa.org.tw/e-Tutor/mod/programming/view.php?a=15924</a></p><a id="more"></a><h3 id="敘述-Description"><a href="#敘述-Description" class="headerlink" title="敘述 Description"></a>敘述 Description</h3><p>斷詞在自然語言的研究上是個很重要的步驟，主要就是將關鍵字從句子中斷出，英文的斷詞較為簡單，就根據句子中的空格將英文字隔開。</p><h3 id="輸入-Input"><a href="#輸入-Input" class="headerlink" title="輸入 Input"></a>輸入 Input</h3><p>輸入一句英文敘述句。 字元數 $\leq 1000$。</p><h3 id="輸出-Output"><a href="#輸出-Output" class="headerlink" title="輸出 Output"></a>輸出 Output</h3><p>將輸入的句子進行斷詞，將斷出的關鍵字依照句子中的出現排序列印出。全部轉成小寫，列印出的關鍵字不得重複，關鍵字間以一個空格隔開，最後一個關鍵字後面進行換行。例如輸入 How do you do ，則輸出 how do you 。</p><h3 id="範例輸入-Sample-Input"><a href="#範例輸入-Sample-Input" class="headerlink" title="範例輸入 Sample Input"></a>範例輸入 Sample Input</h3><pre><code class="hljs plain">How do you do</code></pre><h3 id="範例輸出-Sample-Output"><a href="#範例輸出-Sample-Output" class="headerlink" title="範例輸出 Sample Output"></a>範例輸出 Sample Output</h3><pre><code class="hljs plain">how do you</code></pre><h3 id="提示-Hint"><a href="#提示-Hint" class="headerlink" title="提示 Hint"></a>提示 Hint</h3><h2 id="題解-Solution"><a href="#題解-Solution" class="headerlink" title="題解 Solution"></a>題解 Solution</h2><p>C++ 題解程式還蠻多的，我來寫個 C 語言能解開的版本</p><p>C 語言可以使用 <code>string.h</code> String Token (<code>strtok</code>) 去解決<br>我們來看 <code>strtok</code> 函式原型</p><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">char</span>* <span class="hljs-title">strtok</span><span class="hljs-params">( <span class="hljs-keyword">char</span>* str, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* delim )</span></span>;</code></pre><p>引數傳要切割的字串 <code>str</code>、切割的關鍵字元 <code>delim</code></p><p>回傳的是字元指標，就是位於切割字元之間的字串<br>如果拿到 <code>NULL</code> 就代表已經沒了</p><p>但是，如果想再搜尋同一句話的下一個切割字元之間字串，<code>str</code> 就傳 <code>NULL</code> 即可</p><p>通常我會搭配 while 迴圈去完成</p><p>這題要先把所有字串轉為小寫<br>第一次做 <code>strtok</code> 的時候要 <code>str</code> 引數傳需要被切割的字串<br>第二次以後 <code>str</code> 引數直接傳 <code>NULL</code><br>直到回傳值為 <code>NULL</code> 跳出迴圈</p><p>while 迴圈裡，需要搜尋這個字串是否存在</p><p>搭配 <code>strcmp</code> 去完成</p><p>不存在則於迴圈的最後 <code>strcpy</code> 進去</p><p>最後再列出所有字串</p><h3 id="程式碼-Accepted-Code"><a href="#程式碼-Accepted-Code" class="headerlink" title="程式碼 Accepted Code"></a>程式碼 Accepted Code</h3><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;  </span></span><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;string.h&gt;  </span></span><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;ctype.h&gt;  </span></span><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;      <span class="hljs-keyword">char</span> enter[<span class="hljs-number">10000</span>];      fgets(enter, <span class="hljs-number">9999</span>, <span class="hljs-built_in">stdin</span>);      <span class="hljs-keyword">int</span> len = <span class="hljs-built_in">strlen</span>(enter);      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span> ; i &lt; len; i++) &#123;          enter[i] = <span class="hljs-built_in">tolower</span>(enter[i]);      &#125;      <span class="hljs-keyword">char</span> ans[<span class="hljs-number">1000</span>][<span class="hljs-number">1000</span>];      <span class="hljs-keyword">int</span> nowAns = <span class="hljs-number">0</span>;      <span class="hljs-keyword">char</span> *pch = strtok(enter, <span class="hljs-string">" \r\n"</span>);  <span class="hljs-comment">// 爛坑！！！</span>    <span class="hljs-keyword">while</span>(pch != <span class="hljs-literal">NULL</span>) &#123;          <span class="hljs-keyword">int</span> judge = <span class="hljs-number">1</span>;          <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nowAns; i++) &#123;              <span class="hljs-keyword">if</span> (<span class="hljs-built_in">strcmp</span>(ans[i], pch) == <span class="hljs-number">0</span>) &#123;                  judge = <span class="hljs-number">0</span>;                  <span class="hljs-keyword">break</span>;              &#125;          &#125;          <span class="hljs-keyword">if</span> (judge) &#123;              <span class="hljs-built_in">strcpy</span>(ans[nowAns], pch);              nowAns++;          &#125;          pch = strtok(<span class="hljs-literal">NULL</span>, <span class="hljs-string">" \r\n"</span>);  <span class="hljs-comment">// 爛坑！！！</span>    &#125;      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nowAns; i++) &#123;          <span class="hljs-keyword">if</span>(i)              <span class="hljs-built_in">printf</span>(<span class="hljs-string">" "</span>);          <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%s"</span>, ans[i]);     &#125;      <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);      <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;  &#125;</code></pre><h2 id="後記-Afterword"><a href="#後記-Afterword" class="headerlink" title="後記 Afterword"></a>後記 Afterword</h2><p>Line 13 / 26 我寫了一個註解叫做爛坑！！</p><p>一開始寫了的 Token 如果只有空格跟換行（沒有 <code>\r</code>）<br>會直接吃兩個 AC、兩個 WA，根本不知道問題在哪<br><code>\r</code> 我就直接順手加進去，就 <code>AC</code> 了</p><p>理當來說換行為 <code>\n</code><br>但 Windows 換行為 <code>\r\n</code><br>我覺得測試資料可能有些是 Windows 手動產生</p><p>之前有個月賽題目賽後的測資有錯<br>歷史紀錄沒有人 <code>AC</code> 那題（放題目的人不會覺得詭異嗎？）<br>E-mail 反應後也是音訊全無</p><p>FB 社團裡的人也說這個平台實在是不敢領教<br>這篇特別紀錄一下<del>很坑的通靈之路</del></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 解題區 </category>
+          
+          <category> 解題報告書 - ITSA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> strtok </tag>
+            
+            <tag> ITSA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>c779. 106北二4.盆栽展覽</title>
       <link href="/2020/04/17/zj-c779/"/>
       <url>/2020/04/17/zj-c779/</url>
