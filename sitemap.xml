@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.yangjerry.tw/2020/06/02/undefined-behavior-in-c/</loc>
+    
+    <lastmod>2020-06-02T09:04:45.532Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.yangjerry.tw/2020/06/01/itsa-basic-17/</loc>
     
     <lastmod>2020-06-01T08:55:40.953Z</lastmod>

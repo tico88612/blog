@@ -18,7 +18,7 @@
   <meta name="description" content>
   <meta name="author" content="Jerry Yang">
   <meta name="keywords" content>
-  <title>c779. 106北二4.盆栽展覽 - Jerry Yang&#39;s Blog</title>
+  <title>關於 Undefined Behavior 這件事... - Jerry Yang&#39;s Blog</title>
 
   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css">
@@ -148,8 +148,8 @@
               
                 <div class="mt-3 post-meta">
                   <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-04-17 12:20">
-                    星期五, 四月 17日 2020, 12:20 中午
+                  <time datetime="2020-06-02 17:02">
+                    星期二, 六月 2日 2020, 5:02 下午
                   </time>
                 </div>
               
@@ -159,7 +159,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    1.2k 字
+                    895 字
                   </span>
                 
 
@@ -169,7 +169,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    19
+                    10
                      分鐘
                   </span>
                 
@@ -205,160 +205,58 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <h2 id="題目-Problem"><a href="#題目-Problem" class="headerlink" title="題目 Problem"></a>題目 Problem</h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=c779" target="_blank" rel="noopener">題目連結：https://zerojudge.tw/ShowProblem?problemid=c779</a></p>
+              <blockquote>
+<p>本篇文章我在以前的 Blogspot 有寫過，不過沒什麼點閱率 QAQ<br>現在好不容易這裡有一些觀看<br>再加上前陣子也有看到 Undefined Behavior 寫法被討論<br>我就把舊文章移植過來，順便把語病、說法做個修正</p>
+</blockquote>
+<p>前幾天在看FB的文章時，看到了一篇貼文</p>
 <a id="more"></a>
 
-<h3 id="敘述-Description"><a href="#敘述-Description" class="headerlink" title="敘述 Description"></a>敘述 Description</h3><p>盆栽協會為了推廣盆栽藝術將舉辦盆栽比賽與展覽。在展覽時，將依照比賽編號來依序擺放盆栽，但由於參賽盆栽的高度不一，為了方便評審評分與來賓觀賞，盆栽協會將訂做展示架來擺放盆栽，以便讓相鄰盆栽的高度差異不超過最大高度差。為了節省訂做成本，盆栽協會希望訂做的展示架高度越低越好。請你寫一個程式，根據相鄰最大高度差與每個盆栽的高度，計算擺放這排盆栽所需的最低展示架總高度。</p>
-<p>舉例說明，以下例子中，第一列共有五個盆栽的高度。若相鄰最大高度差為 $5$，則第二列為每個盆栽的最低展示架高度,所以總高度為$0+118+153+0+282=553$。若相鄰最大高度差為 $50$，則第三列為每個盆栽的最低展示架高度，所以總高度為 $0+67+108+0+237=412$。</p>
-<table>
-<thead>
-<tr>
-<th align="center">盆栽高度</th>
-<th align="center">401</th>
-<th align="center">284</th>
-<th align="center">254</th>
-<th align="center">412</th>
-<th align="center">125</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">相鄰最大高度差為 5</td>
-<td align="center">0</td>
-<td align="center">118</td>
-<td align="center">153</td>
-<td align="center">0</td>
-<td align="center">282</td>
-</tr>
-<tr>
-<td align="center">相鄰最大高度差為 50</td>
-<td align="center">0</td>
-<td align="center">67</td>
-<td align="center">108</td>
-<td align="center">0</td>
-<td align="center">237</td>
-</tr>
-</tbody></table>
-<h3 id="輸入-Input"><a href="#輸入-Input" class="headerlink" title="輸入 Input"></a>輸入 Input</h3><p>測試資料有兩行。<br>第一行有 $A (1 \leq A \leq 30)$ 個以一個空格(white space)隔開的整數 $B (1 \leq B \leq 2000)$ 代表盆栽高度。<br>第二行有一個整數 $C (1 \leq C \leq 2000)$，代表相鄰最大高度差。</p>
-<h3 id="輸出-Output"><a href="#輸出-Output" class="headerlink" title="輸出 Output"></a>輸出 Output</h3><p>請輸出 1 個整數，代表擺放這排盆栽所需的最低展示架總高度。</p>
-<h3 id="範例輸入-Sample-Input"><a href="#範例輸入-Sample-Input" class="headerlink" title="範例輸入 Sample Input"></a>範例輸入 Sample Input</h3><pre><code class="hljs undefined">範例輸入一：
-401 284 254 412 125
-50
-
-範例輸入二：
-1010 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000
-5</code></pre>
-
-<h3 id="範例輸出-Sample-Output"><a href="#範例輸出-Sample-Output" class="headerlink" title="範例輸出 Sample Output"></a>範例輸出 Sample Output</h3><pre><code class="hljs undefined">範例輸出一：
-412
-
-範例輸出二：
-5</code></pre>
-
-<h3 id="提示-Hint"><a href="#提示-Hint" class="headerlink" title="提示 Hint"></a>提示 Hint</h3><h2 id="題解-Solution"><a href="#題解-Solution" class="headerlink" title="題解 Solution"></a>題解 Solution</h2><p>每個數字兩個之間有沒有差距超過相鄰最大高度差</p>
-<p>我過程至少 $A$ 次，第一次可能還沒有跟上最高高度</p>
-<h3 id="程式碼-Accepted-Code"><a href="#程式碼-Accepted-Code" class="headerlink" title="程式碼 Accepted Code"></a>程式碼 Accepted Code</h3><pre><code class="hljs cpp"><span class="hljs-comment">/*
-    Author: Jerry Yang C.H. (tico88612)
-    Date: 2020/4/9
-*/</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<p><img src="problem.jpg" srcset="/img/loading.gif" alt></p>
+<blockquote>
+<p>第八題不會有太大的問題 6*6*6=216<br>第九題，答案是多少？</p>
+</blockquote>
+<p>那篇貼文討論蠻熱烈的～（可是這讓我有點擔心……）<br>一般人第一個直覺是把++n算完後代入x，就會變成6*6*6=216，可是沒有在選項內……？<br>那就來執行一次看看吧</p>
+<p>統一以這份 Code 執行</p>
+<pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;cstdio&gt;</span></span>
 <span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
-<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;
-<span class="hljs-keyword">typedef</span> pair&lt;ll, ll&gt; pii;
-<span class="hljs-keyword">typedef</span> pair&lt;<span class="hljs-keyword">double</span>,<span class="hljs-keyword">double</span>&gt; pdd;
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> SQ(i) ((i)*(i))</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MEM(a, b) memset(a, (b), sizeof(a))</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> SZ(i) int(i.size())</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> FOR(i, j, k, in) for (int i=j ; i&lt;k ; i+=in)</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> RFOR(i, j, k, in) for (int i=j ; i&gt;=k ; i-=in)</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> REP(i, j) FOR(i, 0, j, 1)</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> REP1(i,j) FOR(i, 1, j+1, 1)</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> RREP(i, j) RFOR(i, j, 0, 1)</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ALL(_a) _a.begin(),_a.end()</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MP make_pair</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> PB push_back</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> EB emplace_back</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> X first</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> Y second</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">ifdef</span> tmd</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> debug(...) do&#123;\
-    fprintf(stderr,<span class="hljs-meta-string">"%s - %d (%s) = "</span>,__PRETTY_FUNCTION__,__LINE__,#__VA_ARGS__);\
-    _do(__VA_ARGS__);\
-&#125;while(0)</span>
-<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;<span class="hljs-keyword">void</span> _do(T &amp;&amp;_x)&#123;<span class="hljs-built_in">cerr</span>&lt;&lt;_x&lt;&lt;<span class="hljs-built_in">endl</span>;&#125;
-<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T,<span class="hljs-keyword">typename</span> ...S&gt; <span class="hljs-keyword">void</span> _do(T &amp;&amp;_x,S &amp;&amp;...<span class="hljs-keyword">_t</span>)&#123;<span class="hljs-built_in">cerr</span>&lt;&lt;_x&lt;&lt;<span class="hljs-string">" ,"</span>;_do(<span class="hljs-keyword">_t</span>...);&#125;
-<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> _a,<span class="hljs-keyword">typename</span> _b&gt; ostream&amp; <span class="hljs-keyword">operator</span> &lt;&lt; (ostream &amp;_s,<span class="hljs-keyword">const</span> pair&lt;_a,_b&gt; &amp;_p)&#123;<span class="hljs-keyword">return</span> _s&lt;&lt;<span class="hljs-string">"("</span>&lt;&lt;_p.X&lt;&lt;<span class="hljs-string">","</span>&lt;&lt;_p.Y&lt;&lt;<span class="hljs-string">")"</span>;&#125;
-<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> It&gt; ostream&amp; _OUTC(ostream &amp;_s,It _ita,It _itb)
-&#123;
-    _s&lt;&lt;<span class="hljs-string">"&#123;"</span>;
-    <span class="hljs-keyword">for</span>(It _it=_ita;_it!=_itb;_it++)
-    &#123;
-        _s&lt;&lt;(_it==_ita?<span class="hljs-string">""</span>:<span class="hljs-string">","</span>)&lt;&lt;*_it;
-    &#125;
-    _s&lt;&lt;<span class="hljs-string">"&#125;"</span>;
-    <span class="hljs-keyword">return</span> _s;
-&#125;
-<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> _a&gt; ostream &amp;<span class="hljs-keyword">operator</span> &lt;&lt; (ostream &amp;_s,<span class="hljs-built_in">vector</span>&lt;_a&gt; &amp;_c)&#123;<span class="hljs-keyword">return</span> _OUTC(_s,ALL(_c));&#125;
-<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> _a&gt; ostream &amp;<span class="hljs-keyword">operator</span> &lt;&lt; (ostream &amp;_s,<span class="hljs-built_in">set</span>&lt;_a&gt; &amp;_c)&#123;<span class="hljs-keyword">return</span> _OUTC(_s,ALL(_c));&#125;
-<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> _a&gt; ostream &amp;<span class="hljs-keyword">operator</span> &lt;&lt; (ostream &amp;_s,<span class="hljs-built_in">deque</span>&lt;_a&gt; &amp;_c)&#123;<span class="hljs-keyword">return</span> _OUTC(_s,ALL(_c));&#125;
-<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> _a,<span class="hljs-keyword">typename</span> _b&gt; ostream &amp;<span class="hljs-keyword">operator</span> &lt;&lt; (ostream &amp;_s,<span class="hljs-built_in">map</span>&lt;_a,_b&gt; &amp;_c)&#123;<span class="hljs-keyword">return</span> _OUTC(_s,ALL(_c));&#125;
-<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> <span class="hljs-keyword">_t</span>&gt; <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">pary</span><span class="hljs-params">(<span class="hljs-keyword">_t</span> _a,<span class="hljs-keyword">_t</span> _b)</span></span>&#123;_OUTC(<span class="hljs-built_in">cerr</span>,_a,_b);<span class="hljs-built_in">cerr</span>&lt;&lt;<span class="hljs-built_in">endl</span>;&#125;
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> IOS()</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">else</span></span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> debug(...)</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> pary(...)</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> endl <span class="hljs-meta-string">'\n'</span></span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> IOS() ios_base::sync_with_stdio(0);cin.tie(0)</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
-
-<span class="hljs-keyword">const</span> ll MOD = <span class="hljs-number">1000000007L</span>L;
-<span class="hljs-keyword">const</span> ll INF = <span class="hljs-number">0x3f3f3f3f3f3f3f3f</span>LL;
-<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> iNF = <span class="hljs-number">0x3f3f3f3f</span>;
-<span class="hljs-comment">// const ll MAXN = </span>
-
-<span class="hljs-comment">/********** Good Luck :) **********/</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> CUBE(x) x*x*x</span>
 <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
 </span>&#123;
-    IOS();
-    ll enter[<span class="hljs-number">35</span>] = &#123;<span class="hljs-number">0</span>&#125;, t = <span class="hljs-number">0</span>;
-    <span class="hljs-keyword">while</span>(<span class="hljs-built_in">cin</span> &gt;&gt; enter[t++]);
-    t--;
-    ll c = enter[--t];
-    ll ans = <span class="hljs-number">0</span>;
-    REP(i, t)&#123;
-        REP(j, t)&#123;
-            <span class="hljs-keyword">if</span> (j == <span class="hljs-number">0</span> &amp;&amp; j != t - <span class="hljs-number">1</span>) &#123;
-                <span class="hljs-keyword">if</span> (j + <span class="hljs-number">1</span> &lt; t &amp;&amp; enter[j] &lt; enter[j + <span class="hljs-number">1</span>] - c)&#123;
-                    ans += enter[j + <span class="hljs-number">1</span>] - c - enter[j];
-                    enter[j] = enter[j + <span class="hljs-number">1</span>] - c;
-                &#125;
-            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (j == t - <span class="hljs-number">1</span>) &#123;
-                <span class="hljs-keyword">if</span> (enter[j] &lt; enter[j - <span class="hljs-number">1</span>] - c) &#123;
-                    ans += enter[j - <span class="hljs-number">1</span>] - c - enter[j];
-                    enter[j] = enter[j - <span class="hljs-number">1</span>] - c;
-                &#125;
-            &#125; <span class="hljs-keyword">else</span> &#123;
-                <span class="hljs-keyword">int</span> tt = max(enter[j - <span class="hljs-number">1</span>], enter[j + <span class="hljs-number">1</span>]);
-                <span class="hljs-keyword">if</span>(tt - c &gt; enter[j])&#123;
-                    ans += tt - c - enter[j];
-                    enter[j] = tt - c;
-                &#125;
-            &#125;
-        &#125;
-    &#125;
-    <span class="hljs-built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="hljs-string">'\n'</span>;
+    <span class="hljs-keyword">int</span> n = <span class="hljs-number">5</span>;
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>, CUBE(++n));
     <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 &#125;</code></pre>
 
-<h2 id="後記-Afterword"><a href="#後記-Afterword" class="headerlink" title="後記 Afterword"></a>後記 Afterword</h2><p>我發現外層迴圈設定 $2$ 次，還是可以 AC</p>
-<p>根本證明這測資根本太水了</p>
-<p>輸入</p>
-<pre><code class="hljs undefined">10 10 10 10 10 10 10 10 100 100
-10</code></pre>
-
-<p>輸出</p>
-<pre><code class="hljs undefined">設定兩次：150
-正確：360</code></pre>
-
+<p>用兩個較主流的編譯器，GNU G++ 跟 Clang（MSVC++ 表示：…）</p>
+<h2 id="GNU-G"><a href="#GNU-G" class="headerlink" title="GNU G++"></a>GNU G++</h2><blockquote>
+<p>編譯參數：g++ -Wall -O2 -std=c++14 a.cpp</p>
+</blockquote>
+<p><img src="gnu.png" srcset="/img/loading.gif" alt></p>
+<p>輸出結果 392</p>
+<p>那第九題答案就是 (D)，真相大白<br>.<br>.<br>.<br>.<br>.<br>.<br>答案真的那麼簡單？來看看 <code>Clang</code> 結果吧！</p>
+<h2 id="Clang"><a href="#Clang" class="headerlink" title="Clang"></a>Clang</h2><blockquote>
+<p>編譯參數：clang -Wall -O2 -std=c++14 a.cpp</p>
+</blockquote>
+<p><img src="clang.png" srcset="/img/loading.gif" alt></p>
+<p>等一下！竟然是 336？</p>
+<p>這個就是所謂的 UB（Undefined Behavior）未定義行為<br>照理說，同個語言，不同編譯器，執行結果一定要一樣</p>
+<p>這個跟運算的優先順序有點關係，<a href="https://zh.wikipedia.org/wiki/C%E5%92%8CC%2B%2B%E9%81%8B%E7%AE%97%E5%AD%90" target="_blank" rel="noopener">每個運算子在 C/C++ 的優先順序</a><br>這有點像是遊戲規則，大規則方向有訂好</p>
+<p>但是有些規則並沒有規定誰先誰後<br>自己編譯器就自己規定，反正只要照著大方向就好</p>
+<p>像是 GNU G++ 的結果：</p>
+<p>第一個數字 ++N 確實變成 $6$<br>乘法優先運算子低<br><strong>把 $N$ 排入等待運算</strong><br>第二個數字又把 $N$ 加上 $1$<br>第一個數字被連帶影響<br>第一個跟第二個數字相乘就變成 $7 \times 7 = 49$<br>把 $49$ 排入等待運算<br>第三個數字又把 $N$ 加上 $1$<br>$N$ 變成 $8$<br>$49 \times 8 = 392$</p>
+<blockquote>
+<p>以上為對 GNU G++ 的個人見解</p>
+</blockquote>
+<p>Clang 結果：</p>
+<p>第一個數字 ++N 確實變成 $6$<br>乘法優先運算子低<br><strong>把 $6$ 排入等待運算</strong><br>第二個數字又把 $N$ 加上 $1$<br>第一個跟第二個數字相乘就變成 $6 \times 7 = 42$<br>把 $42$ 排入等待運算<br>第三個數字又把 $N$ 加上 $1$<br>$N$ 變成 $8$<br>$42 \times 8 = 336$</p>
+<blockquote>
+<p>以上為對 Clang 的個人見解</p>
+</blockquote>
+<p>以上結果其實沒有違反「運算子的優先順序」<br>但！這是未定義行為，真的不需要對他細節作法作討論<br>程式編譯經過優化後，也有可能自動幫你修改過程<br>未定義行為結果就可能會因此不同</p>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>聽網路上說，大學教授其實出蠻多這種題目的（還好我的科系沒有考這種東西），討論這種題目基本上沒有什麼意義，錯誤的定義上討論出的結果，也只會是錯誤的。</p>
+<p>不過我也有去找教授討論過，他上課也說過，同一個運算式，不要使用「遞增遞減運算子（Ex.i++、++i、i–、–i）」超過兩個以上，不然會發生一些<strong>不可預期</strong>的錯誤。</p>
+<p>UB（Undefined Behavior）的例子還有很多，發生的情況不一定是執行結果不一樣</p>
+<p>希望不要再出這種 Code 殘害學生，也不需要去討論這種東西<br>只要告訴他：「這是 UB（Undefined Behavior）未定義行為，不需要去多做任何討論。」</p>
 
               <div>
     <script type="text/javascript">
@@ -375,12 +273,23 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/解題區/">解題區</a>
+                      <a class="hover-with-bg" href="/categories/生活/">生活</a>
                     
-                      <a class="hover-with-bg" href="/categories/解題區/解題報告書-ZeroJudge/">解題報告書 - ZeroJudge</a>
+                      <a class="hover-with-bg" href="/categories/生活/程式/">程式</a>
                     
                   </div>
                 
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Undefined-Behavior/">Undefined Behavior</a>
+                    
+                      <a class="hover-with-bg" href="/tags/UB/">UB</a>
+                    
+                      <a class="hover-with-bg" href="/tags/運算子/">運算子</a>
+                    
+                  </div>
                 
               </div>
               
@@ -391,18 +300,12 @@
                   <div class="post-prev col-6">
                     
                     
-                      <a href="/2020/06/01/itsa-basic-17/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">ITSA 基礎題庫 —— 題目17. 英文斷詞</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </div>
                   <div class="post-next col-6">
                     
                     
-                      <a href="/2020/04/03/zerojudge-april-fools-contest-2020/">
-                        <span class="hidden-mobile">ZeroJudge April Fools Contest 2020 解題心得</span>
+                      <a href="/2020/06/01/itsa-basic-17/">
+                        <span class="hidden-mobile">ITSA 基礎題庫 —— 題目17. 英文斷詞</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -421,8 +324,8 @@
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'https://blog.yangjerry.tw/2020/04/17/zj-c779/';
-        this.page.identifier = '/2020/04/17/zj-c779/';
+        this.page.url = 'https://blog.yangjerry.tw/2020/06/02/undefined-behavior-in-c/';
+        this.page.identifier = '/2020/06/02/undefined-behavior-in-c/';
       };
       var oldLoadDq = window.onload;
       window.onload = function () {
@@ -604,7 +507,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "c779. 106北二4.盆栽展覽&nbsp;",
+        "關於 Undefined Behavior 這件事...&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
