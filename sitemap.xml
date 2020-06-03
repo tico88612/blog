@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.yangjerry.tw/about/index.html</loc>
+    
+    <lastmod>2020-06-03T07:55:25.578Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.yangjerry.tw/2020/06/02/undefined-behavior-in-c/</loc>
     
     <lastmod>2020-06-02T09:04:45.532Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>https://blog.yangjerry.tw/2020/04/17/zj-c779/</loc>
     
     <lastmod>2020-04-17T16:27:11.141Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.yangjerry.tw/about/index.html</loc>
-    
-    <lastmod>2020-04-17T16:06:51.486Z</lastmod>
     
   </url>
   
