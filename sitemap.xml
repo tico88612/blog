@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.yangjerry.tw/2020/06/26/jerry-and-init-kaobeiengineer/</loc>
+    
+    <lastmod>2020-06-29T06:31:26.666Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.yangjerry.tw/2020/06/02/undefined-behavior-in-c/</loc>
     
     <lastmod>2020-06-23T09:13:44.336Z</lastmod>

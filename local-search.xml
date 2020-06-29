@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Jerry Yang&#39;s Blog X 純靠北工程師</title>
+    <link href="/2020/06/26/jerry-and-init-kaobeiengineer/"/>
+    <url>/2020/06/26/jerry-and-init-kaobeiengineer/</url>
+    
+    <content type="html"><![CDATA[<p>嗨！大家好，我是這個 Blog 版主 Jerry Yang</p><p>為了提高文章<del>還有我的廢文</del>的能見度</p><a id="more"></a><p><strong>我決定要在純靠北工程師的共同協作 Blog 上發文啦！</strong></p><p>目前會發上去的應該只有技術文、分享文之類的</p><p>感想、生活、解題之類目前還只會放在這裡</p><p>一方面，我目前是「純靠北工程師 iOS」開發者</p><blockquote><p>只是一直把進度持續咕咕咕</p></blockquote><p>「純靠北工程師 iOS」也是開發過程筆記也會放在上面</p><blockquote><p>如果我有時間寫的話</p></blockquote><p>以我目前更新頻率來說，大約兩個月兩篇文章<br>不過「純靠北工程師 Blog」我只會分享技術文<br>因此，更新頻率應該會很慢</p><p>目前第一篇主題也想好了，類別是人工智慧的演算法<br>會想寫主要是因為中文資料過少（但英文資料其實也不多）<br>把自己想法分享出去，也歡迎更多高手來跟我討論。</p><p>這是我在「純靠北工程師 Blog」的作者<a href="https://init-engineer.github.io/authors/tico88612/" target="_blank" rel="noopener">連結</a></p><p><a href="https://init-engineer.github.io/authors/tico88612/" target="_blank" rel="noopener">https://init-engineer.github.io/authors/tico88612/</a></p><p>然後，我最近也把 LikeCoin 加入我的 Blog<br>喜歡我的文章記得幫我按多一點的 LikeCoin<br>就這樣，ㄅㄅ</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>生活</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>純靠北工程師</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>關於 Undefined Behavior 這件事...</title>
     <link href="/2020/06/02/undefined-behavior-in-c/"/>
     <url>/2020/06/02/undefined-behavior-in-c/</url>
@@ -223,11 +248,11 @@
     
     <tags>
       
+      <tag>程式</tag>
+      
       <tag>Dev-C++</tag>
       
       <tag>更新</tag>
-      
-      <tag>程式</tag>
       
       <tag>競賽</tag>
       
