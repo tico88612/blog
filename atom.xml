@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.yangjerry.tw/"/>
-  <updated>2020-06-29T06:31:26.666Z</updated>
+  <updated>2020-07-15T16:50:58.521Z</updated>
   <id>https://blog.yangjerry.tw/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>關於 NCPU 2020 我想說的是......</title>
+    <link href="https://blog.yangjerry.tw/2020/07/16/ncpu-2020-negative/"/>
+    <id>https://blog.yangjerry.tw/2020/07/16/ncpu-2020-negative/</id>
+    <published>2020-07-15T16:45:26.000Z</published>
+    <updated>2020-07-15T16:50:58.521Z</updated>
+    
+    <content type="html"><![CDATA[<p>有點想說這次競賽的不合理之處</p><a id="more"></a><p>本次競賽 Rank 10 / 50</p><p>名次也在 20 %，但整場只覺得他們到底到幹嘛？</p><h2 id="1-更換比賽環境"><a href="#1-更換比賽環境" class="headerlink" title="1. 更換比賽環境"></a>1. 更換比賽環境</h2><p>比賽前一天我還在確認比賽環境<br>下圖是比賽後一天才看到被改的<br><img src="web-env.png" srcset="/img/loading.gif" alt></p><p>改用瘋狂程設？也就是說環境改成 Windows？<br>為什麼這種重大改變事項沒有發給全部的參賽者？</p><p>反正那些 IDE 也都給假的，用過「瘋狂程設」都知道那是佔滿全部螢幕</p><p>比賽前 20 分鐘裁判才來教室講解說<br>「我們本來就打算採用『瘋狂程設』」</p><p>比賽當天上午兩點（對，AM 2:00）也才收到</p><blockquote><p>各位參賽的師長與同學大家好:<br>根據疾病管制署社交距離注意事項，建議人與人之間，在室內應保持1.5公尺、室外保持1公尺之距離，若雙方正確佩戴口罩，則可豁免社交距離，但處於擁擠、密閉之場所仍應佩戴口罩。</p><p>請各位參賽的師長與同學進入競賽場地，請盡量佩戴口罩。如果有發燒情況，請勿參賽，其餘成員仍可出賽。<br>感謝大家的參與及配合。</p></blockquote><p>只有通知這件事？在 AM 2:00？通知給誰？</p><h2 id="2-Judge-環境的配置，裁判不見人影"><a href="#2-Judge-環境的配置，裁判不見人影" class="headerlink" title="2. Judge 環境的配置，裁判不見人影"></a>2. Judge 環境的配置，裁判不見人影</h2><p>我在檢測環境時間，也要確保我設定參數跟 Judge 環境參數一樣<br>（就是語言標準、優化參數那類的）<br>那邊工作人員感覺也是一臉滿頭問號<br>還在回答我説：「用 Java 就要用 Java 程式編譯」<br>不然我會拿 Python 拿去給 C++ 編譯嗎？= =</p><p>某點來說，我不會怪工作人員懂不懂<br>我想講的是裁判問題<br>工作人員最後只好回應我：「裁判等等會過來講解比賽環境」</p><p>但以備萬一，只好拿手機找 Code 慢慢測試環境</p><p>不過到最後，等到 11 點，檢測環境結束，我還是看不到裁判人影。</p><p>（也聽說也只有在幾間比賽教室講解）</p><p>欸不是，裁判在幹嘛？</p><h2 id="3-其餘瑣碎事"><a href="#3-其餘瑣碎事" class="headerlink" title="3. 其餘瑣碎事"></a>3. 其餘瑣碎事</h2><p>個人覺得不太大的問題，只是就觀感問題</p><ol><li>自己拿舉手拿氣球（我真的第一次遇到）</li><li>位置安排不太良好，五個一排，這樣空間很多都浪費</li><li>宣傳比賽？我自己搜尋我才知道要辦比賽</li><li>得獎只有前三名拍照？</li></ol><p>有些人好像有提到比賽場外問題，不過因為我沒有去外面吃點心，所以不知道什麼情況</p><h2 id="4-瘋狂程設問題"><a href="#4-瘋狂程設問題" class="headerlink" title="4. 瘋狂程設問題"></a>4. 瘋狂程設問題</h2><p>賽中有程式寫爛了，我也不熟悉「瘋狂程設」<br>那時候也不知道我寫到 <code>Runtime Error</code></p><p>Debug 輸出半天才知道 <code>Runtime Error</code> 不會輸出 = =<br>就是為了這點折騰很久……</p><h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>這次參賽體驗實在是差到不行<br>第 10 屆比賽，ㄏ，我只差點還沒把未消化的食物吐出來</p><p>有多少學生為了好好比賽拼命練習…<br>然而主辦方只想草草了事…</p><p>連比賽都辦不好還想競爭啊！洗洗睡吧！<br>私立大學辦比賽辦成這樣，只不過是一堆笑話罷了。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有點想說這次競賽的不合理之處&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="NCPU" scheme="https://blog.yangjerry.tw/tags/NCPU/"/>
+    
+      <category term="NCPU 2020" scheme="https://blog.yangjerry.tw/tags/NCPU-2020/"/>
+    
+      <category term="ICPC" scheme="https://blog.yangjerry.tw/tags/ICPC/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Jerry Yang&#39;s Blog X 純靠北工程師</title>
     <link href="https://blog.yangjerry.tw/2020/06/26/jerry-and-init-kaobeiengineer/"/>
     <id>https://blog.yangjerry.tw/2020/06/26/jerry-and-init-kaobeiengineer/</id>
     <published>2020-06-25T18:07:31.000Z</published>
-    <updated>2020-06-29T06:31:26.666Z</updated>
+    <updated>2020-06-29T06:40:05.486Z</updated>
     
     <content type="html"><![CDATA[<p>嗨！大家好，我是這個 Blog 版主 Jerry Yang</p><p>為了提高文章<del>還有我的廢文</del>的能見度</p><a id="more"></a><p><strong>我決定要在純靠北工程師的共同協作 Blog 上發文啦！</strong></p><p>目前會發上去的應該只有技術文、分享文之類的</p><p>感想、生活、解題之類目前還只會放在這裡</p><p>一方面，我目前是「純靠北工程師 iOS」開發者</p><blockquote><p>只是一直把進度持續咕咕咕</p></blockquote><p>「純靠北工程師 iOS」也是開發過程筆記也會放在上面</p><blockquote><p>如果我有時間寫的話</p></blockquote><p>以我目前更新頻率來說，大約兩個月兩篇文章<br>不過「純靠北工程師 Blog」我只會分享技術文<br>因此，更新頻率應該會很慢</p><p>目前第一篇主題也想好了，類別是人工智慧的演算法<br>會想寫主要是因為中文資料過少（但英文資料其實也不多）<br>把自己想法分享出去，也歡迎更多高手來跟我討論。</p><p>這是我在「純靠北工程師 Blog」的作者<a href="https://init-engineer.github.io/authors/tico88612/" target="_blank" rel="noopener">連結</a></p><p><a href="https://init-engineer.github.io/authors/tico88612/" target="_blank" rel="noopener">https://init-engineer.github.io/authors/tico88612/</a></p><p>然後，我最近也把 LikeCoin 加入我的 Blog<br>喜歡我的文章記得幫我按多一點的 LikeCoin<br>就這樣，ㄅㄅ</p>]]></content>
     
@@ -531,37 +556,6 @@
     
     
       <category term="字串處理" scheme="https://blog.yangjerry.tw/tags/%E5%AD%97%E4%B8%B2%E8%99%95%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>理型論？為何凡是不能只看表面？</title>
-    <link href="https://blog.yangjerry.tw/2018/10/24/theory-of-forms/"/>
-    <id>https://blog.yangjerry.tw/2018/10/24/theory-of-forms/</id>
-    <published>2018-10-24T01:25:49.000Z</published>
-    <updated>2018-10-24T03:56:28.296Z</updated>
-    
-    <content type="html"><![CDATA[<p>Tag 是不是多了兩個感覺不相關的？((((；ﾟДﾟ)))))))</p><a id="more"></a><p>前幾天上了教育哲學，感覺跟現在的事件有點相關，所以我把它拉進裡面了<br>（這只是我的個人上課筆記而已）<br>（如果你是要專業研究的，請回去上一頁或是看其他人寫的文章，<a href="https://phiphicake.blogspot.com/2008/05/blog-post_4164.html" target="_blank" rel="noopener">哲學哲學雞蛋糕的理型論</a>）</p><h2 id="理型論-Theory-of-Form"><a href="#理型論-Theory-of-Form" class="headerlink" title="理型論 Theory of Form"></a>理型論 Theory of Form</h2><p>提出人：柏拉圖（Plato），古希臘三哲人之一</p><p>他認為觀念界</p><h3 id="表象界-vs-觀念界"><a href="#表象界-vs-觀念界" class="headerlink" title="表象界 vs 觀念界"></a>表象界 vs 觀念界</h3><h4 id="表象界-Appenrance"><a href="#表象界-Appenrance" class="headerlink" title="表象界 Appenrance"></a>表象界 Appenrance</h4><p>它靠著感官，眼、耳、口、鼻、觸，來去説他是什麼樣子的<br>例如：水壺，我用眼睛感覺，他是圓柱體的</p><p>但是，表象是可以被偽造的<br>例如：筷子插入水中，用眼睛感覺，筷子被折斷了((((；ﾟДﾟ)))))))</p><p>表象界它是：短暫的、虛假的、易變的</p><p>日本的《世界奇妙物語》之前還演過類似的<br>有個人犯了重大的罪，被判了30天<br>30天？重大的罪只有30天？眾人很疑惑</p><p>這30天以內，犯人受盡各種折磨<br>然而，孰不知，夢裡的30天 = 現實的5分鐘<br>現實是被判30天，也就是夢裡大約720年</p><h4 id="觀念界-Idea"><a href="#觀念界-Idea" class="headerlink" title="觀念界 Idea"></a>觀念界 Idea</h4><p>剛剛談到，表象是可以被偽造的<br>例如：筷子插入水中，用眼睛感覺，筷子被折斷了((((；ﾟДﾟ)))))))</p><p>觀念界，就是知道筷子沒有被折斷，只是水的折射看起來被折斷了<br>你知道了水的折射，才知道筷子並沒有斷</p><p>觀念界它是：永恆的、真實的、不變的</p><h3 id="洞穴寓言-Allegory-of-the-Cave"><a href="#洞穴寓言-Allegory-of-the-Cave" class="headerlink" title="洞穴寓言 Allegory of the Cave"></a>洞穴寓言 Allegory of the Cave</h3><p>內容其實 <a href="https://lmgtfy.com/?q=地穴寓言" target="_blank" rel="noopener">Google</a>、<a href="https://zh.wikipedia.org/wiki/地穴寓言" target="_blank" rel="noopener">Wikipedia</a> 都看得到</p><p>如果給一名囚犯鬆綁，出去看見這些以往所見的影子的原型，你覺得會怎麼樣？<br>這個人可能會在強光刺激下痛苦不堪，產生錯亂。<br>他可能會認為外面所看到的東西不是現實的。<br>因為他相信只有在洞壁上能看見真相。</p><h2 id="普悠瑪事件-Train-derailment"><a href="#普悠瑪事件-Train-derailment" class="headerlink" title="普悠瑪事件 Train derailment"></a>普悠瑪事件 Train derailment</h2><p>很多人知道普悠瑪出軌事件，看著新聞直播救援</p><p>剛好拍到慈濟在助念，當天有人身為前救難隊員就出來罵慈濟説干擾救援<br>（也就是說，前救難隊員並沒有在現場）</p><p>週日：Po文到「爆料公社」<br>週一：大家一起狂鞭「慈濟」，說「作秀」「詛咒別人」「詐騙集團」「干擾救援」之類的<br>週二：大愛電視FB專頁表示「如果志工助念，影響到搜救工作，警消人員一定會來制止的，但現場並沒有人有任何表示。」<br>「慈濟志工跟媒體被安排在同一區，很接近攝影機收音位置，可能因此導致媒體直播時，志工的聲音很明顯，引發觀眾的關切與誤會。」</p><p>（詳情也可以去看<a href="https://www.facebook.com/DaAiTV/" target="_blank" rel="noopener">大愛電視FB專頁</a>，多吸收一點資訊，多方面查證）<br>（也不要只是聽信「媒體」、「爆料公社」怎麼説就怎麼罵，不然你也是跟那些洞穴囚犯一樣）</p><p>真相怎麼樣，我也不多做評論了，畢竟我沒有在現場<br>至於真的是不是「作秀」「干擾救援」？<br><img src="nosay.gif" srcset="/img/loading.gif" alt="我很乖 我不酸 我坐等看留言 —— 圖源：www.71714.com"><br>不要只是憑著一張照片、一段錄音、一部影片<br>就輕易的斷定事實</p><h2 id="後記-Afterword"><a href="#後記-Afterword" class="headerlink" title="後記 Afterword"></a>後記 Afterword</h2><p>學習哲學，並不是思考哲學，而是更有哲學的思考<br>保持著理性，才能更接近真相</p><p>為何凡是不能只看表面？<br>因為表象是可以被偽造的</p><p><strong>多思考、多查證，不要只是人云亦云</strong><br><strong>否則，你也跟洞穴囚犯沒什麼差異</strong></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Tag 是不是多了兩個感覺不相關的？((((；ﾟДﾟ)))))))&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="師培筆記" scheme="https://blog.yangjerry.tw/categories/%E5%B8%AB%E5%9F%B9%E7%AD%86%E8%A8%98/"/>
-    
-      <category term="師培筆記 - 教育哲學" scheme="https://blog.yangjerry.tw/categories/%E5%B8%AB%E5%9F%B9%E7%AD%86%E8%A8%98/%E5%B8%AB%E5%9F%B9%E7%AD%86%E8%A8%98-%E6%95%99%E8%82%B2%E5%93%B2%E5%AD%B8/"/>
-    
-    
-      <category term="理型論" scheme="https://blog.yangjerry.tw/tags/%E7%90%86%E5%9E%8B%E8%AB%96/"/>
-    
-      <category term="洞穴寓言" scheme="https://blog.yangjerry.tw/tags/%E6%B4%9E%E7%A9%B4%E5%AF%93%E8%A8%80/"/>
-    
-      <category term="慈濟" scheme="https://blog.yangjerry.tw/tags/%E6%85%88%E6%BF%9F/"/>
-    
-      <category term="普悠瑪出軌事件" scheme="https://blog.yangjerry.tw/tags/%E6%99%AE%E6%82%A0%E7%91%AA%E5%87%BA%E8%BB%8C%E4%BA%8B%E4%BB%B6/"/>
     
   </entry>
   
