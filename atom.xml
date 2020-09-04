@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.yangjerry.tw/"/>
-  <updated>2020-07-15T16:50:58.521Z</updated>
+  <updated>2020-09-04T15:46:24.460Z</updated>
   <id>https://blog.yangjerry.tw/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>社群回答被刪除紀錄區</title>
+    <link href="https://blog.yangjerry.tw/2020/09/04/group-answer/"/>
+    <id>https://blog.yangjerry.tw/2020/09/04/group-answer/</id>
+    <published>2020-09-04T15:45:04.000Z</published>
+    <updated>2020-09-04T15:46:24.460Z</updated>
+    
+    <content type="html"><![CDATA[<p>我一直很受不了社群有些人就是問完答案就刪除那種。</p><a id="more"></a><p>你在社群得到答案，多數回答者會希望把答案留下來。<br>可是提問的那些人，不管用什麼理由刪除貼文，我都會覺得很不合理。</p><ul><li>避免洗版？：你可以最多選擇關閉留言，你刪除文章直接損失社群答案，我只會覺得你很自私。</li><li>機密問題？：如果是機密問題，那當初就不應該貼上來。</li></ul><p>因為這裡是個討論社團，<strong>不是你的個人解答區</strong>。</p><p>我決定之後要來反擊那些問完答案就刪除的那些人。</p><p>如果你看到我回答了，基本上我回答完，一定先截圖。<br>我通常會追蹤問題好幾天，我想到就會去翻一下。</p><p>如果你刪文了，可能你的發問跟答案就會出現在這裡 OwO。<br>同時我也會紀錄：</p><ul><li>發問者公開名稱</li><li>發問文章</li><li>發問時間</li><li>我回覆的答案</li><li>我回覆的時間</li></ul><p>我之後再想我要在底下更新還是另外再寫一篇文章會比較好，預計可能都是在這篇底下更新。<br>暑假發生的事之後再來慢慢寫。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我一直很受不了社群有些人就是問完答案就刪除那種。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="https://blog.yangjerry.tw/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="程式社群" scheme="https://blog.yangjerry.tw/tags/%E7%A8%8B%E5%BC%8F%E7%A4%BE%E7%BE%A4/"/>
+    
+  </entry>
   
   <entry>
     <title>關於 NCPU 2020 我想說的是......</title>
@@ -531,31 +554,6 @@
     
     
       <category term="DP" scheme="https://blog.yangjerry.tw/tags/DP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>b981. YoJudge 預練(時間之章)</title>
-    <link href="https://blog.yangjerry.tw/2018/10/26/zj-b981/"/>
-    <id>https://blog.yangjerry.tw/2018/10/26/zj-b981/</id>
-    <published>2018-10-26T03:30:17.000Z</published>
-    <updated>2018-10-26T03:44:50.027Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="題目-Problem"><a href="#題目-Problem" class="headerlink" title="題目 Problem"></a>題目 Problem</h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=b981" target="_blank" rel="noopener">題目連結：https://zerojudge.tw/ShowProblem?problemid=b981</a></p><a id="more"></a><h3 id="敘述-Description"><a href="#敘述-Description" class="headerlink" title="敘述 Description"></a>敘述 Description</h3><p>　前幾天看到一隻 b961 YoJudge怪獸，感覺太強大了，所以先打Lo練功，期盼來日再戰YoJudge怪獸。<br>　這次任務較簡單，將以下各種格式的時間單位統一轉換為毫秒。 以下 x,y,z,a,b皆為非負整數<br>可能出現的時間單位格式如下：<br>xhour :代表 x 小時, 0&lt;=x&lt;24<br>xhym :代表 x 小時又 y 分鐘, 0&lt;=x&lt;24, 0&lt;=y&lt;60<br>xhymzs :代表 x 小時又 y 分鐘又 z 秒, 0&lt;=x&lt;24, 0&lt;=y&lt;60, 0&lt;=z&lt;60<br>ymin :代表 y 分鐘, 0&lt;=y&lt;60<br>ymzs :代表 y 分鐘又 z 秒, 0&lt;=y&lt;60, 0&lt;=z&lt;60<br>zs :代表 z 秒, 0&lt;=y&lt;60, 0&lt;=z&lt;60<br>z.as :代表 z 秒又 a*100毫秒, 0&lt;=z&lt;60, 0&lt;=a&lt;10<br>bms :代表 b 毫秒, 0&lt;=b&lt;1000</p><h3 id="輸入-Input"><a href="#輸入-Input" class="headerlink" title="輸入 Input"></a>輸入 Input</h3><p>多行直到 EOF，每行只有如上題目所說的時間格式，沒有空格</p><h3 id="輸出-Output"><a href="#輸出-Output" class="headerlink" title="輸出 Output"></a>輸出 Output</h3><p>將輸入的每一行換算為毫秒，輸出一行整數</p><h3 id="範例輸入-Sample-Input"><a href="#範例輸入-Sample-Input" class="headerlink" title="範例輸入 Sample Input"></a>範例輸入 Sample Input</h3><pre><code class="hljs undefined">13hour9h20m23h17m57s6min34m50s8s19.7s567ms</code></pre><h3 id="範例輸出-Sample-Output"><a href="#範例輸出-Sample-Output" class="headerlink" title="範例輸出 Sample Output"></a>範例輸出 Sample Output</h3><pre><code class="hljs undefined">4680000033600000838770003600002090000800019700567</code></pre><h3 id="提示-Hint"><a href="#提示-Hint" class="headerlink" title="提示 Hint"></a>提示 Hint</h3><h2 id="題解-Solution"><a href="#題解-Solution" class="headerlink" title="題解 Solution"></a>題解 Solution</h2><p>數字會先讀取，所以先存數字到 $tmp$ 裡面<br>讀到 $h$ 可能是 $h$ 或 $hour$，要自己判斷<br>讀到 $m$ 可能是 $m$ 或 $min$ 或 $ms$，$ms$ 是毫秒，要另外區隔<br>要注意小數點，反正小數點也只會在 $s$ 出現<br>出現小數點，就直接把數字放在 $s$ 就好<br>小數點後的數字另外判斷</p><h3 id="程式碼-Accepted-Code"><a href="#程式碼-Accepted-Code" class="headerlink" title="程式碼 Accepted Code"></a>程式碼 Accepted Code</h3><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> _ ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);</span><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;_<span class="hljs-built_in">string</span> enter;<span class="hljs-keyword">while</span>(<span class="hljs-built_in">cin</span>&gt;&gt;enter)&#123;<span class="hljs-keyword">int</span> h=<span class="hljs-number">0</span>,m=<span class="hljs-number">0</span>,s=<span class="hljs-number">0</span>,dot=<span class="hljs-number">0</span>,ms=<span class="hljs-number">0</span>,tmp=<span class="hljs-number">0</span>,dotyes=<span class="hljs-number">0</span>;<span class="hljs-keyword">for</span>(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;enter.length();i++)&#123;<span class="hljs-keyword">if</span>(enter[i]==<span class="hljs-string">'.'</span>)&#123;s=tmp;dotyes=<span class="hljs-number">1</span>;tmp=<span class="hljs-number">0</span>;&#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-string">'0'</span>&lt;=enter[i]&amp;&amp;enter[i]&lt;=<span class="hljs-string">'9'</span>)&#123;tmp*=<span class="hljs-number">10</span>;tmp+=enter[i]-<span class="hljs-string">'0'</span>;&#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(enter[i]==<span class="hljs-string">'h'</span>)&#123;<span class="hljs-keyword">if</span>(i+<span class="hljs-number">1</span>&lt;enter.length())&#123;<span class="hljs-keyword">if</span>(enter[i+<span class="hljs-number">1</span>]==<span class="hljs-string">'o'</span>)&#123;h=tmp;i+=<span class="hljs-number">3</span>;&#125;<span class="hljs-keyword">else</span>&#123;h=tmp;&#125;&#125;<span class="hljs-keyword">else</span>&#123;h=tmp;&#125;tmp=<span class="hljs-number">0</span>;&#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(enter[i]==<span class="hljs-string">'m'</span>)&#123;<span class="hljs-keyword">if</span>(i+<span class="hljs-number">1</span>&lt;enter.length())&#123;<span class="hljs-keyword">if</span>(enter[i+<span class="hljs-number">1</span>]==<span class="hljs-string">'s'</span>)&#123;ms=tmp;i+=<span class="hljs-number">1</span>;&#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(enter[i+<span class="hljs-number">1</span>]==<span class="hljs-string">'i'</span>)&#123;m=tmp;i+=<span class="hljs-number">2</span>;&#125;<span class="hljs-keyword">else</span>&#123;m=tmp;&#125;&#125;<span class="hljs-keyword">else</span>&#123;m=tmp;&#125;tmp=<span class="hljs-number">0</span>;&#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(enter[i]==<span class="hljs-string">'s'</span>)&#123;<span class="hljs-keyword">if</span>(dotyes)&#123;dot=tmp;&#125;<span class="hljs-keyword">else</span>&#123;s=tmp;&#125;tmp=<span class="hljs-number">0</span>;&#125;&#125;m+=h*<span class="hljs-number">60</span>;s+=m*<span class="hljs-number">60</span>;dot+=s*<span class="hljs-number">10</span>;ms+=dot*<span class="hljs-number">100</span>;<span class="hljs-built_in">cout</span>&lt;&lt;ms&lt;&lt;<span class="hljs-string">'\n'</span>;&#125;<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;&#125;</code></pre><h2 id="後記-Afterword"><a href="#後記-Afterword" class="headerlink" title="後記 Afterword"></a>後記 Afterword</h2><p>很久沒出解題報告書了<br>還有另一個 YoJudge 預練(空間之章)<br>晚點再寫吧！寫完「空間之章」，就可以來寫真正的「YouJudge」(X)了</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;題目-Problem&quot;&gt;&lt;a href=&quot;#題目-Problem&quot; class=&quot;headerlink&quot; title=&quot;題目 Problem&quot;&gt;&lt;/a&gt;題目 Problem&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://zerojudge.tw/ShowProblem?problemid=b981&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;題目連結：https://zerojudge.tw/ShowProblem?problemid=b981&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="解題區" scheme="https://blog.yangjerry.tw/categories/%E8%A7%A3%E9%A1%8C%E5%8D%80/"/>
-    
-      <category term="解題報告書 - ZeroJudge" scheme="https://blog.yangjerry.tw/categories/%E8%A7%A3%E9%A1%8C%E5%8D%80/%E8%A7%A3%E9%A1%8C%E5%A0%B1%E5%91%8A%E6%9B%B8-ZeroJudge/"/>
-    
-    
-      <category term="字串處理" scheme="https://blog.yangjerry.tw/tags/%E5%AD%97%E4%B8%B2%E8%99%95%E7%90%86/"/>
     
   </entry>
   
