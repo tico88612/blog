@@ -1,7 +1,7 @@
+
+
 <!DOCTYPE html>
-<html lang="zh-TW">
-
-
+<html lang="zh-TW" data-default-color-scheme=&#34;auto&#34;>
 
 
 
@@ -30,24 +30,21 @@
   <title>Jerry Yang&#39;s Blog</title>
 
   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css">
 
-
-  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.18.1/styles/github-gist.min.css">
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_ijqayz9ro8k.css">
-
-
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
 
 <link rel="stylesheet" href="/css/main.css">
 
 <!-- 自定义样式保持在最底部 -->
 
 
+  <script src="/js/utils.js"></script>
+  <script src="/js/color-schema.js"></script>
 <link rel="alternate" href="/atom.xml" title="Jerry Yang's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
@@ -72,70 +69,97 @@
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="https://yangjerry.tw">
-              <i class="iconfont icon-home-fill"></i>
-              首頁</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://yangjerry.tw">
+                <i class="iconfont icon-home-fill"></i>
+                首頁
+              </a>
+            </li>
+          
         
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/">
-              <i class="iconfont icon-rss-fill"></i>
-              部落格</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-rss-fill"></i>
+                部落格
+              </a>
+            </li>
+          
         
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/archives/">
-              <i class="iconfont icon-archive-fill"></i>
-              存檔</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                存檔
+              </a>
+            </li>
+          
         
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/categories/">
-              <i class="iconfont icon-category-fill"></i>
-              分類</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分類
+              </a>
+            </li>
+          
         
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/tags/">
-              <i class="iconfont icon-tags-fill"></i>
-              標籤</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                標籤
+              </a>
+            </li>
+          
         
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/about/">
-              <i class="iconfont icon-user-fill"></i>
-              關於</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                關於
+              </a>
+            </li>
+          
         
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="https://twitch.tv/tico88612">
-              <i class="iconfont icon-twitch-fill"></i>
-              解題直播</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://twitch.tv/tico88612">
+                <i class="iconfont icon-twitch-fill"></i>
+                解題直播
+              </a>
+            </li>
+          
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
       </ul>
@@ -143,12 +167,12 @@
   </div>
 </nav>
 
-    <div class="view intro-2" id="background" parallax=true
+    <div class="banner intro-2" id="background" parallax=true
          style="background: url('/img/banner.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="container text-center white-text fadeInUp">
+          <div class="container page-header text-center fade-in-up">
             <span class="h2" id="subtitle">
               
             </span>
@@ -181,21 +205,28 @@
   <div class="row mx-auto index-card">
     
     
-    <div class="col-12 col-md-12 mx-auto index-info">
-      <a class="index-header" href="/2018/08/30/zj-a625/">a625. 5. Overhanging Cards</a>
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2018/08/30/zj-a625/">a625. 5. Overhanging Cards</a>
+      </h1>
 
-      <a href="/2018/08/30/zj-a625/" class="index-excerpt">
-        
-        
+      <p class="index-excerpt">
+        <a href="/2018/08/30/zj-a625/">
           
-        
-        <div>題目 Problem題目連結：https://zerojudge.tw/ShowProblem?problemid=a625</div>
-      </a>
+          
+            
+          
+          題目 Problem題目連結：https://zerojudge.tw/ShowProblem?problemid=a625
+        </a>
+      </p>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2018-08-30
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-08-30 20:04" pubdate>
+              2018-08-30
+            </time>
           </div>
         
         
@@ -219,27 +250,34 @@
           </div>
         
       </div>
-    </div>
+    </article>
   </div>
 
   <div class="row mx-auto index-card">
     
     
-    <div class="col-12 col-md-12 mx-auto index-info">
-      <a class="index-header" href="/2018/08/29/zj-c700/">c700. 壞掉的隊列(queue)</a>
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2018/08/29/zj-c700/">c700. 壞掉的隊列(queue)</a>
+      </h1>
 
-      <a href="/2018/08/29/zj-c700/" class="index-excerpt">
-        
-        
+      <p class="index-excerpt">
+        <a href="/2018/08/29/zj-c700/">
           
-        
-        <div>題目 Problem題目連結：https://zerojudge.tw/ShowProblem?problemid=c700</div>
-      </a>
+          
+            
+          
+          題目 Problem題目連結：https://zerojudge.tw/ShowProblem?problemid=c700
+        </a>
+      </p>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2018-08-29
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-08-29 21:34" pubdate>
+              2018-08-29
+            </time>
           </div>
         
         
@@ -265,27 +303,34 @@
           </div>
         
       </div>
-    </div>
+    </article>
   </div>
 
   <div class="row mx-auto index-card">
     
     
-    <div class="col-12 col-md-12 mx-auto index-info">
-      <a class="index-header" href="/2018/08/26/hello-world/">Hello Hexo! Test By Jerry Yang</a>
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2018/08/26/hello-world/">Hello Hexo! Test By Jerry Yang</a>
+      </h1>
 
-      <a href="/2018/08/26/hello-world/" class="index-excerpt">
-        
-        
+      <p class="index-excerpt">
+        <a href="/2018/08/26/hello-world/">
           
-        
-        <div>先恭喜亞運台灣 🇹🇼 奪得金牌網路中文 也很大方的免費讓人註冊.tw</div>
-      </a>
+          
+            
+          
+          先恭喜亞運台灣 🇹🇼 奪得金牌網路中文 也很大方的免費讓人註冊.tw
+        </a>
+      </p>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2018-08-26
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-08-26 14:30" pubdate>
+              2018-08-26
+            </time>
           </div>
         
         
@@ -298,7 +343,7 @@
         
         
       </div>
-    </div>
+    </article>
   </div>
 
 
@@ -378,12 +423,19 @@
 <!-- SCRIPTS -->
 <script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
 <script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
 <script  src="/js/main.js" ></script>
 
+<!-- Plugins -->
 
-  <script  src="/js/lazyload.js" ></script>
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
 
 
+
+  
 
 
 
@@ -397,38 +449,6 @@
 
 
 
-<!-- Plugins -->
-
-
-  
-
-  
-    <!-- Google Analytics -->
-    <script defer>
-      (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-          (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-          m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-      ga('create', 'UA-116676990-3', 'auto');
-      ga('send', 'pageview');
-    </script>
-  
-
-  
-
-  
-
-  
-
-  
 
 
 
@@ -452,21 +472,6 @@
 
 
 
-  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
-  <script>
-    anchors.options = {
-      placement: "right",
-      visible: "always",
-      
-    };
-    var el = "h1,h2,h3,h4,h5,h6".split(",");
-    var res = [];
-    for (item of el) {
-      res.push(".markdown-body > " + item)
-    }
-    anchors.add(res.join(", "))
-  </script>
-
 
 
   <script  src="/js/local-search.js" ></script>
@@ -474,10 +479,40 @@
     var path = "/local-search.xml";
     var inputArea = document.querySelector("#local-search-input");
     inputArea.onclick = function () {
-      getSearchFile(path);
+      searchFunc(path, 'local-search-input', 'local-search-result');
       this.onclick = null
     }
-  </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    <!-- Google Analytics -->
+    <script defer>
+      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
+      ga.l = +new Date;
+      ga('create', 'UA-116676990-3', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config("");
 </script>
@@ -495,21 +530,15 @@
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
+  
 
+  
 
+  
 
+  
 
-
-
-
-
-
-
-
-
-
-
-
+  
 
 
 
