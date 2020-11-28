@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>Dev-C++ 不就是個很古老的 IDE？蛤？它又更新了？</title>
+      <link href="/2020/11/25/devcpp-6/"/>
+      <url>/2020/11/25/devcpp-6/</url>
+      
+        <content type="html"><![CDATA[<p>寫這篇文章的意義是幫忙把新版的 Dev-C++ 推出去，給更多人知道。</p><blockquote><p>這一篇，獻給愛用 Dev-C++ 的你。</p></blockquote><a id="more"></a><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>依如往常的滑著電腦 Facebook，社團依舊充斥著廢文（不開玩笑，平常就是 IDE / Compiler 都搞不清楚地在亂吵）</p><p>唯有少數幾篇文，可以吸引到我的目光，講到 C 語言總會講到 Dev-C++。<br><img src="question.jpg" srcset="/img/loading.gif" alt="大略長這樣"></p><p>滑了一下留言<br><img src="comment.jpg" srcset="/img/loading.gif" alt></p><p><strong>給我等一下，Dev-C++ 2020？我怎麼不知道！</strong><br><img src="waitasec.jpg" srcset="/img/loading.gif" alt></p><p>如果你直接去 Google <code>Dev-C++ 2020</code> 估計是找不到你要的結果。<br>後來去維基百科才知道 Dev-C++ 最新版本的 Source Code 位置。</p><h2 id="新版-Dev-C-介紹"><a href="#新版-Dev-C-介紹" class="headerlink" title="新版 Dev-C++ 介紹"></a>新版 Dev-C++ 介紹</h2><p><a href="https://www.embarcadero.com/" target="_blank" rel="noopener">維護公司：Embarcadero</a><br><a href="https://github.com/Embarcadero/Dev-Cpp" target="_blank" rel="noopener">GitHub 連結: https://github.com/Embarcadero/Dev-Cpp</a><br><a href="https://github.com/Embarcadero/Dev-Cpp/releases" target="_blank" rel="noopener">GitHub Release: https://github.com/Embarcadero/Dev-Cpp/releases</a></p><p>其實他也不叫做 Dev-C++ 2020，負責這項專案的公司也直接命名為 <strong>Embarcadero Dev-C++</strong></p><p>這維護公司來頭也不小啊，有公司接手維護這個專案真的是一個奇葩之事吧！</p><h3 id="編譯器-Compiler"><a href="#編譯器-Compiler" class="headerlink" title="編譯器 Compiler"></a>編譯器 Compiler</h3><p>目前選用 TDM-GCC 9.2.0，直接從 4.9.2 跳上去</p><p>選項也支援新版標準 C++ 20，之前手動更新編譯器都需要手動輸入參數才能換成新版標準。</p><p><img src="cpp17.png" srcset="/img/loading.gif" alt></p><h3 id="外觀介面-Appearance"><a href="#外觀介面-Appearance" class="headerlink" title="外觀介面 Appearance"></a>外觀介面 Appearance</h3><p>經典介面從 4.9.9.2 到 5.11 版本基本上都長這樣，能去改變外觀的選項比較少</p><p><img src="classic.png" srcset="/img/loading.gif" alt></p><p>最新版本他可以直接讓你更改樣式了</p><p><img src="env_opt.png" srcset="/img/loading.gif" alt></p><p>選取環境選項（Environment Options）$\rightarrow$ 外觀（Appearance）<br>就可以改成你想看到的主題（Theme）了。</p><p><img src="material.png" srcset="/img/loading.gif" alt></p><blockquote><p><strong>等等，你真的是 Dev-C++ 嗎？</strong></p></blockquote><h3 id="終端機-Command-PowerShell"><a href="#終端機-Command-PowerShell" class="headerlink" title="終端機 Command / PowerShell"></a>終端機 Command / PowerShell</h3><p>都已經 2020 年了，把 IDE 跟 Terminal 放在一起已經算是標準配備了吧！<br>現在也終於可以囉！</p><p>最底下的選項也多了一個 Console 選項<br>點下後，下面視窗也有兩個按鈕分別為 <code>CMD</code> 跟 <code>PS</code></p><p><code>CMD</code> 指的是 Windows 傳統的 Command Line<br><code>PS</code> 指的是 Windows 最新的 PowerShell</p><p>只要點一下，就可以打開你想要的 Console 囉！<br>不要的 Console 也可以直接右鍵關閉就好</p><p><img src="powershell.png" srcset="/img/loading.gif" alt></p><h3 id="隱藏問題-Issue"><a href="#隱藏問題-Issue" class="headerlink" title="隱藏問題 Issue"></a>隱藏問題 Issue</h3><p>安裝完成後，先不要選擇「繁體中文」，都先選擇「英文」<br>目前我在 Windows 10 的新版 Dev-C++ v6.2 跑繁體中文，會出現亂碼<br>這個問題暫時還沒修復，如果是新手，請暫時先忍一忍吧</p><h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>我想，這也是目前開源專案裡面最成功的例子了吧<br>三個大版本更新，全都是不同人開發、維護<br>希望這個開源精神，也有人能繼續傳下去</p><p>對著三個版本 Dev-C++ 的開發者們致上最高的 Respect！</p><p>目前我們就繼續期待著 Embarcadero Dev-C++ 會帶給我們什麼樣驚喜吧！</p><h3 id="廢文附帶廢圖（？）"><a href="#廢文附帶廢圖（？）" class="headerlink" title="廢文附帶廢圖（？）"></a>廢文附帶廢圖（？）</h3><p>從今天起，Embarcadero 就是我大哥，誰說 Embarcadero 不好，對不起，我們不認識（Ｘ）</p><p><img src="boss.jpg" srcset="/img/loading.gif" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 程式 </category>
+          
+          <category> Dev-C++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 程式 </tag>
+            
+            <tag> Dev-C++ </tag>
+            
+            <tag> 更新 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>社群回答被刪除紀錄區</title>
       <link href="/2020/09/04/group-answer/"/>
       <url>/2020/09/04/group-answer/</url>
@@ -290,6 +321,8 @@
       <categories>
           
           <category> 程式 </category>
+          
+          <category> Dev-C++ </category>
           
       </categories>
       
