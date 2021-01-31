@@ -27,7 +27,7 @@
 <meta property="og:description" content="這次比賽真的蠻有 April Fools 的味道 不過在 ZeroJudge 平台應該是新手居多，可能會有點適應不良，或者不知從何下手">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://blog.yangjerry.tw/img/avatar.png">
-<meta property="og:updated_time" content="2020-04-19T07:04:32.799Z">
+<meta property="og:updated_time" content="2021-01-29T03:27:59.089Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ZeroJudge April Fools Contest 2020 解題心得">
 <meta name="twitter:description" content="這次比賽真的蠻有 April Fools 的味道 不過在 ZeroJudge 平台應該是新手居多，可能會有點適應不良，或者不知從何下手">
@@ -514,13 +514,13 @@
 <div class="hljs"><pre><code class="hljs undefined"><span class="hljs-number">6</span>IulIF<span class="hljs-symbol">NbaV0</span><span class="hljs-name">g54</span>K<span class="hljs-number">6</span>IOWtl+S<span class="hljs-number">4</span>slM<span class="hljs-name">g56</span>ysIGk<span class="hljs-name">g5</span>YCL<span class="hljs-number">5</span>a<span class="hljs-number">2</span>X<span class="hljs-number">5</span>YWD<span class="hljs-number">55</span>qEIGFzY<span class="hljs-number">2</span>lpIOaVuOWA<span class="hljs-attr">vCAoRVg6</span><span class="hljs-keyword">IF</span><span class="hljs-name">M9</span>ImJhciI<span class="hljs-name">g5</span>YmHIF<span class="hljs-symbol">NbMF09</span>OTgpCuS<span class="hljs-number">7</span>pCBIKFMpID<span class="hljs-number">0</span>gc<span class="hljs-number">3</span>VtKF<span class="hljs-symbol">NbaV0</span>qMT<span class="hljs-name">M5</span>XmkpICjpgJ<span class="hljs-symbol">noo6</span>H<span class="hljs-symbol">nmoRe5</span>piv<span class="hljs-number">5</span>oyH<span class="hljs-number">5</span>pW<span class="hljs-number">46</span>YGL<span class="hljs-number">566</span>XKSAoRV<span class="hljs-name">g6</span><span class="hljs-keyword">IF</span><span class="hljs-name">M9</span>ImJhciI<span class="hljs-name">g5</span>YmHIEgoUyk<span class="hljs-number">9</span>OTgrOTcqMT<span class="hljs-name">M5</span>KzEx<span class="hljs-symbol">NCoxMzleMj0</span>yMjE<span class="hljs-number">2</span>MTc<span class="hljs-number">1</span>KQrlpoLm<span class="hljs-symbol">npwgSChTKSUoU1</span>swXSUzKzIpID<span class="hljs-number">09</span>IDAgKOmAmeijoeeahCXmmK/lj<span class="hljs-number">5</span>bppJjmlbgpIOWJh+ipsumkheS<span class="hljs-number">5</span>vuaYr+WxrOaW<span class="hljs-attr">vCLlsI/mrZAi55</span>qE<span class="hljs-number">6</span>aSF<span class="hljs-number">5</span>Lm<span class="hljs-number">+77</span>y<span class="hljs-name">M5</span>Y+<span class="hljs-symbol">N5</span>LmL<span class="hljs-number">5</span>YmH<span class="hljs-number">5</span>Li<span class="hljs-symbol">N5</span>piv<span class="hljs-number">44</span>CCCihFWDogUz<span class="hljs-number">0</span>iYmFyIiwgIOWboOeCuiBIKFMpJShTWzBdJTMrMikgPSAyMjE<span class="hljs-number">2</span>MTc<span class="hljs-number">1</span>JTQgPSAzIOaVhSDoqbLppIXoqbLkuKbkuI<span class="hljs-number">3</span>lsazmlrwi<span class="hljs-number">5</span>bCP<span class="hljs-number">5</span>q<span class="hljs-number">2</span>QIueahOmkheS<span class="hljs-number">5</span>vik=</code></pre></div>
 
 <p>結尾有個等於，看起來是 Base64 Encode，找個 <a href="https://www.base64decode.org/" target="_blank" rel="noopener">Online Base64 Decoder</a> 還原回去</p>
-<div class="hljs"><pre><code class="hljs undefined">若 S[i] 為 字串S 第 i 個字元的 ascii 數值 <span class="hljs-comment">(EX: S="bar" 則 S[0]=98)</span>
-令 H<span class="hljs-comment">(S)</span> = sum<span class="hljs-comment">(S[i]*139^i)</span> <span class="hljs-comment">(這裡的^是指數運算)</span> <span class="hljs-comment">(EX: S="bar" 則 H(S)</span>=<span class="hljs-number">98</span><span class="hljs-number">+97</span>*<span class="hljs-number">139</span><span class="hljs-number">+114</span>*<span class="hljs-number">139</span>^<span class="hljs-number">2</span>=<span class="hljs-number">2216175</span>)
-如果 H<span class="hljs-comment">(S)</span><span class="hljs-meta">%</span><span class="hljs-comment">(S[0]%3+2)</span> == <span class="hljs-number">0</span> <span class="hljs-comment">(這裡的%是取餘數)</span> 則該餅乾是屬於<span class="hljs-string">"小歐"</span>的餅乾，反之則不是。
-<span class="hljs-comment">(EX: S="bar",  因為 H(S)</span><span class="hljs-meta">%</span><span class="hljs-comment">(S[0]%3+2)</span> = <span class="hljs-number">2216175</span><span class="hljs-meta">%</span><span class="hljs-number">4</span> = <span class="hljs-number">3</span> 故 該餅該並不屬於<span class="hljs-string">"小歐"</span>的餅乾)</code></pre></div>
+<div class="hljs"><pre><code class="hljs plain">若 S[i] 為 字串S 第 i 個字元的 ascii 數值 (EX: S=&quot;bar&quot; 則 S[0]=98)
+令 H(S) = sum(S[i]*139^i) (這裡的^是指數運算) (EX: S=&quot;bar&quot; 則 H(S)=98+97*139+114*139^2=2216175)
+如果 H(S)%(S[0]%3+2) == 0 (這裡的%是取餘數) 則該餅乾是屬於&quot;小歐&quot;的餅乾，反之則不是。
+(EX: S=&quot;bar&quot;,  因為 H(S)%(S[0]%3+2) = 2216175%4 = 3 故 該餅該並不屬於&quot;小歐&quot;的餅乾)</code></pre></div>
 
 <p>知道題目了，來實作吧！</p>
-<p>這題需要用到<a href="https://zh.wikipedia.org/wiki/%E5%90%8C%E9%A4%98" target="_blank" rel="noopener">同餘定理</a>，照題目先把要 MOD 的數字算出，再把 $H(S)$ 算出</p>
+<p>這題需要用到<a href="https://zh.wikipedia.org/wiki/%E5%90%8C%E9%A4%98" target="_blank" rel="noopener">同餘定理</a>，照題目先把要 MOD 的數字算出，再把 $H(S)$ 算出</p>
 <p>算 $139$ 的次方，記得都要取 MOD，再去照題目要求判斷，即可 <code>AC</code></p>
 <div class="hljs"><pre><code class="hljs c++"><span class="hljs-comment">/*
     Author: Jerry Yang C.H. (tico88612)
@@ -572,11 +572,8 @@
 <blockquote>
 <p>小歐:「咦?? 現在這個人好像就是來自 美國 的耶」<br>小草:「啊… 的確呢 還真是意外耶(棒讀)」<br>小歐:「怎麼覺得你早就知道會有人一樣… ?」<br>小草:「沒那回事 那是你的錯覺♪」<br>小歐:「所以說那個提示.. ?」<br>小草:「啊，差點就忘了… 提示是『${Ans=(9487945\times\displaystyle\sum_{i=0}^{b}a^i)\bmod 10^9+7}$』。」<br>小歐:「我是覺得這已經不是提示的程度了啦，直接講解答還能夠算是提示嗎?? 不過確實，不看提示真的猜不到呢… …」<br>小草:「嘛 惡趣味可不是叫假的」<br>小歐:「算了… 我已經放棄思考了… …」<br>小草:「終於看開了呀(笑)」<br>小歐:「所以在最後還是來做點正事吧 在此恭喜你通過所有關卡!! 🎉🎉🎉」<br>小草:「不過也有可能是直接跳關到這裡就是了… ?」<br>小歐:「雖然相見的時間不長，但也到了該謝幕的時間了。」<br>小草:「我倒是覺得已經很長了… …」<br>小歐:「就這樣，我是主持人小歐」<br>小草:「我其實只是路過的♪」<br>小歐:「欸!? 真的假的!? 總之，有緣的話明年再見吧」<br>小草:「說真的，究竟有多少人能看到這裡呢… …」</p>
 </blockquote>
-<!-- **然後你的背景也一起 `美國` 了，強烈建議連線進去捧場一下**
-
-![背景也一起美國](e964-0.png) -->
-
-<p><strong>強烈建議連線進去捧場一下，你會發現不可思議的事</strong></p>
+<p><strong>然後你的背景也一起 <code>美國</code> 了，強烈建議連線進去捧場一下</strong></p>
+<p><img src="e964-0.png" srcset="/img/loading.gif" alt="背景也一起美國"></p>
 <p><strong>但我是覺得不一定要連 VPN 到美國，想辦法騙過 JavaScript 是從美國來的應該也可以</strong></p>
 <p>回到題目重點，本題重點在這裡</p>
 <p>$$<br>{Ans=(9487945\times\displaystyle\sum_{i=0}^{b}a^i)\bmod 10^9+7}<br>$$</p>
