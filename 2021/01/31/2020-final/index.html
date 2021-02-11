@@ -18,21 +18,21 @@
   <meta name="description" content>
   <meta name="author" content="Jerry Yang">
   <meta name="keywords" content>
-  <meta name="description" content="題目 Problem題目連結：https://zerojudge.tw/ShowProblem?problemid=e463">
-<meta name="keywords" content="multiset,DFS">
+  <meta name="description" content="又一年飛逝了，不知道 2020 的大家過得好不好？ 但總覺得 2020 的我比起往年，似乎沒有好到哪裡去">
+<meta name="keywords" content="生活,2020">
 <meta property="og:type" content="article">
-<meta property="og:title" content="e463. 數數字">
-<meta property="og:url" content="https://blog.yangjerry.tw/2020/02/16/zj-e463/index.html">
+<meta property="og:title" content="回顧 2020 總結 ＆ 2021 開局">
+<meta property="og:url" content="https://blog.yangjerry.tw/2021/01/31/2020-final/index.html">
 <meta property="og:site_name" content="Jerry Yang&#39;s Blog">
-<meta property="og:description" content="題目 Problem題目連結：https://zerojudge.tw/ShowProblem?problemid=e463">
+<meta property="og:description" content="又一年飛逝了，不知道 2020 的大家過得好不好？ 但總覺得 2020 的我比起往年，似乎沒有好到哪裡去">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://blog.yangjerry.tw/img/avatar.png">
-<meta property="og:updated_time" content="2020-02-17T09:16:04.657Z">
+<meta property="og:updated_time" content="2021-02-11T09:35:52.999Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="e463. 數數字">
-<meta name="twitter:description" content="題目 Problem題目連結：https://zerojudge.tw/ShowProblem?problemid=e463">
+<meta name="twitter:title" content="回顧 2020 總結 ＆ 2021 開局">
+<meta name="twitter:description" content="又一年飛逝了，不知道 2020 的大家過得好不好？ 但總覺得 2020 的我比起往年，似乎沒有好到哪裡去">
 <meta name="twitter:image" content="https://blog.yangjerry.tw/img/avatar.png">
-  <title>e463. 數數字 - Jerry Yang&#39;s Blog</title>
+  <title>回顧 2020 總結 ＆ 2021 開局 - Jerry Yang&#39;s Blog</title>
 
   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
 
@@ -201,8 +201,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-02-16 17:20" pubdate>
-        星期日, 二月 16日 2020, 5:20 下午
+      <time datetime="2021-01-31 23:14" pubdate>
+        星期日, 一月 31日 2021, 11:14 晚上
       </time>
     </span>
   
@@ -213,7 +213,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      837 字
+      819 字
     </span>
   
 
@@ -223,7 +223,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      14
+      8
        分鐘
     </span>
   
@@ -261,130 +261,30 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">e463. 數數字</h1>
+            <h1 style="display: none">回顧 2020 總結 ＆ 2021 開局</h1>
             
             <div class="markdown-body" id="post-body">
-              <h2 id="題目-Problem"><a href="#題目-Problem" class="headerlink" title="題目 Problem"></a>題目 Problem</h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=e463" target="_blank" rel="noopener">題目連結：https://zerojudge.tw/ShowProblem?problemid=e463</a></p>
+              <p>又一年飛逝了，不知道 2020 的大家過得好不好？</p>
+<p>但總覺得 2020 的我比起往年，似乎沒有好到哪裡去</p>
 <a id="more"></a>
-<h3 id="敘述-Description"><a href="#敘述-Description" class="headerlink" title="敘述 Description"></a>敘述 Description</h3><p>給你一個數字n(n&lt;=100)，可以在n旁邊加上&lt;=n/2的數字，一直加到不能加為止</p>
-<p>比如說n=6，可以變成16,26,36</p>
-<p>26可以變成126</p>
-<p>36可以變成136</p>
-<p>最後總共有6,16,26,36,126,136共六個數字</p>
-<h3 id="輸入-Input"><a href="#輸入-Input" class="headerlink" title="輸入 Input"></a>輸入 Input</h3><p>多筆輸入</p>
-<p>每行為n(n&lt;=100)</p>
-<h3 id="輸出-Output"><a href="#輸出-Output" class="headerlink" title="輸出 Output"></a>輸出 Output</h3><p>輸出共有幾個數字</p>
-<p>再輸出每個數字，記得要排序</p>
-<p>(有一些數字雖然會重複，但因為是由不同數字變出來的，所以都要輸出)</p>
-<h3 id="範例輸入-Sample-Input"><a href="#範例輸入-Sample-Input" class="headerlink" title="範例輸入 Sample Input"></a>範例輸入 Sample Input</h3><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-number">6</span>
-<span class="hljs-number">10</span></code></pre></div>
 
-<h3 id="範例輸出-Sample-Output"><a href="#範例輸出-Sample-Output" class="headerlink" title="範例輸出 Sample Output"></a>範例輸出 Sample Output</h3><div class="hljs"><pre><code class="hljs undefined"><span class="hljs-number">6</span>
-<span class="hljs-number">6</span> <span class="hljs-number">16</span> <span class="hljs-number">26</span> <span class="hljs-number">36</span> <span class="hljs-number">126</span> <span class="hljs-number">136</span> 
-<span class="hljs-number">14</span>
-<span class="hljs-number">10</span> <span class="hljs-number">110</span> <span class="hljs-number">210</span> <span class="hljs-number">310</span> <span class="hljs-number">410</span> <span class="hljs-number">510</span> <span class="hljs-number">1210</span> <span class="hljs-number">1310</span> <span class="hljs-number">1410</span> <span class="hljs-number">1510</span> <span class="hljs-number">2410</span> <span class="hljs-number">2510</span> <span class="hljs-number">12410</span> <span class="hljs-number">12510</span></code></pre></div>
-
-<h3 id="提示-Hint"><a href="#提示-Hint" class="headerlink" title="提示 Hint"></a>提示 Hint</h3><p>不准作弊!</p>
-<h2 id="題解-Solution"><a href="#題解-Solution" class="headerlink" title="題解 Solution"></a>題解 Solution</h2><p>搭配 DFS + Multiset<br>不能使用 Set 的原因是有些數字會是重複產生，但是必須要讓它輸出</p>
-<p>深度當前的那個數字 $n$，然後從 $1$ 到 $\frac{n}{2}$ 再向下搜尋<br>Line 64 的 s 是計算要加入數字的長度</p>
-<h3 id="程式碼-Accepted-Code"><a href="#程式碼-Accepted-Code" class="headerlink" title="程式碼 Accepted Code"></a>程式碼 Accepted Code</h3><div class="hljs"><pre><code class="hljs cpp"><span class="hljs-comment">/*
-    Author: Jerry Yang C.H. (tico88612)
-    Date: 2020/2/16
-*/</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
-<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
-<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;
-<span class="hljs-keyword">typedef</span> pair&lt;ll, ll&gt; pii;
-<span class="hljs-keyword">typedef</span> pair&lt;<span class="hljs-keyword">double</span>,<span class="hljs-keyword">double</span>&gt; pdd;
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> SQ(i) ((i)*(i))</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MEM(a, b) memset(a, (b), sizeof(a))</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> SZ(i) int(i.size())</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> FOR(i, j, k, in) for (int i=j ; i&lt;k ; i+=in)</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> RFOR(i, j, k, in) for (int i=j ; i&gt;=k ; i-=in)</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> REP(i, j) FOR(i, 0, j, 1)</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> REP1(i,j) FOR(i, 1, j+1, 1)</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> RREP(i, j) RFOR(i, j, 0, 1)</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ALL(_a) _a.begin(),_a.end()</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MP make_pair</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> PB push_back</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> EB emplace_back</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> X first</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> Y second</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">ifdef</span> tmd</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> debug(...) do&#123;\
-    fprintf(stderr,<span class="hljs-meta-string">"%s - %d (%s) = "</span>,__PRETTY_FUNCTION__,__LINE__,#__VA_ARGS__);\
-    _do(__VA_ARGS__);\
-&#125;while(0)</span>
-<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;<span class="hljs-keyword">void</span> _do(T &amp;&amp;_x)&#123;<span class="hljs-built_in">cerr</span>&lt;&lt;_x&lt;&lt;<span class="hljs-built_in">endl</span>;&#125;
-<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T,<span class="hljs-keyword">typename</span> ...S&gt; <span class="hljs-keyword">void</span> _do(T &amp;&amp;_x,S &amp;&amp;...<span class="hljs-keyword">_t</span>)&#123;<span class="hljs-built_in">cerr</span>&lt;&lt;_x&lt;&lt;<span class="hljs-string">" ,"</span>;_do(<span class="hljs-keyword">_t</span>...);&#125;
-<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> _a,<span class="hljs-keyword">typename</span> _b&gt; ostream&amp; <span class="hljs-keyword">operator</span> &lt;&lt; (ostream &amp;_s,<span class="hljs-keyword">const</span> pair&lt;_a,_b&gt; &amp;_p)&#123;<span class="hljs-keyword">return</span> _s&lt;&lt;<span class="hljs-string">"("</span>&lt;&lt;_p.X&lt;&lt;<span class="hljs-string">","</span>&lt;&lt;_p.Y&lt;&lt;<span class="hljs-string">")"</span>;&#125;
-<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> It&gt; ostream&amp; _OUTC(ostream &amp;_s,It _ita,It _itb)
-&#123;
-    _s&lt;&lt;<span class="hljs-string">"&#123;"</span>;
-    <span class="hljs-keyword">for</span>(It _it=_ita;_it!=_itb;_it++)
-    &#123;
-        _s&lt;&lt;(_it==_ita?<span class="hljs-string">""</span>:<span class="hljs-string">","</span>)&lt;&lt;*_it;
-    &#125;
-    _s&lt;&lt;<span class="hljs-string">"&#125;"</span>;
-    <span class="hljs-keyword">return</span> _s;
-&#125;
-<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> _a&gt; ostream &amp;<span class="hljs-keyword">operator</span> &lt;&lt; (ostream &amp;_s,<span class="hljs-built_in">vector</span>&lt;_a&gt; &amp;_c)&#123;<span class="hljs-keyword">return</span> _OUTC(_s,ALL(_c));&#125;
-<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> _a&gt; ostream &amp;<span class="hljs-keyword">operator</span> &lt;&lt; (ostream &amp;_s,<span class="hljs-built_in">set</span>&lt;_a&gt; &amp;_c)&#123;<span class="hljs-keyword">return</span> _OUTC(_s,ALL(_c));&#125;
-<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> _a&gt; ostream &amp;<span class="hljs-keyword">operator</span> &lt;&lt; (ostream &amp;_s,<span class="hljs-built_in">deque</span>&lt;_a&gt; &amp;_c)&#123;<span class="hljs-keyword">return</span> _OUTC(_s,ALL(_c));&#125;
-<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> _a,<span class="hljs-keyword">typename</span> _b&gt; ostream &amp;<span class="hljs-keyword">operator</span> &lt;&lt; (ostream &amp;_s,<span class="hljs-built_in">map</span>&lt;_a,_b&gt; &amp;_c)&#123;<span class="hljs-keyword">return</span> _OUTC(_s,ALL(_c));&#125;
-<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> <span class="hljs-keyword">_t</span>&gt; <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">pary</span><span class="hljs-params">(<span class="hljs-keyword">_t</span> _a,<span class="hljs-keyword">_t</span> _b)</span></span>&#123;_OUTC(<span class="hljs-built_in">cerr</span>,_a,_b);<span class="hljs-built_in">cerr</span>&lt;&lt;<span class="hljs-built_in">endl</span>;&#125;
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> IOS()</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">else</span></span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> debug(...)</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> pary(...)</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> endl <span class="hljs-meta-string">'\n'</span></span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> IOS() ios_base::sync_with_stdio(0);cin.tie(0)</span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
-
-<span class="hljs-keyword">const</span> ll MOD = <span class="hljs-number">1000000007L</span>L;
-<span class="hljs-keyword">const</span> ll INF = <span class="hljs-number">0x3f3f3f3f3f3f3f3f</span>LL;
-<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> iNF = <span class="hljs-number">0x3f3f3f3f</span>;
-<span class="hljs-comment">// const ll MAXN =</span>
-
-<span class="hljs-built_in">multiset</span>&lt;ll&gt; ms;
-
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(ll n, ll now)</span></span>&#123;
-    ms.insert(now);
-    ll s = <span class="hljs-built_in">pow</span>(<span class="hljs-number">10</span>, (ll)(<span class="hljs-built_in">log10</span>(now) + <span class="hljs-number">1</span>));
-    REP1(i, n / <span class="hljs-number">2</span>)&#123;
-        dfs(i, now + i * s);
-    &#125;
-&#125;
-
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">play</span><span class="hljs-params">(ll n)</span></span>&#123;
-    ms.clear();
-    dfs(n, n);
-    <span class="hljs-built_in">cout</span> &lt;&lt; SZ(ms) &lt;&lt; <span class="hljs-string">'\n'</span>;
-    <span class="hljs-keyword">int</span> fir = <span class="hljs-number">1</span>;
-    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> i: ms)&#123;
-        <span class="hljs-keyword">if</span>(fir)&#123;
-            fir = <span class="hljs-number">0</span>;
-        &#125;
-        <span class="hljs-keyword">else</span>&#123;
-            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">" "</span>;
-        &#125;
-        <span class="hljs-built_in">cout</span> &lt;&lt; i;
-    &#125;
-    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">'\n'</span>;
-&#125;
-
-<span class="hljs-comment">/********** Good Luck :) **********/</span>
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
-</span>&#123;
-    IOS();
-    ll n;
-    <span class="hljs-keyword">while</span>(<span class="hljs-built_in">cin</span> &gt;&gt; n)&#123;
-        play(n);
-    &#125;
-    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-&#125;</code></pre></div>
-
-<h2 id="後記-Afterword"><a href="#後記-Afterword" class="headerlink" title="後記 Afterword"></a>後記 Afterword</h2><p>That’s it.<br>暫時不知道要寫啥</p>
+<h2 id="一月-Jan"><a href="#一月-Jan" class="headerlink" title="一月 Jan"></a>一月 Jan</h2><p>比較有印象的話，那時的我準備要做專題，那時課業也不太重。<br>組員雖然找好了，但誰知我組員一位陸生回家一趟後就回不了台灣了。</p>
+<p>原本要參加交大的程式解題集訓，但前兩天直接宣佈取消 ヽ(#`Д´)ﾉ<br>可以說是疫情打亂一切啊！</p>
+<h2 id="二月-Feb-六月-Jun"><a href="#二月-Feb-六月-Jun" class="headerlink" title="二月 Feb ~ 六月 Jun"></a>二月 Feb ~ 六月 Jun</h2><p>又是 26 學分的人生，系上 16 學分 + 師培 10 學分，也不知道我怎麼混過去了，雖然只是感覺好像又過了忙碌的學期。</p>
+<p>專題目前那時算是一顆未爆彈，進度到後面有時候會有點跟不太上，跟組員或教授交談有時候會有種溝通障礙，會有點突然就聽不懂想法，但又不知道從何問起。</p>
+<h2 id="七月-Jul-八月-Aug"><a href="#七月-Jul-八月-Aug" class="headerlink" title="七月 Jul ~ 八月 Aug"></a>七月 Jul ~ 八月 Aug</h2><p>暑假嘛！除了專題以外就是史懷哲營隊了吧！<br>史懷哲營隊對我來說是大學生涯中認識最多朋友的一次吧！<br>有點意外的是，修課還跟所有同學不熟（交集基本為 0）<br>但暑期集訓中旬以後就變得超熟。<br>每次在路上看到夥伴們都還會停下來寒暄幾句（我對系上的同學都不一定會這樣）</p>
+<p>喔對 BTW，還有那逢甲大學辦超爛的 NCPU 2020<del>（直接被我歸類為糞校）</del>，明年 NCPU 聽 MZ 說要自己拿回來舉辦了，據說今年被罵超慘ㄏㄏ。<br>雖然不是說 MZ 辦的多好，但至少沒有出事的比賽就是一場不錯的比賽，至少不會到現場才跟你改比賽環境 @@<br>至於 NCPU 2020 當天出了什麼事，我已經詳細寫在<a href="/2020/07/16/ncpu-2020-negative/" title="這篇文章">這篇文章</a>裡面了。</p>
+<h2 id="九月-Sep-十月-Oct"><a href="#九月-Sep-十月-Oct" class="headerlink" title="九月 Sep ~ 十月 Oct"></a>九月 Sep ~ 十月 Oct</h2><p>明明只有 9 學分，卻忙碌的跟 26 學分一樣 @@</p>
+<p>十月比較好笑就是，我忙到只有繳交比賽費，忘記填寫表單<br>直到某一天就在 Discord 加入的社群被廣播……<br><img src="fee.png" srcset="/img/loading.gif" alt></p>
+<h2 id="十一月-Nov-十二月中旬-Dec-Mid"><a href="#十一月-Nov-十二月中旬-Dec-Mid" class="headerlink" title="十一月 Nov ~ 十二月中旬 Dec. Mid"></a>十一月 Nov ~ 十二月中旬 Dec. Mid</h2><p>很驚喜的就是，我在 <strong>ICPC 2020 Taipei Regional 拿到了銅牌獎</strong>。</p>
+<p>大學生涯最後一場 ICPC，不曉得明年還能不能參加就是了，但是專題也陷入了趕進度的困境，後期也過得超黑暗。</p>
+<p>不過所幸專題還是過了，也拿了很意外的名次，專題競賽第一名。</p>
+<h2 id="2021-一月-2021-Jun"><a href="#2021-一月-2021-Jun" class="headerlink" title="2021 一月 2021 Jun"></a>2021 一月 2021 Jun</h2><p>大學第一科被送下去的科目也出來了（對，我努力撐很久才出現第一科被當掉），主要真的是因為專題忙不過來，反正就給她當掉吧。</p>
+<p>參與了 AWS Gameday 2021，詳細內容也寫在<a href="/2021/01/31/aws-gameday-2021-fcu/" title="這篇文章">這篇文章</a>裡面了。</p>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><blockquote>
+<p>「每一次，每一年，我們都會說新年要有新希望，<br>要有新的改變，可是經過了 2020 這樣子的一年之後，<br>突然發現，突然發現，沒有改變，<br>好像就是最幸福的一件事了。」<br>—— 五月天 2020.12.31</p>
+</blockquote>
+<p>我用這句話來總結 2020，一定要好好珍惜現在所在的人事物。</p>
 
               <div>
     <script type="text/javascript">
@@ -401,9 +301,9 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/解題區/">解題區</a>
+                      <a class="hover-with-bg" href="/categories/生活/">生活</a>
                     
-                      <a class="hover-with-bg" href="/categories/解題區/解題報告書-ZeroJudge/">解題報告書 - ZeroJudge</a>
+                      <a class="hover-with-bg" href="/categories/生活/回顧/">回顧</a>
                     
                   </div>
                 
@@ -411,9 +311,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/multiset/">multiset</a>
+                      <a class="hover-with-bg" href="/tags/生活/">生活</a>
                     
-                      <a class="hover-with-bg" href="/tags/DFS/">DFS</a>
+                      <a class="hover-with-bg" href="/tags/2020/">2020</a>
                     
                   </div>
                 
@@ -426,18 +326,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/04/03/zerojudge-april-fools-contest-2020/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">ZeroJudge April Fools Contest 2020 解題心得</span>
-                        <span class="visible-mobile">前の記事</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/02/04/zj-e880/">
-                        <span class="hidden-mobile">e880. Q1 合影隊形</span>
+                      <a href="/2021/01/31/aws-gameday-2021-fcu/">
+                        <span class="hidden-mobile">AWS GameDay 2021 逢甲大學</span>
                         <span class="visible-mobile">次の記事</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -456,8 +350,8 @@
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'https://blog.yangjerry.tw/2020/02/16/zj-e463/';
-        this.page.identifier = '/2020/02/16/zj-e463/';
+        this.page.url = 'https://blog.yangjerry.tw/2021/01/31/2020-final/';
+        this.page.identifier = '/2021/01/31/2020-final/';
       };
       function loadDisqus() {
         (function () {
@@ -612,7 +506,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "e463. 數數字&nbsp;",
+        "回顧 2020 總結 ＆ 2021 開局&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
