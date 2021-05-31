@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.yangjerry.tw/"/>
-  <updated>2021-02-11T10:02:00.555Z</updated>
+  <updated>2021-05-31T12:29:02.756Z</updated>
   <id>https://blog.yangjerry.tw/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>關於 refineCollectionShardKey 的更多解釋</title>
+    <link href="https://blog.yangjerry.tw/2021/05/31/mongodb-refinecollectionshardkey/"/>
+    <id>https://blog.yangjerry.tw/2021/05/31/mongodb-refinecollectionshardkey/</id>
+    <published>2021-05-31T12:30:00.000Z</published>
+    <updated>2021-05-31T12:29:02.756Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近著手研究 MongoDB 4.4 的一些相關 function<br>尤其是 <code>refineCollectionShardKey</code> 的解釋讓我很……<br>一方面我才剛研究 MongoDB，可能也對此設計也不太理解，所以想做一下紀錄</p><a id="more"></a><p><strong>此篇為新手向教學，並非 MongoDB 原始碼深入閱讀，高手們請直接左上離開謝謝。</strong></p><h2 id="先備知識"><a href="#先備知識" class="headerlink" title="先備知識"></a>先備知識</h2><p>開始這篇文章的解釋之前，先來個先備知識<br>要使用此 function 之前，必須先知道 Sharding</p><h3 id="MongoDB-Shard"><a href="#MongoDB-Shard" class="headerlink" title="MongoDB Shard"></a>MongoDB Shard</h3><p>一組 MongoDB Cluster 都會有多個 Shard Server<br>每一台 Shard Server 會有多個 Chunk<br>每一組 Chunk 會有多筆資料</p><p>資料中被選定的 Shard Key 會決定資料放置位置</p><p>多台 Shard Server 的優勢：</p><ul><li>可以做水平擴展</li><li>Server 負載分擔</li></ul><h3 id="MongoDB-Chunk"><a href="#MongoDB-Chunk" class="headerlink" title="MongoDB Chunk"></a>MongoDB Chunk</h3><p>說完 MongoDB Shard 一定要來說說 Chunk 啦！</p><p>每個 Chunk 最大容量預設為 64 MB（可以自行調整）</p><p>只要 Sharding 功能有開啟，Chunk 的 Auto Split 就會自己打開。<br>Chunk 只要高達 64 MB，MongoDB 就會幫你 Split（當然你也可以選擇自己 Split）。</p><h2 id="正式介紹-refineCollectionShardKey"><a href="#正式介紹-refineCollectionShardKey" class="headerlink" title="正式介紹 refineCollectionShardKey"></a>正式介紹 refineCollectionShardKey</h2><p>因此前面冗長先備知識完後，就來正式介紹 <code>refineCollectionShardKey</code>。</p><p>其實就是針對每個 Chunk 再做更細的區分資料。</p><p>假設今天的 Shard Key 選擇「整數 ID」，如果集中寫入 $30 \sim 50$ 之間，<br>至少可以從中間切開 $40$，讓 Chunk 變成 $30 \sim 40$ 跟 $41 \sim 50$。</p><p>可是如果今天大量資料的「整數 ID」集中在 $42$ 呢？如果達到 Chunk 容量上限，也不能做分割，就形成 Jumbo Chunk，不可讀也不可寫。</p><p>因此就會使用 <code>refineCollectionShardKey</code> 給下一個 Shard Key 參考去做切割，迴避掉 Jumbo Chunk 問題。</p><p>照著官網說明完成命令，也不會馬上變化太大，但資料會隨著未來改變，加了這步驟就是給系統一個參考的讀寫策略。</p><h2 id="後記"><a href="#後記" class="headerlink" title="後記"></a>後記</h2><p>發現很多中文資料都找不到有關 <code>refineCollectionShardKey</code> 用途，就自己來寫一篇了。<br>如果我有任何錯誤想修正，歡迎底下留言，謝謝大家觀看。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近著手研究 MongoDB 4.4 的一些相關 function&lt;br&gt;尤其是 &lt;code&gt;refineCollectionShardKey&lt;/code&gt; 的解釋讓我很……&lt;br&gt;一方面我才剛研究 MongoDB，可能也對此設計也不太理解，所以想做一下紀錄&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="MongoDB" scheme="https://blog.yangjerry.tw/tags/MongoDB/"/>
+    
+      <category term="Sharding" scheme="https://blog.yangjerry.tw/tags/Sharding/"/>
+    
+      <category term="Chunk" scheme="https://blog.yangjerry.tw/tags/Chunk/"/>
+    
+      <category term="refineCollectionShardKey" scheme="https://blog.yangjerry.tw/tags/refineCollectionShardKey/"/>
+    
+  </entry>
   
   <entry>
     <title>回顧 2020 總結 ＆ 2021 開局</title>
@@ -539,33 +566,6 @@
       <category term="IO 優化" scheme="https://blog.yangjerry.tw/tags/IO-%E5%84%AA%E5%8C%96/"/>
     
       <category term="Bit 運算" scheme="https://blog.yangjerry.tw/tags/Bit-%E9%81%8B%E7%AE%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Google Code Jam 2019 Qualification Round 亂寫の解題心得</title>
-    <link href="https://blog.yangjerry.tw/2019/04/08/gcj-2019-qr/"/>
-    <id>https://blog.yangjerry.tw/2019/04/08/gcj-2019-qr/</id>
-    <published>2019-04-08T15:00:00.000Z</published>
-    <updated>2019-04-07T11:24:41.763Z</updated>
-    
-    <content type="html"><![CDATA[<p><del>反正只要 30 分以上就可以進 Round 1 了</del></p><a id="more"></a><p>pA 可以 WA 到把 Penalty 飆超高我也是醉了啦！</p><h2 id="pA-Foregone-Solution"><a href="#pA-Foregone-Solution" class="headerlink" title="pA. Foregone Solution"></a>pA. Foregone Solution</h2><p>題意大致是說，給你個 $N$，請輸出正整數 $A, B$，並且 $A + B = N$<br>然後 $A, B$ 不能有任何的 $4$ 出現</p><p>一開始我是用$\div 2$方式去做的<br>但沒有考慮太多情況<br>然後就吃了5次WA</p><p>後來就想說$A = 1, B = N - 1$<br>如果$B$的某個位數為$4$<br>就把那個位數減去$1$加在$A$上<br>然後這個解法一次就過了…（ㄏㄏ）</p><p>本題 Hidden Test 只有 1 分<br>但$N$高達$10^{100}$，就直接用 Python 解了</p><div class="hljs"><pre><code class="hljs python">T = int(input())<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, T + <span class="hljs-number">1</span>):    N = int(input())    A = <span class="hljs-number">1</span>    B = N - <span class="hljs-number">1</span>    Run = <span class="hljs-number">1</span>    <span class="hljs-keyword">while</span> Run &lt; B:        NowE = B // Run        NowE = NowE % <span class="hljs-number">10</span>        <span class="hljs-keyword">if</span> NowE == <span class="hljs-number">4</span>:            A += Run            B -= Run        Run *= <span class="hljs-number">10</span>    print(<span class="hljs-string">"Case #"</span> + str(i) + <span class="hljs-string">": "</span> + str(A) + <span class="hljs-string">" "</span> + str(B))</code></pre></div><h2 id="pB-You-Can-Go-Your-Own-Way"><a href="#pB-You-Can-Go-Your-Own-Way" class="headerlink" title="pB. You Can Go Your Own Way"></a>pB. You Can Go Your Own Way</h2><p>題意大致是說，給你一個 $N\times N$ 的格子<br>找個路徑，只能往右走$E$跟往下走$S$<br>不能跟他給的路徑重複</p><p>就直接跟他相反就不會重複了<br>他走$E$，你就走$S$<br>他走$S$，你就走$E$</p><div class="hljs"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">pragma</span> GCC optimize (<span class="hljs-meta-string">"O2"</span>)</span><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;unistd.h&gt;</span></span><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<span class="hljs-keyword">typedef</span> <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; vi;<span class="hljs-keyword">typedef</span> pair&lt;<span class="hljs-keyword">int</span>,<span class="hljs-keyword">int</span>&gt; pi;<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> _ ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);</span><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> FZ(n) memset((n),0,sizeof(n))</span><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> FMO(n) memset((n),-1,sizeof(n))</span><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> F first</span><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> S second</span><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> PB push_back</span><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MP make_pair</span><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ALL(x) begin(x),end(x)</span><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> SZ(x) ((int)(x).size())</span><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> REP(i,a,b) for (int i = a; i &lt; b; i++)</span><span class="hljs-comment">// Let's Fight!</span><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;_<span class="hljs-keyword">int</span> T;<span class="hljs-built_in">cin</span> &gt;&gt; T;REP(i, <span class="hljs-number">1</span>, T + <span class="hljs-number">1</span>)&#123;<span class="hljs-keyword">int</span> N;<span class="hljs-built_in">cin</span> &gt;&gt; N;<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Case #"</span> &lt;&lt; i &lt;&lt; <span class="hljs-string">": "</span>;<span class="hljs-built_in">string</span> enter;<span class="hljs-built_in">cin</span> &gt;&gt; enter;REP(j, <span class="hljs-number">0</span>, SZ(enter))&#123;<span class="hljs-keyword">if</span>(enter[j] == <span class="hljs-string">'S'</span>)<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"E"</span>;<span class="hljs-keyword">if</span>(enter[j] == <span class="hljs-string">'E'</span>)<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"S"</span>;&#125;<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">'\n'</span>;&#125;    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;&#125;</code></pre></div><h2 id="pC-Cryptopangrams"><a href="#pC-Cryptopangrams" class="headerlink" title="pC. Cryptopangrams"></a>pC. Cryptopangrams</h2><p>應該就直接用 Python 寫，<del>不會寫，ToDo</del></p><h2 id="pD-Dat-Bae"><a href="#pD-Dat-Bae" class="headerlink" title="pD. Dat Bae"></a>pD. Dat Bae</h2><p>互動式題目，<del>不會寫，ToDo</del></p><h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>pA 跟 pB 的 Visible Test 過就可以進 Round 1 了</p><p>另外兩題等有詳解 Code 再來試寫好了(X)</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;del&gt;反正只要 30 分以上就可以進 Round 1 了&lt;/del&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="比賽心得區" scheme="https://blog.yangjerry.tw/categories/%E6%AF%94%E8%B3%BD%E5%BF%83%E5%BE%97%E5%8D%80/"/>
-    
-      <category term="Google Code Jam" scheme="https://blog.yangjerry.tw/categories/%E6%AF%94%E8%B3%BD%E5%BF%83%E5%BE%97%E5%8D%80/Google-Code-Jam/"/>
-    
-    
-      <category term="Google Code Jam" scheme="https://blog.yangjerry.tw/tags/Google-Code-Jam/"/>
-    
-      <category term="2019" scheme="https://blog.yangjerry.tw/tags/2019/"/>
     
   </entry>
   
